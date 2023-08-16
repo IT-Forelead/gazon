@@ -1,7 +1,6 @@
 <script setup>
 import HomeIcon from "@/assets/icons/HomeIcon.vue"
 import StadiumIcon from "@/assets/icons/StadiumIcon.vue"
-import CreateIcon from "@/assets/icons/CreateIcon.vue"
 import BallIcon from "@/assets/icons/BallIcon.vue";
 import CalendarIcon from "@/assets/icons/CalendarIcon.vue"
 import ProfileIcon from "@/assets/icons/ProfileIcon.vue"
@@ -12,7 +11,6 @@ onMounted(() => {
   initFlowbite();
 })
 </script>
-
 <template>
   <div class="fixed z-50 w-full h-14 -translate-x-1/2 bg-white bottom-1 left-1/2">
     <div class="grid h-full max-w-lg grid-cols-5 mx-auto md:max-w-3xl">
@@ -39,7 +37,6 @@ onMounted(() => {
     </div>
   </div>
 </template>
-
 <style scoped>
 
 </style>
