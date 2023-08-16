@@ -14,11 +14,11 @@ onMounted(() => {
 
 <template>
   <div class="fixed z-50 w-full h-14 -translate-x-1/2 bg-white border-t border-gray-300 bottom-1 left-1/2">
-    <div class="grid h-full max-w-lg grid-cols-5 mx-auto">
-      <router-link to="/" class="inline-flex flex-col items-center justify-center px-5 hover:text-teal-500">
+    <div class="grid h-full max-w-lg grid-cols-5 mx-auto md:max-w-3xl">
+      <router-link to="/" class="inline-flex flex-col items-center justify-center px-5 text-teal-400 hover:text-teal-600">
         <HomeIcon class="w-6 h-6"/>
       </router-link>
-      <router-link to="#" class="inline-flex flex-col items-center justify-center px-5 hover:text-teal-500">
+      <router-link to="#" class="inline-flex flex-col items-center justify-center px-5 text-teal-400 hover:text-teal-600">
         <StadiumIcon class="w-6 h-6"/>
       </router-link>
       <div class="flex items-center justify-center">
@@ -28,11 +28,11 @@ onMounted(() => {
         </router-link>
       </div>
       <router-link to="#"
-                   class="inline-flex flex-col items-center justify-center px-5 hover:text-teal-500">
+                   class="inline-flex flex-col items-center justify-center px-5 text-teal-400 hover:text-teal-600">
         <CalendarIcon class="w-6 h-6"/>
       </router-link>
       <router-link to="#"
-              class="inline-flex flex-col items-center justify-center px-5 hover:text-teal-500">
+              class="inline-flex flex-col items-center justify-center px-5 text-teal-400 hover:text-teal-600">
         <ProfileIcon class="w-6 h-6"/>
       </router-link>
     </div>
