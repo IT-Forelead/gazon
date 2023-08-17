@@ -3,7 +3,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
   font-family: "DM Sans", sans-serif;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #bcd1d6;
+  -webkit-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #106279;
+  -webkit-border-radius: 10px;
 }
