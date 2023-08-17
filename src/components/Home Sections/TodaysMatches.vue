@@ -57,7 +57,7 @@ const todaysMatches = ref([
       <div
           v-for="(matches, index) in todaysMatches"
           :key="index"
-          class="mx-4 w-80 h-36 pb-1 bg-white rounded-lg border border-teal-300">
+          class="mx-4 w-80 h-36 pb-1 bg-white rounded-lg border border-teal-300 shadow-md mb-3">
         <div class="text-center mt-2">
           <p class="text-sm">{{ matches.day }}</p>
           <p class="text-sm">{{ matches.date }}</p>

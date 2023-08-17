@@ -48,7 +48,7 @@ const todaysMatches = ref([
 ]);
 </script>
 <template>
-  <div class="flex max-w-lg items-center ml-3 mt-2 md:mx-auto text-teal-600 font-bold">
+  <div class="flex max-w-lg items-center ml-3 md:mx-auto text-teal-600 font-bold">
     <h1>Yakunlangan uchrashuvlar</h1>
     <BallIcon/>
   </div>
@@ -57,7 +57,7 @@ const todaysMatches = ref([
       <div
           v-for="(matches, index) in todaysMatches"
           :key="index"
-          class="mx-4 w-80 h-[190px] pb-1 bg-white rounded-lg border border-teal-300">
+          class="mx-4 w-80 h-[190px] pb-1 bg-white rounded-lg border border-teal-300 shadow-md mb-3">
         <div class="text-center mt-2">
           <p class="text-sm">{{ matches.day }}</p>
           <p class="text-sm">{{ matches.date }}</p>
