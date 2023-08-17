@@ -14,8 +14,8 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
-    path: '/:name',
-    // name: : name,
+    path: '/view-player/:name/:id',
+    name: 'viewPlayer',
     component: () => import('../views/ViewPlayer.vue'),
     meta: { layout: 'dashboard' },
   },

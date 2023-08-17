@@ -2,14 +2,14 @@ import { defineStore } from 'pinia'
 
 export const useViewPlayerStore = defineStore('player', {
     state: () => ({
-        player: {}
+        // player: {}
     }),
     actions: {
-        setPlayer(payload) {
-            this.player = payload
-        },
-        clearPlayer() {
-            this.player = {}
-        }
+        // setPlayer(payload) {
+        //     this.player = payload
+        // },
+        // clearPlayer() {
+        //     this.player = {}
+        // }
     }
 })

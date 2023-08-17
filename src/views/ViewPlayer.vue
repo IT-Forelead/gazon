@@ -1,33 +1,24 @@
 <script setup>
-import { computed, ref } from 'vue';
-import CloseIcon from '../assets/icons/CloseIcon.vue';
-import { useViewPlayerStore } from '../stores/viewPlayer.store';
+import { useRoute } from 'vue-router'
+import { computed, onMounted, ref } from 'vue';
+import playerLists from '@/assets/playerLists.json'
 
-const playerInformation = computed(() => useViewPlayerStore().player)
+const hero = ref()
+const route = useRoute()
 
-const clearAll = () => {
-    useViewPlayerStore().clearPlayer()
-}
-
-const photos = ref(['arslon', 'abror', 'akmal', 'bobur', 'elyor', 'qodirbergan', 'ibrohim', 'jamshid', 'otabek', 'ulugbek', 'sardor', 'shaxzod', 'umid2', 'doniyor', 'yunusbek', 'behruz', 'bekzod', 'umid', 'umidbek', 'elyor junior'])
+onMounted(() => hero.value = playerLists.filter(player => player.id == route.params.id)[0])
 
 </script>
 
 <template>
-    <section
-        class="fixed left-0 right-0 top-0 bg-white py-5 px-10 border rounded z-10 max-h-[340px] overflow-y-auto style-shadow"
-        v-show="useViewPlayerStore().player.name">
-        <button class="absolute bg-[#16858D] rounded-full group right-10 top-6 hover:bg-red-500">
-            <CloseIcon class="w-10 h-10 text-white font-bold group-hover:rotate-90 duration-300" @click="clearAll()" />
-        </button>
-
-        <div class="flex items-center">
+    <section>
+        <div class="flex items-center pl-10">
             <div class="bg-top bg-cover w-20 h-20 mr-2 bg-no-repeat rounded-full"
-                :style="{ backgroundImage: `url('${playerInformation.name}.jpg')` }"></div>
+                :style="{ backgroundImage: `url(/public/${hero?.firstName}.jpg)` }"></div>
             <span class="-space-y-1">
-                <h2 class="capitalize font-semibold text-xl">{{ playerInformation.name }}</h2>
-                <h4>{{ playerInformation.name }}ov</h4>
-                <h4 class="text-[12px] text-gray-400">{{ playerInformation.age }} yosh</h4>
+                <h2 class="capitalize font-semibold text-xl">{{ hero?.firstName }}</h2>
+                <h4 class="capitalize">{{ hero?.lastName }}</h4>
+                <h4 class="text-[12px] text-gray-400">{{ hero?.age }} yosh</h4>
             </span>
         </div>
         <ul class="flex my-4 items-center justify-around">
@@ -44,19 +35,34 @@ const photos = ref(['arslon', 'abror', 'akmal', 'bobur', 'elyor', 'qodirbergan',
                 <span>gollar</span>
             </li>
         </ul>
-        <ul class="flex items-center flex-wrap gap-1">
-            <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat"
-                :style="{ backgroundImage: `url('${playerInformation.name}.jpg')` }">
+        <ul class="flex items-center flex-wrap gap-1 justify-center">
+            <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
+                :style="{ backgroundImage: `url(/public/${hero?.firstName}.jpg)` }">
             </li>
-            <li v-for="(photo, index) in photos" :key="index"
-                class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat"
-                :style="{ backgroundImage: `url('${photo}.jpg')` }">
+            <li v-for="(player, index) in playerLists" :key="index"
+                class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
+                :style="{ backgroundImage: `url(/public/${player.firstName}.jpg)` }">
             </li>
         </ul>
+        <!-- <ul class="flex items-center flex-wrap gap-1">
+            <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
+                :style="{ backgroundImage: `url('${playerInformation.name}.jpg')` }" @click="hero = playerInformation.name">
+            </li>
+            <li v-for="(photo, index) in photos" :key="index"
+                class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
+                :style="{ backgroundImage: `url('${photo}.jpg')` }" @click="hero = photo">
+            </li>
+        </ul> -->
+        <!-- <div class="absolute -bottom-72 left-0 bgcolor w-full mt-20 h-72 bg-no-repeat bg-center bg-contain" v-show="hero"
+            :style="{ backgroundImage: `url('${hero?.firstName}.jpg')` }"></div> -->
     </section>
 </template>
 <style scoped>
 .style-shadow {
     box-shadow: 0px -49px 36px -50px #18a9d1 inset;
+}
+
+.bgcolor {
+    background-color: #33333329;
 }
 </style>

@@ -1,6 +1,6 @@
 <script setup>
-import { useRouter } from 'vue-router'
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import NavbarTop from "@/components/NavbarTop.vue";
 
 const defaultLayout = 'login'
