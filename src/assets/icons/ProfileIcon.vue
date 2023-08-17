@@ -5,6 +5,6 @@
 
 <script lang="ts">
 export default {
-  name: 'IcOutlineAccountCircle'
+  name: 'ProfileIcon'
 }
 </script>

@@ -5,6 +5,6 @@
 
 <script>
 export default {
-  name: 'MaterialSymbolsHomeOutlineRounded'
+  name: 'HomeIcon'
 }
 </script>
