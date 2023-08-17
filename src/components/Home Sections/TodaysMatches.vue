@@ -1,8 +1,7 @@
 <script setup>
-import {Vue3Marquee} from "vue3-marquee";
-import LocationIcon from "@/assets/icons/LocationIcon.vue";
-import {ref} from "vue";
-import BallIcon from "@/assets/icons/BallIcon.vue";
+import {Vue3Marquee} from "vue3-marquee"
+import LocationIcon from "@/assets/icons/LocationIcon.vue"
+import {ref} from "vue"
 
 const todaysMatches = ref([
   {
