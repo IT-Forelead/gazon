@@ -46,13 +46,9 @@ const todaysMatches = ref([
 ]);
 </script>
 <template>
-  <div class="flex justify-between max-w-lg items-center ml-3 md:mx-auto text-teal-600 font-bold">
-    <div class="ml-3">
-      <h1 class="flex items-center text-sm">Bugungi o'yinlar</h1>
-    </div>
-    <div class="mr-3">
-      <a href="" class="flex items-center text-xs">Barchasi</a>
-    </div>
+  <div class="flex justify-between max-w-lg items-center md:mx-auto text-teal-600 font-bold px-2">
+    <h1 class="text-xl">Bugungi o'yinlar</h1>
+    <a href="" class="text-xs">Barchasi</a>
   </div>
   <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 md:mx-auto">
     <div class="flex items-center ml-6 space-x-4">

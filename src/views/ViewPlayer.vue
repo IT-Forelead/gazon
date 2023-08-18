@@ -19,7 +19,7 @@ onMounted(() => {
     <section>
         <div class="flex items-center pl-10">
             <div class="bg-top bg-cover w-20 h-20 mr-2 bg-no-repeat rounded-full"
-                :style="{ backgroundImage: `url(/public/${hero?.firstName}.jpg)` }"></div>
+                :style="{ backgroundImage: `url(/${hero?.firstName}.jpg)` }"></div>
             <span class="-space-y-1">
                 <h2 class="capitalize font-semibold text-xl">{{ hero?.firstName }}</h2>
                 <h4 class="capitalize">{{ hero?.lastName }}</h4>
