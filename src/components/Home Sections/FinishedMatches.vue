@@ -51,7 +51,7 @@ const todaysMatches = ref([
     <h1 class="text-xl">Yakunlangan o'yinlar</h1>
     <a href="" class="text-xs">Barchasi</a>
   </div>
-  <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 md:mx-auto">
+  <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 mb-16 md:mx-auto">
     <div class="flex items-center ml-6 space-x-4">
       <div v-for="(matches, index) in todaysMatches" :key="index"
         class="mx-4 w-80 h-[190px] pb-1 bg-white rounded-lg shadow-md mb-3">
