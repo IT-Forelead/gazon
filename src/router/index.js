@@ -13,6 +13,12 @@ const routes = [
     component: () => import('../views/Profile.vue'),
     meta: { layout: 'dashboard' },
   },
+  {
+    path: '/view-player/:name/:id',
+    name: 'viewPlayer',
+    component: () => import('../views/ViewPlayer.vue'),
+    meta: { layout: 'dashboard' },
+  },
 
 ]
 
