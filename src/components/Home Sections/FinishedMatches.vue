@@ -3,42 +3,47 @@ import {Vue3Marquee} from "vue3-marquee"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
 import {ref} from "vue"
 
+const today = new Date()
+const daysOfWeek = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"]
+const dayOfWeek = daysOfWeek[today.getDay()]
+
+
 const todaysMatches = ref([
   {
-    day: "Juma",
-    date: "15 Avgust",
+    day: dayOfWeek,
+    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "1-0",
     blueTeam: "Blue Team",
     redTeam: "Red Team",
     location: "Xorazm Palace, Urganch shahar",
   },
   {
-    day: "Juma",
-    date: "15 Avgust",
+    day: dayOfWeek,
+    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "3-0",
     blueTeam: "Urganch",
     redTeam: "Xonqa",
     location: "Milliy gazon, Urganch tuman",
   },
   {
-    day: "Juma",
-    date: "15 Avgust",
+    day: dayOfWeek,
+    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "1-2",
     blueTeam: "Yangiariq",
     redTeam: "Gurlan",
     location: "Xorazm Palace, Urganch shahar",
   },
   {
-    day: "Juma",
-    date: "15 Avgust",
+    day: dayOfWeek,
+    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "4-5",
     blueTeam: "Xorazm",
     redTeam: "Nukus",
     location: "Milliy gazon, Urganch shahar",
   },
   {
-    day: "Juma",
-    date: "15 Avgust",
+    day: dayOfWeek,
+    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "4-4",
     blueTeam: "Xiva",
     redTeam: "Xazarasp",
