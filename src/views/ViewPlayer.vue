@@ -2,6 +2,7 @@
 import { useRoute } from 'vue-router'
 import { onMounted, ref } from 'vue';
 import playerLists from '@/assets/playerLists.json'
+import ArrowIcon from '../assets/icons/ArrowIcon.vue';
 
 const hero = ref()
 const players = ref([])
@@ -12,6 +13,8 @@ onMounted(() => {
     players.value = playerLists.filter(player => player.id != route.params.id)
     players.value.unshift(hero.value)
 })
+
+const heroImage = ref('')
 
 </script>
 
@@ -40,36 +43,28 @@ onMounted(() => {
                 <span>gollar</span>
             </li>
         </ul>
-        <ul class="flex items-center flex-wrap gap-1 justify-center">
-            <!-- <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
-                :style="{ backgroundImage: `url(/${hero?.firstName}.jpg)` }">
-            </li> -->
-            <li v-for="(player, index) in players" :key="index"
-                class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
+        <ul class="grid items-center grid-cols-3 gap-1">
+            <li v-for="(player, index) in players" :key="index" @click="heroImage = ++index"
+                class="bg-top bg-cover h-40 xl:h-96 2xl:h-[600px] md:h-60 bg-no-repeat cursor-pointer"
                 :style="{ backgroundImage: `url(/${player.firstName}.jpg)` }">
             </li>
         </ul>
 
-
-        <!-- <ul class="flex items-center flex-wrap gap-1">
-            <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
-                :style="{ backgroundImage: `url('${playerInformation.name}.jpg')` }" @click="hero = playerInformation.name">
-            </li>
-            <li v-for="(photo, index) in photos" :key="index"
-                class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
-                :style="{ backgroundImage: `url('${photo}.jpg')` }" @click="hero = photo">
-            </li>
-        </ul> -->
-        <!-- <div class="absolute -bottom-72 left-0 bgcolor w-full mt-20 h-72 bg-no-repeat bg-center bg-contain" v-show="hero"
-            :style="{ backgroundImage: `url('${hero?.firstName}.jpg')` }"></div> -->
+        <div v-show="heroImage">
+            <div class="bg-[#00000085] fixed inset-0" @click="heroImage = ''"></div>
+            <div class="bg-top bg-cover w-4/5 h-3/4 bg-no-repeat fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                :style="{ backgroundImage: `url(/${players[heroImage - 1]?.firstName}.jpg)` }">
+                <button v-show="heroImage > 1"
+                    class="absolute w-10 h-10 pl-2 rounded-full bg-white top-1/2 -left-5 flex items-center justify-center active:bg-[#ffffff61]"
+                    @click="heroImage--">
+                    <ArrowIcon class="w-10 h-10" />
+                </button>
+                <button v-show="heroImage < 19"
+                    class="absolute w-10 h-10 bg-white top-1/2 -right-5 rounded-full flex items-center justify-center pr-2 active:bg-[#ffffff61]"
+                    @click="heroImage++">
+                    <ArrowIcon class="w-10 h-10 rotate-180" />
+                </button>
+            </div>
+        </div>
     </section>
 </template>
-<style scoped>
-.style-shadow {
-    box-shadow: 0px -49px 36px -50px #18a9d1 inset;
-}
-
-.bgcolor {
-    background-color: #33333329;
-}
-</style>
