@@ -5,6 +5,6 @@
 
 <script>
 export default {
-  name: 'IonIosFootball'
+  name: 'BallIcon'
 }
 </script>

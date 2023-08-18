@@ -16,8 +16,8 @@ import SunIcon from "@/assets/icons/SunIcon.vue"
           <p class="text-gray-600"> 30 <sup>o</sup></p>
         </div>
       </div>
-      <div>
-        <NotificationIcon class="w-6 h-6 text-teal-400"/>
+      <div class="hover:cursor-pointer">
+        <NotificationIcon class="w-6 h-6 hover:text-teal-500 text-teal-400"/>
       </div>
     </div>
   </div>
