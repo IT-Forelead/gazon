@@ -13,6 +13,12 @@ const routes = [
     component: () => import('../views/Profile.vue'),
     meta: { layout: 'dashboard' },
   },
+  {
+    path: '/stadiums',
+    name: 'Stadiums',
+    component: () => import('../views/Stadiums.vue'),
+    meta: { layout: 'dashboard' },
+  },
 
 ]
 
