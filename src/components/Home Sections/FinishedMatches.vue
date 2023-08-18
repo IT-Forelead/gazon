@@ -11,7 +11,6 @@ const dayOfWeek = daysOfWeek[today.getDay()]
 const todaysMatches = ref([
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "1-0",
     blueTeam: "Blue Team",
     redTeam: "Red Team",
@@ -19,7 +18,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "3-0",
     blueTeam: "Urganch",
     redTeam: "Xonqa",
@@ -27,7 +25,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "1-2",
     blueTeam: "Yangiariq",
     redTeam: "Gurlan",
@@ -35,7 +32,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "4-5",
     blueTeam: "Xorazm",
     redTeam: "Nukus",
@@ -43,7 +39,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     score: "4-4",
     blueTeam: "Xiva",
     redTeam: "Xazarasp",
@@ -68,7 +63,7 @@ const todaysMatches = ref([
           class="mx-4 w-80 h-[190px] pb-1 bg-white rounded-lg shadow-md mb-3">
         <div class="text-center mt-2">
           <p class="text-sm">{{ matches.day }}</p>
-          <p class="text-sm">{{ matches.date }}</p>
+          <p class="text-sm">{{ today.toLocaleDateString("uz-UZ") }}</p>
         </div>
         <div class="flex mt-2 mx-4">
           <div class="flex items-center font-bold justify-center text-sm w-full bg-blue-800 text-white rounded-l-full p-1.5">

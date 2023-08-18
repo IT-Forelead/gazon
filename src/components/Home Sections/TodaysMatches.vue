@@ -1,7 +1,7 @@
 <script setup>
-import {Vue3Marquee} from "vue3-marquee"
+import { Vue3Marquee } from "vue3-marquee"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
-import {ref} from "vue"
+import { ref } from "vue"
 
 const today = new Date()
 const daysOfWeek = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"]
@@ -10,7 +10,6 @@ const dayOfWeek = daysOfWeek[today.getDay()]
 const todaysMatches = ref([
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     time: "18:00",
     blueTeam: "Blue Team",
     redTeam: "Red Team",
@@ -18,7 +17,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     time: "19:00",
     blueTeam: "Urganch",
     redTeam: "Xonqa",
@@ -26,7 +24,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     time: "20:00",
     blueTeam: "Yangiariq",
     redTeam: "Gurlan",
@@ -34,7 +31,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { weekday: "long", month: "long", day: "numeric" }),
     time: "21:00",
     blueTeam: "Xorazm",
     redTeam: "Nukus",
@@ -42,7 +38,6 @@ const todaysMatches = ref([
   },
   {
     day: dayOfWeek,
-    date: today.toLocaleDateString("uz-UZ", { month: "long", day: "numeric" }),
     time: "22:00",
     blueTeam: "Xiva",
     redTeam: "Xazarasp",
@@ -61,27 +56,27 @@ const todaysMatches = ref([
   </div>
   <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 md:mx-auto">
     <div class="flex items-center ml-6 space-x-4">
-      <div
-          v-for="(match, index) in todaysMatches"
-          :key="index"
-          class="mx-4 w-80 h-36 pb-1 bg-white rounded-lg shadow-md mb-3">
+      <div v-for="(match, index) in todaysMatches" :key="index"
+        class="mx-4 w-80 h-36 pb-1 bg-white rounded-lg shadow-md mb-3">
         <div class="text-center mt-2">
           <p class="text-sm">{{ match.day }}</p>
-          <p class="text-sm">{{ match.date }}</p>
+          <p class="text-sm">{{ today.toLocaleDateString("uz-UZ") }}</p>
         </div>
         <div class="flex mt-2 mx-4">
-          <div class="flex items-center font-bold justify-center text-sm w-full bg-blue-800 text-white rounded-l-full p-1.5">
+          <div
+            class="flex items-center font-bold justify-center text-sm w-full bg-blue-800 text-white rounded-l-full p-1.5">
             {{ match.blueTeam }}
           </div>
           <div class="flex items-center w-full font-bold justify-center text-teal-600 p-1.5 border-y text-xl">
             {{ match.time }}
           </div>
-          <div class="flex items-center font-bold justify-center text-sm w-full bg-red-800 text-white rounded-r-full p-1.5">
+          <div
+            class="flex items-center font-bold justify-center text-sm w-full bg-red-800 text-white rounded-r-full p-1.5">
             {{ match.redTeam }}
           </div>
         </div>
         <div class="flex justify-center items-center text-teal-600 my-2 text-sm">
-          <LocationIcon class="w-4 h-4 mx-1"/>
+          <LocationIcon class="w-4 h-4 mx-1" />
           {{ match.location }}
         </div>
       </div>
