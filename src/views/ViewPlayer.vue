@@ -50,7 +50,7 @@ onMounted(() => {
             </li>
         </ul>
 
-        
+
         <!-- <ul class="flex items-center flex-wrap gap-1">
             <li class="bg-top bg-cover w-[32%] h-40 xl:h-96 xl:w-[30%] bg-no-repeat cursor-pointer"
                 :style="{ backgroundImage: `url('${playerInformation.name}.jpg')` }" @click="hero = playerInformation.name">

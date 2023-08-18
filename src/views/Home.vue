@@ -8,6 +8,6 @@ import FinishedMatches from "@/components/Home Sections/FinishedMatches.vue";
 <template>
   <SearchingSection />
   <TodaysMatches/>
-  <FinishedMatches/>
   <BestPlayers />
+  <FinishedMatches/>
 </template>

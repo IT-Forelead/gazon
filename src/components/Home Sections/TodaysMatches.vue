@@ -64,14 +64,14 @@ const todaysMatches = ref([
         </div>
         <div class="flex mt-2 mx-4">
           <div
-            class="flex items-center font-bold justify-center text-sm w-full bg-blue-800 text-white rounded-l-full p-1.5">
+            class="flex items-center font-bold justify-center text-sm w-full bg-teal-400 text-white rounded-l-full p-1.5">
             {{ match.blueTeam }}
           </div>
           <div class="flex items-center w-full font-bold justify-center text-teal-600 p-1.5 border-y text-xl">
             {{ match.time }}
           </div>
           <div
-            class="flex items-center font-bold justify-center text-sm w-full bg-red-800 text-white rounded-r-full p-1.5">
+            class="flex items-center font-bold justify-center text-sm w-full bg-red-500 text-white rounded-r-full p-1.5">
             {{ match.redTeam }}
           </div>
         </div>
@@ -83,6 +83,3 @@ const todaysMatches = ref([
     </div>
   </Vue3Marquee>
 </template>
-<style scoped>
-/* Bu yerga stil qo'shishingiz mumkin */
-</style>
