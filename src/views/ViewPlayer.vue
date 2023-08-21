@@ -1,11 +1,21 @@
 <script setup>
 import { useRoute } from 'vue-router'
+import { Vue3Marquee } from 'vue3-marquee';
 import { onMounted, watch, ref } from 'vue';
 import CupIcon from '../assets/icons/CupIcon.vue';
 import playerLists from '@/assets/playerLists.json'
 import BallIcon from '../assets/icons/BallIcon.vue';
 import ArrowIcon from '../assets/icons/ArrowIcon.vue';
 import LightingIcon from '../assets/icons/LightingIcon.vue';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+
+// Import Swiper styles
+import 'swiper/css';
+
+import 'swiper/css/effect-cards';
+import { EffectCards } from 'swiper/modules';
+
+const modules = ref([EffectCards])
 
 const hero = ref()
 const players = ref([])
@@ -100,13 +110,31 @@ const incrementImage = (ind) => {
             </li>
         </ul>
         <ul class="grid items-center grid-cols-3 gap-1">
-            <li v-for="(player, index) in players" :key="index" @click="incrementImage(index)"
+            <li v-for="(player, index) in players" :key="index" @click="heroImage = index + 1"
                 class="bg-top bg-cover h-40 xl:h-96 2xl:h-[600px] md:h-60 bg-no-repeat cursor-pointer"
                 :style="{ backgroundImage: `url(/${player.firstName}.jpg)` }">
             </li>
         </ul>
 
-        <div v-show="heroImage">
+        <!-- <div v-show="heroImage" class="fixed inset-0 bg-red-50">
+            <Vue3Marquee :duration="30" :direction="'normal'" :space="50" class="m-auto max-w-lg mt-2 md:mx-auto">
+                <h1 class="text-xl">Assalomu alaykum {{ i }}</h1>
+                <div v-for="i in 10" :key="i" class="">
+                    <img :src="`/${playerLists[heroImage]?.firstName}.jpg`" alt="" class="mx-1">
+                </div>
+            </Vue3Marquee>
+        </div> -->
+
+        <div class="fixed inset-0 bg-[#ffffff4f]" v-if="heroImage">
+            <swiper :effect="'cards'" :grabCursor="true" :modules="modules"
+                class="mySwiper absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg">
+                <swiper-slide class="p-5 bg-top bg-no-repeat bg-cover" v-for="(player, index) in playerLists" :key="index"
+                    :style="{ backgroundImage: `url(/${player?.firstName}.jpg)` }">
+                </swiper-slide>
+            </swiper>
+        </div>
+
+        <!-- <div v-show="heroImage">
             <div class="bg-[#00000085] fixed inset-0" @click="heroImage = 0"></div>
             <div class="bg-top bg-cover w-4/5 h-3/4 bg-no-repeat fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 :style="{ backgroundImage: `url(/${players[heroImage - 1]?.firstName}.jpg)` }">
@@ -121,6 +149,6 @@ const incrementImage = (ind) => {
                     <ArrowIcon class="w-10 h-10 rotate-180" />
                 </button>
             </div>
-        </div>
+        </div> -->
     </section>
 </template>
