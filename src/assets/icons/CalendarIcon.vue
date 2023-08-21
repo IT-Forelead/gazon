@@ -5,6 +5,6 @@
 
 <script lang="ts">
 export default {
-  name: 'MaterialSymbolsCalendarMonthOutline'
+  name: 'CalendarIcon'
 }
 </script>

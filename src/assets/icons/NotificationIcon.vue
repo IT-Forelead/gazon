@@ -5,6 +5,6 @@
 
 <script>
 export default {
-  name: 'RiNotification2Line'
+  name: 'NotificationIcon'
 }
 </script>
