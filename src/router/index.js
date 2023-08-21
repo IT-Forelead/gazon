@@ -32,9 +32,9 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
-    path: '/stadiums',
-    name: 'Stadiums',
-    component: () => import('../views/Stadiums.vue'),
+    path: '/View-stadiums/:id',
+    name: 'ViewStadium',
+    component: () => import('../views/ViewStadium.vue'),
     meta: { layout: 'dashboard' },
   },
   {
