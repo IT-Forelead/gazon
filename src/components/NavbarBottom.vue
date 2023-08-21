@@ -6,13 +6,13 @@ import BallIcon from "@/assets/icons/BallIcon.vue"
 import CalendarIcon from "@/assets/icons/CalendarIcon.vue"
 import ProfileIcon from "@/assets/icons/ProfileIcon.vue"
 
-const menuLists = ref([
+const menuLists = [
   { path: '', icon: HomeIcon, size: 'w-9 h-9' },
   { path: 'stadium', icon: StadiumIcon, size: 'w-8 h-8' },
   { path: 'best-players', icon: BallIcon, size: 'w-9 h-9' },
   { path: 'calendar', icon: CalendarIcon, size: 'w-8 h-8' },
   { path: 'profile', icon: ProfileIcon, size: 'w-8 h-8' },
-])
+]
 </script>
 <template>
   <div class="fixed z-40 w-full bottom-0">
