@@ -88,7 +88,7 @@ const modules = [Autoplay, Pagination];
                       </button>
                       <div @click="router.push(`/View-stadiums/${list.id}`)"
                         class="text-md mt-1 font-normal border-l-2 pl-6 text-zinc-500">
-                        {{ list.Mentor }}
+                     Batafsil...
                       </div>
                     </div>
                   </div>

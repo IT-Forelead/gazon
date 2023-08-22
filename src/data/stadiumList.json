@@ -5,7 +5,9 @@
     "assessment":"4.5",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":10,
+    "price": "50 000",
+    "field": "50 m²"
   },
   {
     "id":1,
@@ -13,7 +15,9 @@
     "assessment":"4.9",
     "title":"Xorazm Palace",
     "Item":"Hybrid * Indoor",
-    "Mentor":"Batafsil..."
+    "reviews":10,
+    "price": "60 000",
+    "field": "50 m²"
   },
   {
     "id":2,
@@ -21,7 +25,9 @@
     "assessment":"4.5",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":14,
+    "price": "70 000",
+    "field": "50 m²"
   },
   {
     "id":3,
@@ -29,7 +35,9 @@
     "assessment":"4.9",
     "title":"Xorazm Palace",
     "Item":"Hybrid * Indoor",
-    "Mentor":"Batafsil..."
+    "reviews":12,
+    "price": "50 000",
+    "field": "50 m²"
   },
   {
     "id":4,
@@ -37,7 +45,9 @@
     "assessment":"4.5",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":10,
+    "price": "60 000",
+    "field": "50 m²"
   },
   {
     "id":5,
@@ -45,7 +55,9 @@
     "assessment":"4.9",
     "title":"Xorazm Palace",
     "Item":"Hybrid * Indoor",
-    "Mentor":"Batafsil..."
+    "reviews":22,
+    "price": "65 000",
+    "field": "50 m²"
   },
   {
     "id":6,
@@ -53,7 +65,9 @@
     "assessment":"5.0",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":16,
+    "price": "70 000",
+    "field": "50 m²"
   },
   {
     "id":7,
@@ -61,7 +75,9 @@
     "assessment":"4.5",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":12,
+    "price": "50 000",
+    "field": "50 m²"
   },
   {
     "id":8,
@@ -69,6 +85,8 @@
     "assessment":"5.0",
     "title":"Milliy Gazon",
     "Item":"Dedicated * Outdoor",
-    "Mentor":"Batafsil..."
+    "reviews":14,
+    "price": "60 000",
+    "field": "50 m²"
   }
 ]
