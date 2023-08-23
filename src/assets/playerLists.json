@@ -1,182 +1,167 @@
 [
   {
-    "firstName": "arslon",
-    "lastName": "saidov",
-    "goal": 10,
-    "assist": 5,
+    "id": 0,
     "age": 27,
+    "goal": 10,
+    "wins": 80,
+    "loses": 40,
+    "assist": 5,
     "status": "daily",
-    "id": 0
+    "lastName": "saidov",
+    "firstName": "arslon"
   },
   {
-    "firstName": "abror",
-    "lastName": "hasanov",
+    "id": 1,
+    "age": 20,
     "goal": 8,
     "assist": 8,
-    "age": 20,
     "status": "weekly",
-    "id": 1
+    "firstName": "abror",
+    "lastName": "hasanov"
   },
   {
-    "firstName": "akmal",
-    "lastName": "saidov",
+    "id": 2,
+    "age": 25,
     "goal": 7,
     "assist": 5,
-    "age": 25,
     "status": "monthly",
-    "id": 2
+    "lastName": "saidov",
+    "firstName": "akmal"
   },
   {
+    "id": 3,
+    "age": 27,
+    "goal": 5,
+    "assist": 5,
+    "status": "daily",
     "firstName": "bobur",
-    "lastName": "radjabov",
-    "goal": 5,
-    "assist": 5,
-    "age": 27,
-    "status": "daily",
-    "id": 3
+    "lastName": "radjabov"
   },
   {
-    "firstName": "elyor",
-    "lastName": "allohbergan o'gli",
-    "goal": 5,
-    "assist": 5,
+    "id": 4,
     "age": 30,
+    "goal": 5,
+    "assist": 5,
     "status": "daily",
-    "id": 4
+    "firstName": "elyor",
+    "lastName": "allohbergan o'gli"
   },
   {
-    "firstName": "qodirbergan",
-    "lastName": "razzaqov",
-    "goal": 4,
-    "assist": 5,
+    "id": 5,
     "age": 25,
-    "status": "weekly",
-    "id": 5
-  },
-  {
-    "firstName": "ibrohim",
-    "lastName": "ruzmetov",
     "goal": 4,
     "assist": 5,
+    "status": "weekly",
+    "lastName": "razzaqov",
+    "firstName": "qodirbergan"
+  },
+  {
+    "id": 6,
     "age": 4,
-    "status": "monthly",
-    "id": 6
-  },
-  {
-    "firstName": "jamshid",
-    "lastName": "abdulloh o'gli",
     "goal": 4,
     "assist": 5,
-    "age": 28,
     "status": "monthly",
-    "id": 7
+    "lastName": "ruzmetov",
+    "firstName": "ibrohim"
   },
   {
-    "firstName": "otabek",
-    "lastName": "abdurrahmon o'gli",
-    "goal": 6,
-    "assist": 5,
+    "id": 7,
     "age": 28,
-    "status": "weekly",
-    "id": 8
+    "goal": 4,
+    "assist": 5,
+    "status": "monthly",
+    "firstName": "jamshid",
+    "lastName": "abdulloh o'gli"
   },
   {
-    "firstName": "ulugbek",
-    "lastName": "raxmanov",
+    "id": 8,
+    "age": 28,
     "goal": 6,
     "assist": 5,
-    "age": 27,
     "status": "weekly",
-    "id": 9
+    "firstName": "otabek",
+    "lastName": "abdurrahmon o'gli"
   },
   {
-    "firstName": "sardor",
-    "lastName": "ga'ipov",
+    "id": 9,
+    "age": 27,
+    "goal": 6,
+    "assist": 5,
+    "status": "weekly",
+    "lastName": "raxmanov",
+    "firstName": "ulugbek"
+  },
+  {
+    "id": 10,
+    "age": 18,
     "goal": 3,
     "assist": 4,
-    "age": 18,
     "status": "weekly",
-    "id": 10
+    "lastName": "ga'ipov",
+    "firstName": "sardor"
   },
   {
-    "firstName": "shaxzod",
-    "lastName": "sobirov",
-    "goal": 2,
-    "assist": 3,
+    "id": 11,
     "age": 22,
-    "status": "monthly",
-    "id": 11
-  },
-  {
-    "firstName": "umid2",
-    "lastName": "ruzmetov",
     "goal": 2,
     "assist": 3,
-    "age": 28,
     "status": "monthly",
-    "id": 12
+    "lastName": "sobirov",
+    "firstName": "shaxzod"
   },
   {
-    "firstName": "doniyor",
-    "lastName": "yusupov",
+    "id": 12,
+    "age": 16,
     "goal": 1,
     "assist": 1,
-    "age": 28,
-    "status": "weekly",
-    "id": 13
+    "status": "monthly",
+    "lastName": "yusupov",
+    "firstName": "elyorj"
   },
   {
-    "firstName": "yunusbek",
-    "lastName": "matkarimov",
+    "id": 13,
+    "age": 28,
+    "goal": 1,
+    "assist": 1,
+    "status": "weekly",
+    "lastName": "yusupov",
+    "firstName": "doniyor"
+  },
+  {
+    "id": 14,
+    "age": 23,
     "goal": 3,
     "assist": 1,
-    "age": 23,
     "status": "daily",
-    "id": 14
+    "firstName": "yunusbek",
+    "lastName": "matkarimov"
   },
   {
-    "firstName": "behruz",
-    "lastName": "boltayev",
+    "id": 15,
+    "age": 29,
     "goal": 3,
     "assist": 0,
-    "age": 29,
     "status": "weekly",
-    "id": 15
+    "firstName": "behruz",
+    "lastName": "boltayev"
   },
   {
-    "firstName": "bekzod",
-    "lastName": "karimov",
-    "goal": 1,
-    "assist": 1,
+    "id": 16,
     "age": 21,
-    "status": "daily",
-    "id": 16
-  },
-  {
-    "firstName": "umid",
-    "lastName": "ruzmetov",
-    "goal": 1,
-    "assist": 3,
-    "age": 28,
-    "status": "daily",
-    "id": 17
-  },
-  {
-    "firstName": "umidbek",
-    "lastName": "ruzmetov",
-    "goal": 1,
-    "assist": 3,
-    "age": 28,
-    "status": "daily",
-    "id": 18
-  },
-  {
-    "firstName": "elyorj",
-    "lastName": "yusupov",
     "goal": 1,
     "assist": 1,
-    "age": 16,
-    "status": "monthly",
-    "id": 19
+    "status": "daily",
+    "lastName": "karimov",
+    "firstName": "bekzod"
+  },
+  {
+    "id": 17,
+    "age": 28,
+    "goal": 1,
+    "assist": 3,
+    "status": "daily",
+    "lastName": "ruzmetov",
+    "firstName": "umidbek",
+    "images":["umid","umid2"]
   }
 ]
