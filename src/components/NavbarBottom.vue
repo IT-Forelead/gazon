@@ -16,15 +16,13 @@ const menuLists = [
 </script>
 <template>
   <div class="fixed z-40 w-full bottom-0">
-    <div class="h-32 mx-auto">
-      <ul class="flex items-center justify-around absolute bottom-0 w-full h-16 bg-teal-500">
-        <li v-for="menu in menuLists" :key="menu.path" class="cursor-pointer">
-          <router-link :to="`/${menu.path}`" class="rounded-tl-full rounded-tr-full">
-            <component :is="menu.icon" :class="menu.size + ' text-white'" />
-          </router-link>
-        </li>
-      </ul>
-    </div>
+    <ul class="flex items-center justify-around absolute bottom-0 w-full h-16 bg-teal-500">
+      <li v-for="menu in menuLists" :key="menu" class="cursor-pointer">
+        <router-link :to="`/${menu.path}`" class="rounded-tl-full rounded-tr-full">
+          <component :is="menu.icon" :class="menu.size + ' text-white'" />
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
 <style scoped>
