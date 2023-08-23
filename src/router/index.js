@@ -61,7 +61,6 @@ const routes = [
     component: () => import('../views/ViewPlayer.vue'),
     meta: { layout: 'dashboard' },
   },
-
 ]
 
 const router = createRouter({
