@@ -3,7 +3,7 @@ import SearchIcon from "@/assets/icons/SearchIcon.vue"
 </script>
 
 <template>
-    <form class="mt-8 px-5 pb-6">
+    <form class="mt-8 px-2 pb-6">
       <div class="relative mx-auto max-w-md pb-1 md:max-w-lg">
         <div class="absolute inset-y-0 flex items-center pl-3">
           <SearchIcon class="w-5 h-5 text-teal-600"/>

@@ -1,9 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   font-family: "DM Sans", sans-serif;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #bcd1d6;
+  -webkit-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #0694a2;
+  -webkit-border-radius: 10px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide {
+  background-color: rgb(206, 17, 17);
 }
