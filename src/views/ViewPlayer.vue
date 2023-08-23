@@ -119,8 +119,6 @@ onMounted(() => {
           :key="index"
           :style="{ backgroundImage: `url(/${player?.firstName}.jpg)` }"
         >
-          {{ index }} <br />
-          {{ heroImage }}
         </swiper-slide>
       </swiper>
     </div>
