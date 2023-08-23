@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import UserIcon from "@/assets/icons/UserIcon.vue";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
 import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
 import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
@@ -18,7 +18,7 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
     <div class="flex flex-col space-y-4">
       <div class="relative flex items-center mt-8">
         <span class="absolute">
-          <UserIcon class="w-6 h-6 mx-3 text-teal-400" />
+          <UserBoldIcon class="w-6 h-6 mx-3 text-teal-400" />
         </span>
         <input
           type="text"
@@ -28,7 +28,7 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
       </div>
       <div class="relative flex items-center mt-8">
         <span class="absolute">
-          <UserIcon class="w-6 h-6 mx-3 text-teal-400" />
+          <UserBoldIcon class="w-6 h-6 mx-3 text-teal-400" />
         </span>
         <input
           type="text"

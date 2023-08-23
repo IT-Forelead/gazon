@@ -1,7 +1,7 @@
 <script setup>
 import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
 import StarIcon from "@/assets/icons/StarIcon.vue";
-import UserIcon from "@/assets/icons/UserIcon.vue";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
 import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import stadiumList2 from '@/data/stadiumList.json'
@@ -69,7 +69,7 @@ onMounted(() => {
       <span class="text-lg font-bold">Xususiyatlari:</span>
       <div class="flex justify-start space-x-6 items-center mt-1">
         <div class="flex space-x-1 items-center">
-          <h1 class="text-3xl font-bold"><UserIcon/></h1>
+          <h1 class="text-3xl font-bold"><UserBoldIcon/></h1>
           <h1 class="text-lg">{{hero?.reviews}}ta odam</h1>
         </div>
         <div class="flex space-x-1 items-center">
