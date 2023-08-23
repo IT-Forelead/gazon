@@ -14,12 +14,6 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
-    path: '/stadium',
-    name: 'Stadium',
-    component: () => import('../views/Stadium.vue'),
-    meta: { layout: 'dashboard' },
-  },
-  {
     path: '/best-players',
     name: 'BestPlayer',
     component: () => import('../views/BestPlayers.vue'),
@@ -35,6 +29,12 @@ const routes = [
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
+    path: '/View-stadiums/:id',
+    name: 'ViewStadium',
+    component: () => import('../views/ViewStadium.vue'),
     meta: { layout: 'dashboard' },
   },
   {
