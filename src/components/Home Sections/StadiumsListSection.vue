@@ -3,7 +3,7 @@ import StarIcon from "@/assets/icons/StarIcon.vue";
 import { computed, ref, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css/navigation';
+
 import 'swiper/css';
 import stadiumList1 from '@/data/stadiumList.json'
 import { useRouter } from "vue-router"
