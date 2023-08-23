@@ -38,12 +38,29 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/login',
+    name: 'Login',
+    component: () => import('../views/Login.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
+    path: '/sign-up',
+    name: 'Sign Up',
+    component: () => import('../views/SignUp.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
+    path: '/forgot-password',
+    name: 'Forgot password',
+    component: () => import('../views/ForgotPassword.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/view-player/:name/:id',
     name: 'viewPlayer',
     component: () => import('../views/ViewPlayer.vue'),
     meta: { layout: 'dashboard' },
   },
-
 ]
 
 const router = createRouter({
