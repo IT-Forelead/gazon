@@ -3,15 +3,14 @@ import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
 import UserIcon from "@/assets/icons/UserIcon.vue";
 import CallIcon from "@/assets/icons/CallIcon.vue";
 import StarIcon from "@/assets/icons/StarIcon.vue";
-import {onMounted, ref} from "vue";
+import {onMounted, onUpdated, ref} from "vue";
 import {useRoute} from "vue-router";
 import stadiumList2 from '@/data/stadiumList.json'
 import FieldIcon from "@/assets/icons/FieldIcon.vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import {Autoplay, Pagination, Navigation, EffectCube} from "swiper/modules";
-
-
-
+import StadiumsListSection from "@/components/Home Sections/StadiumsListSection.vue";
+import LocationIcon from "@/assets/icons/LocationIcon.vue";
 
 
 const modules = [Autoplay, Pagination, Navigation,EffectCube];
@@ -24,10 +23,15 @@ onMounted(() => {
   players.value = stadiumList2.filter(player => player.id != route.params.id)
   players.value.unshift(hero.value)
 })
+onUpdated(() => {
+  hero.value = stadiumList2.filter(player => player.id == route.params.id)[0]
+  players.value = stadiumList2.filter(player => player.id != route.params.id)
+  players.value.unshift(hero.value)
+})
 </script>
 
 <template>
-  <div class=" max-w-lg mb-10 bg-gray-50 min-h-screen pb-1 md:max-w-lg max-h-96 mr-5 md:mx-auto my-2">
+  <div class=" max-w-lg  bg-gray-50 min-h-screen pb-1 md:max-w-lg max-h-96 mr-5 mx-auto md:mx-auto my-2">
     <div class="  items-center mb-6">
       <RouterLink to="/" class=""><ArrowLeftIcon/></RouterLink>
       <h1 class="text-xl text-center font-bold text-teal-600">Batafsil</h1>
@@ -39,7 +43,6 @@ onMounted(() => {
         :pagination="{
       clickable: true,
     }"
-
         :modules="modules"
         class="mySwiper"
     >
@@ -51,12 +54,16 @@ onMounted(() => {
 
     </swiper>
     <div class="flex justify-between items-center mt-4">
-      <h1 class="text-4xl font-bold">{{hero?.title}}</h1>
+      <h1 class="text-3xl  md:text-4xl font-bold">{{hero?.title}}</h1>
       <button class="text-md text-teal-600 bg-teal-100 rounded-md hover:bg-teal-50 font-black ml-8 px-3 py-2">
         Top Sales
       </button>
     </div>
-    <p class="text-md mt-3">{{hero?.Item}}</p>
+    <div class="flex space-x-2" >
+      <span class="mt-2" ><LocationIcon/></span>
+      <p class="text-md mt-2">{{hero?.Item}}</p>
+    </div>
+
     <div class="flex justify-between items-center mt-2">
       <div class="flex items-center space-x-2">
         <h1 class="text-3xl font-bold"><StarIcon/></h1>
@@ -64,8 +71,8 @@ onMounted(() => {
         <h1 class="text-lg">({{hero?.reviews}} Reviews)</h1>
       </div>
       <div class="flex items-center">
-        <h1 class="text-3xl font-bold">{{hero?.price}}</h1>
-        <h1 class="text-lg ml-1">so'm dan</h1>
+        <h1 class="text-2xl md:text-3xl font-bold">{{hero?.price}}</h1>
+        <h1 class="text-md md:text-lg ml-1">so'm dan</h1>
       </div>
     </div>
     <div class="  items-center mt-3">
@@ -77,21 +84,28 @@ onMounted(() => {
         </div>
         <div class="flex space-x-1 items-center">
           <FieldIcon/>
-          <h1 class="text-md">{{hero?.field}}</h1>
+          <h1 class="text-lg">{{hero?.field}}</h1>
         </div>
       </div>
     </div>
-    <div class="  items-center mt-3">
+    <div class="items-center mt-3">
       <span class="text-lg font-bold">Tasnifi:</span>
       <p class="text-left ">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</p>
-    </div><div class="  items-center mb-auto mt-2">
-    <span class="text-lg font-bold">Band qilish:</span>
-    <div class="flex space-x-2 items-center">
-      <h1 class="text-lg">{{hero?.phone}}</h1>
-      <a href="tel:+998942469111"><CallIcon/></a>
+    </div>
+    <div class="  items-center mb-auto mt-2">
+    <span class="text-lg  font-bold">Band qilish:</span>
+
+    <div class="flex mb-3 mt-2  text-center items-center">
+      <h1 class="text-lg rounded-l-lg border-2 px-6 py-1.5 bg-teal-50 border-teal-50  hover:bg-teal-50  transition duration-300">{{hero?.phone}}</h1>
+      <button class="border-2 px-6 py-2 bg-teal-200 border-teal-200  hover:bg-teal-100  transition duration-300 rounded-r-lg " >
+         <a href="tel:+998942469111"><CallIcon/></a>
+      </button>
     </div>
   </div>
 
+    <div>
+       <StadiumsListSection />
+    </div>
   </div>
 </template>
 

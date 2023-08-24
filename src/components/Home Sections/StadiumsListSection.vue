@@ -1,12 +1,14 @@
 <script setup>
 import StarIcon from "@/assets/icons/StarIcon.vue";
-import { computed, ref, onMounted } from "vue";
+import {computed, ref, onMounted, onUpdated} from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from 'swiper/modules';
+
 
 import 'swiper/css';
 import stadiumList1 from '@/data/stadiumList.json'
 import { useRouter } from "vue-router"
+import stadiumList2 from "@/data/stadiumList.json";
 
 const router = useRouter()
 
@@ -42,6 +44,9 @@ const spaceBetween = computed(() => {
 
 const modules = [Autoplay, Pagination];
 
+onUpdated(() => {
+
+})
 
 </script>
 <template>
@@ -83,7 +88,7 @@ const modules = [Autoplay, Pagination];
                     </div>
                     <div class="flex justify-between items-center mt-2">
                       <button
-                        class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-semibold text-gray-50  rounded-full p- py-1.5 px-4">
+                        class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semibold text-gray-50  rounded-full p- py-1.5 px-4">
                         Booking
                       </button>
                       <div @click="router.push(`/View-stadiums/${list.id}`)"

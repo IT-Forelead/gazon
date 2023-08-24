@@ -10,11 +10,12 @@
     },
     "assessment":"4.5",
     "title":"Milliy Gazon",
-    "Item":"Dedicated * Outdoor",
+    "Item":"Urganch tuman",
     "reviews":10,
     "price": "50 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "classification": "",
+    "phone": "+998911234567"
   },
   {
     "id":1,
@@ -27,11 +28,11 @@
     },
     "assessment":"4.9",
     "title":"Xorazm Palace",
-    "Item":"Hybrid * Indoor",
+    "Item":"Urganch shahar",
     "reviews":10,
     "price": "60 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+998917654321"
   },
   {
     "id":2,
@@ -44,7 +45,7 @@
     },
     "assessment":"4.5",
     "title":"Milliy Gazon",
-    "Item":"Dedicated * Outdoor",
+    "Item":"Urganch tuman",
     "reviews":14,
     "price": "70 000",
     "field": "50 m²",
@@ -61,11 +62,11 @@
     },
     "assessment":"4.9",
     "title":"Xorazm Palace",
-    "Item":"Hybrid * Indoor",
+    "Item":"Urganch shahar",
     "reviews":12,
     "price": "50 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+998999099909"
   },
   {
     "id":4,
@@ -78,11 +79,11 @@
     },
     "assessment":"4.5",
     "title":"Milliy Gazon",
-    "Item":"Dedicated * Outdoor",
+    "Item":"Urganch tuman",
     "reviews":10,
     "price": "60 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+998917077707"
   },
   {
     "id":5,
@@ -95,11 +96,11 @@
     },
     "assessment":"4.9",
     "title":"Xorazm Palace",
-    "Item":"Hybrid * Indoor",
+    "Item":"Urganch shahar",
     "reviews":22,
     "price": "65 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+998998080888"
   },
   {
     "id":6,
@@ -112,11 +113,11 @@
     },
     "assessment":"5.0",
     "title":"Milliy Gazon",
-    "Item":"Dedicated * Outdoor",
+    "Item":"Urganch tuman",
     "reviews":16,
     "price": "70 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+99894600666"
   },
   {
     "id":7,
@@ -129,11 +130,11 @@
     },
     "assessment":"4.5",
     "title":"Milliy Gazon",
-    "Item":"Dedicated * Outdoor",
+    "Item":"Urganch shahar",
     "reviews":12,
     "price": "50 000",
     "field": "50 m²",
-    "phone": "+998942469111"
+    "phone": "+998905555005"
   }
 
 ]
