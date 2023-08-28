@@ -1,15 +1,14 @@
 <script setup>
 import { computed, ref } from "vue";
-import bestPlayers from "@/assets/playerLists.json";
+import bestPlayers from '@/assets/playerLists.json'
 import PlaceIcon from "@/assets/icons/PlaceIcon.vue";
 import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue";
 import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue";
 import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue";
 
-const best = ref("daily");
-const reportBestPlayer = computed(() =>
-  bestPlayers.filter((player) => player.status == best.value)
-);
+const best = ref('daily')
+const reportBestPlayer = computed(() => bestPlayers.filter(player => player.status == best.value))
+
 </script>
 
 <template>
