@@ -26,6 +26,12 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/match-list',
+    name: 'Match list',
+    component: () => import('../views/MatchList.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),

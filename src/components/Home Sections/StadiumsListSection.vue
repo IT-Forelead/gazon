@@ -1,6 +1,6 @@
 <script setup>
 import StarIcon from "@/assets/icons/StarIcon.vue";
-import { computed, ref, onMounted } from "vue";
+import { computed } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css/navigation";
@@ -74,7 +74,7 @@ const modules = [Autoplay, Pagination];
             <div class="flex transition-transform duration-500 ease-in-out">
               <div class="px-4">
                 <div
-                  class="bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
+                  class="bg-white border hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
                 >
                   <div class="relative">
                     <div
@@ -96,7 +96,7 @@ const modules = [Autoplay, Pagination];
                         {{ list.title }}
                       </a>
                       <p
-                        class="mb-4 mt-2 text-zinc-500 text-sm font-normal dark:text-zinc-400"
+                        class="mb-4 mt-2 text-zinc-500 text-sm font-normal"
                       >
                         {{ list.Item }}
                       </p>

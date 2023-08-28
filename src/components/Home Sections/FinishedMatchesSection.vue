@@ -8,7 +8,7 @@ const daysOfWeek = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanb
 const dayOfWeek = daysOfWeek[today.getDay()]
 
 
-const todaysMatches = ref([
+const finishedMatches = ref([
   {
     day: dayOfWeek,
     score: "1-0",
@@ -49,11 +49,11 @@ const todaysMatches = ref([
 <template>
   <div class="flex justify-between max-w-lg items-center md:mx-auto text-teal-600 font-bold px-2 mt-4">
     <h1 class="text-xl">Yakunlangan o'yinlar</h1>
-    <a href="" class="text-xs">Barchasi</a>
+    <router-link to="/match-list" class="text-xs hover:text-teal-500">Barchasi</router-link>
   </div>
   <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 mb-16 md:mx-auto">
     <div class="flex items-center ml-6 space-x-4">
-      <div v-for="(matches, index) in todaysMatches" :key="index"
+      <div v-for="(matches, index) in finishedMatches" :key="index"
         class="mx-4 w-80 h-[190px] pb-1 bg-white rounded-lg shadow-md mb-3">
         <div class="text-center mt-2">
           <p class="text-sm">{{ matches.day }}</p>

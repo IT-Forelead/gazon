@@ -13,7 +13,7 @@ const reportBestPlayer = computed(() => bestPlayers.filter(player => player.stat
 
 <template>
     <section class="px-2 max-h-96 overflow-y-auto max-w-lg md:mx-auto my-2">
-        <div class="sticky top-0 bg-gray-50 pb-4">
+        <div class="sticky top-0 bg-white pb-4">
             <h2 class="text-xl font-bold text-teal-600">Eng zo'r futbolchilar</h2>
             <ul class="flex mt-2 space-x-2">
                 <li>
