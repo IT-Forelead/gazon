@@ -33,3 +33,7 @@ body {
   font-weight: bold;
   color: #fff;
 }
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
