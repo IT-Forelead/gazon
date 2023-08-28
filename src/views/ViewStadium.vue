@@ -26,7 +26,7 @@ onMounted(() => {
 <template>
   <div class=" max-w-lg mb-8 overflow-y pb-1 md:max-w-lg max-h-96 mr-5 md:mx-auto my-2">
     <div class="  items-center mb-6">
-      <RouterLink to="/" class=""><ArrowLeftIcon/></RouterLink>
+      <RouterLink to="" class=""><ArrowLeftIcon/></RouterLink>
       <h1 class="text-xl text-center font-bold text-teal-600">Batafsil</h1>
     </div>
     <swiper
