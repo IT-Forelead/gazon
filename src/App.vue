@@ -10,7 +10,7 @@ const layout = computed(() => `${currentRoute.value.meta.layout || defaultLayout
 
 <template>
   <div class="bg-gray-50 min-h-screen">
-    <NavbarTop />
+    <!-- <NavbarTop /> -->
     <component :is="layout">
       <router-view />
     </component>

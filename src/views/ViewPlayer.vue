@@ -1,8 +1,8 @@
 <script setup>
 import "swiper/css";
 import "swiper/css/effect-cards";
+import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import { onMounted, watch, ref } from "vue";
 import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import CupIcon from "../assets/icons/CupIcon.vue";
@@ -11,26 +11,39 @@ import BallIcon from "../assets/icons/BallIcon.vue";
 import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
 
+const hero = ref();
+const route = useRoute();
+const currentImage = ref(-1);
 const modules = ref([EffectCards]);
 
-const hero = ref();
-const players = ref([]);
-const route = useRoute();
-const heroImage = ref("");
-
+const onSwiper = (swiper) => {
+  console.log(swiper.activeIndex);
+  swiper.activeIndex = currentImage.value;
+};
+const onSlideChange = (seip) => {
+  console.log("slide change");
+  console.log(seip.activeIndex);
+};
+const swp = () => {
+  console.log(SwiperSlide.props);
+  console.log(SwiperSlide.props.tag);
+  console.log(SwiperSlide.props.swiperRef);
+  console.log(SwiperSlide.props.swiperSlideIndex);
+  console.log(SwiperSlide.props.zoom);
+  console.log(SwiperSlide.props.lazy);
+};
 onMounted(() => {
   hero.value = playerLists.filter((player) => player.id == route.params.id)[0];
-  players.value = playerLists.filter((player) => player.id != route.params.id);
-  players.value.unshift(hero.value);
+  // console.log(SwiperSlide);
 });
 </script>
 
 <template>
   <section>
-    <div class="flex items-center pl-10">
+    <div class="flex items-center pl-10 pt-5">
       <div
         class="bg-top bg-cover w-20 h-20 mr-2 bg-no-repeat rounded-full"
-        :style="{ backgroundImage: `url(/${hero?.firstName}.jpg)` }"
+        :style="{ backgroundImage: `url(/images/${hero?.firstName}.jpg)` }"
       ></div>
       <span class="-space-y-1">
         <h2 class="capitalize font-semibold text-xl">{{ hero?.firstName }}</h2>
@@ -38,32 +51,25 @@ onMounted(() => {
         <h4 class="text-[12px] text-gray-400">{{ hero?.age }} yosh</h4>
       </span>
     </div>
-
     <div class="grid p-5 grid-cols-2 gap-4">
       <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+        <ShoesIcon class="w-8 h-8 text-teal-400" />
         <div>
-          <ShoesIcon class="w-8 h-8 text-teal-400" />
-        </div>
-        <div>
-          <h4 class="font-bold text-xl">{{ 80 * 3 }}</h4>
+          <h4 class="font-bold text-xl">{{ hero?.wins * 3 }}</h4>
           <p class="text-[#666]">Points</p>
         </div>
       </div>
       <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+        <BallIcon class="w-8 h-8 text-teal-400" />
         <div>
-          <BallIcon class="w-8 h-8 text-teal-400" />
-        </div>
-        <div>
-          <h4 class="font-bold text-xl">120</h4>
+          <h4 class="font-bold text-xl">{{ hero?.wins + hero?.loses }}</h4>
           <p class="text-[#666]">Total match</p>
         </div>
       </div>
       <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+        <CupIcon class="w-8 h-8 text-yellow-400" />
         <div>
-          <CupIcon class="w-8 h-8 text-yellow-400" />
-        </div>
-        <div>
-          <h4 class="font-bold text-xl">80</h4>
+          <h4 class="font-bold text-xl">{{ hero?.wins }}</h4>
           <p class="text-[#666]">Wins</p>
         </div>
       </div>
@@ -73,12 +79,11 @@ onMounted(() => {
           <LightingIcon class="absolute top-0 text-white right-2" />
         </div>
         <div>
-          <h4 class="font-bold text-xl">40</h4>
+          <h4 class="font-bold text-xl">{{ hero?.loses }}</h4>
           <p class="text-[#666]">Loses</p>
         </div>
       </div>
     </div>
-
     <ul class="flex my-4 items-center justify-around">
       <li>
         <h4 class="font-bold">1 000</h4>
@@ -95,29 +100,39 @@ onMounted(() => {
     </ul>
     <ul class="grid items-center grid-cols-3 gap-1">
       <li
-        v-for="(player, index) in players"
+        v-for="(image, index) in hero?.images"
         :key="index"
-        @click="heroImage = index + 1"
+        @click="currentImage = index"
         class="bg-top bg-cover h-40 xl:h-96 2xl:h-[600px] md:h-60 bg-no-repeat cursor-pointer"
-        :style="{ backgroundImage: `url(/${player.firstName}.jpg)` }"
+        :style="{ backgroundImage: `url(/images/${image}.jpg)` }"
       ></li>
     </ul>
 
-    <div v-if="heroImage" class="fixed inset-0">
-      <div class="fixed inset-0 bg-[#ffffff4f]" @click="heroImage = ''"></div>
+    <div v-if="currentImage > -1" class="fixed inset-0">
+      <h1 class="pl-20 text-4xl text-red-300">{{ currentImage }}</h1>
+      <div
+        class="fixed inset-0 bg-[#ffffff4f]"
+        @click="currentImage = -1"
+      ></div>
       <swiper
+        :pagination="{
+          clickable: true,
+        }"
+        @slideChange="swp"
+        :zoom="true"
+        :mousewheel="true"
         :effect="'cards'"
         :grabCursor="true"
         :modules="modules"
         :autoplay="true"
         :loop="true"
-        class="mySwiper absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg"
+        class=" absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg"
       >
         <swiper-slide
           class="p-5 bg-top bg-no-repeat bg-cover"
-          v-for="(player, index) in playerLists"
+          v-for="(player, index) in hero?.images"
           :key="index"
-          :style="{ backgroundImage: `url(/${player?.firstName}.jpg)` }"
+          :style="{ backgroundImage: `url(/images/${player}.jpg)` }"
         >
         </swiper-slide>
       </swiper>
