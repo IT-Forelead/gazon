@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
+import NavbarTop from "@/components/NavbarTop.vue";
 
 const defaultLayout = 'login'
 const { currentRoute } = useRouter()
