@@ -62,6 +62,12 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/edit-profile',
+    name: 'Edit profile',
+    component: () => import('../views/EditProfile.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/view-player/:name/:id',
     name: 'viewPlayer',
     component: () => import('../views/ViewPlayer.vue'),
