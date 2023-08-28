@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import CupIcon from "../assets/icons/CupIcon.vue";
 import playerLists from "@/assets/playerLists.json";
 import BallIcon from "../assets/icons/BallIcon.vue";
+import FootIcon from "../assets/icons/FootIcon.vue";
 import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
 
@@ -52,34 +53,48 @@ onMounted(() => {
       </span>
     </div>
     <div class="grid p-5 grid-cols-2 gap-4">
-      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+      <div class="flex items-center gap-x-4 bg-white py-2 px-4 rounded shadow">
+        <FootIcon
+          :class="[
+            hero?.foot == 'Chap'
+              ? 'rotate-y-180 text-teal-400'
+              : 'text-teal-500',
+            'w-9 h-9',
+          ]"
+        />
+        <div>
+          <h4 class="font-bold">{{ hero?.foot }}</h4>
+          <p class="text-[#666]">oyoq</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">
         <ShoesIcon class="w-8 h-8 text-teal-400" />
         <div>
-          <h4 class="font-bold text-xl">{{ hero?.wins * 3 }}</h4>
+          <h4 class="font-bold">{{ hero?.wins * 3 }}</h4>
           <p class="text-[#666]">Points</p>
         </div>
       </div>
-      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">
         <BallIcon class="w-8 h-8 text-teal-400" />
         <div>
-          <h4 class="font-bold text-xl">{{ hero?.wins + hero?.loses }}</h4>
+          <h4 class="font-bold">{{ hero?.wins + hero?.loses }}</h4>
           <p class="text-[#666]">Total match</p>
         </div>
       </div>
-      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">
         <CupIcon class="w-8 h-8 text-yellow-400" />
         <div>
-          <h4 class="font-bold text-xl">{{ hero?.wins }}</h4>
+          <h4 class="font-bold">{{ hero?.wins }}</h4>
           <p class="text-[#666]">Wins</p>
         </div>
       </div>
-      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded">
+      <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">
         <div class="relative">
           <CupIcon class="w-8 h-8 text-red-500" />
           <LightingIcon class="absolute top-0 text-white right-2" />
         </div>
         <div>
-          <h4 class="font-bold text-xl">{{ hero?.loses }}</h4>
+          <h4 class="font-bold">{{ hero?.loses }}</h4>
           <p class="text-[#666]">Loses</p>
         </div>
       </div>
@@ -111,7 +126,7 @@ onMounted(() => {
     <div v-if="currentImage > -1" class="fixed inset-0">
       <h1 class="pl-20 text-4xl text-red-300">{{ currentImage }}</h1>
       <div
-        class="fixed inset-0 bg-[#ffffff4f]"
+        class="z-1 fixed inset-0 bg-[#ffffff4f]"
         @click="currentImage = -1"
       ></div>
       <swiper
@@ -126,7 +141,7 @@ onMounted(() => {
         :modules="modules"
         :autoplay="true"
         :loop="true"
-        class=" absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg"
+        class="absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg"
       >
         <swiper-slide
           class="p-5 bg-top bg-no-repeat bg-cover"

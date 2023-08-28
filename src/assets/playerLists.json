@@ -6,6 +6,7 @@
     "wins": 80,
     "loses": 40,
     "assist": 5,
+    "foot": "O'ng",
     "status": "daily",
     "lastName": "saidov",
     "firstName": "arslon",
@@ -18,9 +19,11 @@
     "wins": 35,
     "loses": 20,
     "assist": 8,
+    "foot": "O'ng",
     "status": "weekly",
     "firstName": "abror",
-    "lastName": "hasanov"
+    "lastName": "hasanov",
+    "images": ["abror"]
   },
   {
     "id": 2,
@@ -29,9 +32,11 @@
     "wins": 10,
     "loses": 10,
     "assist": 5,
+    "foot": "Chap",
     "status": "monthly",
     "lastName": "saidov",
-    "firstName": "akmal"
+    "firstName": "akmal",
+    "images": ["akmal"]
   },
   {
     "id": 3,
@@ -40,9 +45,11 @@
     "wins": 5,
     "loses": 10,
     "assist": 5,
+    "foot": "O'ng",
     "status": "daily",
     "firstName": "bobur",
-    "lastName": "radjabov"
+    "lastName": "radjabov",
+    "images": ["bobur"]
   },
   {
     "id": 4,
@@ -51,9 +58,11 @@
     "wins": 35,
     "loses": 40,
     "assist": 5,
+    "foot": "O'ng",
     "status": "daily",
     "firstName": "elyor",
-    "lastName": "allohbergan o'gli"
+    "lastName": "allohbergan o'gli",
+    "images": ["elyor"]
   },
   {
     "id": 5,
@@ -62,6 +71,7 @@
     "wins": 57,
     "loses": 12,
     "assist": 5,
+    "foot": "O'ng",
     "status": "weekly",
     "lastName": "razzaqov",
     "firstName": "qodirbergan",
@@ -74,9 +84,11 @@
     "wins": 55,
     "loses": 0,
     "assist": 5,
+    "foot": "O'ng",
     "status": "monthly",
     "lastName": "ruzmetov",
-    "firstName": "ibrohim"
+    "firstName": "ibrohim",
+    "images": ["ibrohim"]
   },
   {
     "id": 7,
@@ -85,9 +97,11 @@
     "wins": 63,
     "loses": 20,
     "assist": 5,
+    "foot": "O'ng",
     "status": "monthly",
     "firstName": "jamshid",
-    "lastName": "abdulloh o'gli"
+    "lastName": "abdulloh o'gli",
+    "images": ["jamshid"]
   },
   {
     "id": 8,
@@ -96,9 +110,11 @@
     "wins": 11,
     "loses": 10,
     "assist": 5,
+    "foot": "O'ng",
     "status": "weekly",
     "firstName": "otabek",
-    "lastName": "abdurrahmon o'gli"
+    "lastName": "abdurrahmon o'gli",
+    "images": ["otabek"]
   },
   {
     "id": 9,
@@ -107,9 +123,11 @@
     "wins": 15,
     "loses": 10,
     "assist": 5,
+    "foot": "O'ng",
     "status": "weekly",
     "lastName": "raxmanov",
-    "firstName": "ulugbek"
+    "firstName": "ulugbek",
+    "images": ["ulugbek"]
   },
   {
     "id": 10,
@@ -118,9 +136,11 @@
     "wins": 61,
     "loses": 0,
     "assist": 4,
+    "foot": "Chap",
     "status": "weekly",
     "lastName": "ga'ipov",
-    "firstName": "sardor"
+    "firstName": "sardor",
+    "images": ["sardor"]
   },
   {
     "id": 11,
@@ -129,6 +149,7 @@
     "wins": 33,
     "loses": 0,
     "assist": 3,
+    "foot": "Chap",
     "status": "monthly",
     "firstName": "murod",
     "lastName": "sobirov",
@@ -141,9 +162,11 @@
     "wins": 1,
     "loses": 2,
     "assist": 1,
+    "foot": "O'ng",
     "status": "monthly",
     "lastName": "yusupov",
-    "firstName": "elyorj"
+    "firstName": "elyorj",
+    "images": ["elyorj"]
   },
   {
     "id": 13,
@@ -152,9 +175,11 @@
     "wins": 35,
     "loses": 20,
     "assist": 1,
+    "foot": "O'ng",
     "status": "weekly",
     "lastName": "yusupov",
-    "firstName": "doniyor"
+    "firstName": "doniyor",
+    "images": ["doniyor"]
   },
   {
     "id": 14,
@@ -163,9 +188,11 @@
     "wins": 77,
     "loses": 6,
     "assist": 1,
+    "foot": "O'ng",
     "status": "daily",
     "firstName": "yunusbek",
-    "lastName": "matkarimov"
+    "lastName": "yaqubov",
+    "images": ["yunusbek"]
   },
   {
     "id": 15,
@@ -174,9 +201,11 @@
     "wins": 5,
     "loses": 27,
     "assist": 0,
+    "foot": "O'ng",
     "status": "weekly",
     "firstName": "behruz",
-    "lastName": "boltayev"
+    "lastName": "boltayev",
+    "images": ["behruz"]
   },
   {
     "id": 16,
@@ -185,9 +214,11 @@
     "wins": 35,
     "loses": 20,
     "assist": 1,
+    "foot": "O'ng",
     "status": "daily",
     "lastName": "karimov",
-    "firstName": "bekzod"
+    "firstName": "bekzod",
+    "images": ["bekzod"]
   },
   {
     "id": 17,
@@ -196,6 +227,7 @@
     "wins": 40,
     "loses": 20,
     "assist": 3,
+    "foot": "O'ng",
     "status": "daily",
     "lastName": "ruzmetov",
     "firstName": "umidbek",
@@ -208,6 +240,7 @@
     "wins": 30,
     "loses": 5,
     "assist": 5,
+    "foot": "Chap",
     "status": "weekly",
     "firstName": "furqat",
     "lastName": "ruzmetov",
@@ -220,6 +253,7 @@
     "wins": 30,
     "loses": 33,
     "assist": 30,
+    "foot": "O'ng",
     "status": "daily",
     "firstName": "nodir",
     "lastName": "hamrayev",
