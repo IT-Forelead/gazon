@@ -24,14 +24,14 @@ const closeModal = () => {
         </div>
         <!-- Modal body -->
         <div class="px-3 py-2 space-y-2">
-          <h3 class="text-lg font-medium text-gray-900">Narx</h3>
+          <h3 class="text-lg font-medium text-gray-900">Gollar</h3>
           <ul class="grid w-full gap-2 grid-cols-3">
             <li>
               <input type="radio" id="price-1" name="hosting" value="price-1" class="hidden peer" required>
               <label for="price-1"
                      class="inline-flex items-center justify-center w-full py-1 text-gray-600 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-0 peer-checked:bg-teal-500 peer-checked:text-white hover:text-gray-600 hover:bg-gray-100">
                 <div class="block">
-                  <div class="w-full text-sm font-semibold">0-60 000</div>
+                  <div class="w-full text-sm font-semibold">0-5</div>
                 </div>
               </label>
             </li>
@@ -40,7 +40,7 @@ const closeModal = () => {
               <label for="price-2"
                      class="inline-flex items-center justify-center w-full py-1 text-gray-600 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-0 peer-checked:bg-teal-500 peer-checked:text-white hover:text-gray-600 hover:bg-gray-100">
                 <div class="block">
-                  <div class="w-full text-sm font-semibold">70 000-100 000</div>
+                  <div class="w-full text-sm font-semibold">6-10</div>
                 </div>
               </label>
             </li>
@@ -49,7 +49,7 @@ const closeModal = () => {
               <label for="hosting-big"
                      class="inline-flex items-center justify-center w-full py-1 text-gray-600 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-0 peer-checked:bg-teal-500 peer-checked:text-white hover:text-gray-600 hover:bg-gray-100">
                 <div class="block">
-                  <div class="w-full text-sm font-semibold">100 000-500 000</div>
+                  <div class="w-full text-sm font-semibold">10-20</div>
                 </div>
               </label>
             </li>
