@@ -1,12 +1,12 @@
 <script setup>
 import {ref} from 'vue'
+import router from "@/router"
+import {useModalStore} from "@/stores/modal.store"
 import SearchIcon from "@/assets/icons/SearchIcon.vue"
 import FilterIcon from "@/assets/icons/FilterIcon.vue"
 import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue"
-import router from "@/router"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
 import FilterMatchListModal from "@/components/Modals/FilterMatchListModal.vue"
-import {useModalStore} from "@/stores/modal.store"
 import SearchMatchListModal from "@/components/Modals/SearchMatchListModal.vue"
 
 const tab = ref('todays');

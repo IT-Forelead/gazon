@@ -2,10 +2,10 @@
 import { onMounted, ref } from "vue";
 import CupIcon from "../assets/icons/CupIcon.vue";
 import BallIcon from "../assets/icons/BallIcon.vue";
-import playersList from "@/assets/playerLists.json";
 import FootIcon from "../assets/icons/FootIcon.vue";
 import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import ShapeIcon from "../assets/icons/ShapeIcon.vue";
+import playersList from "@/assets/data/playerLists.json";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
 
 const player = ref({});
@@ -26,11 +26,11 @@ onMounted(() => {
     <h2 class="text-2xl text-center font-semibold capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>
-    <button
-      class="mx-auto mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+    <router-link
+      to="/edit-profile"
+      class="mx-auto text-center mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+      >Edit</router-link
     >
-      <router-link to="/edit-profile">Edit</router-link>
-    </button>
     <hr />
     <div class="px-2">
       <div class="flex justify-between my-4">

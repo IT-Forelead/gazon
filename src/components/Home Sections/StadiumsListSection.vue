@@ -1,12 +1,12 @@
 <script setup>
-import StarIcon from "@/assets/icons/StarIcon.vue";
-import { computed } from "vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination } from "swiper/modules";
-import "swiper/css/navigation";
 import "swiper/css";
-import stadiumList1 from "@/data/stadiumList.json";
+import { computed } from "vue";
+import "swiper/css/navigation";
 import { useRouter } from "vue-router";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import StarIcon from "@/assets/icons/StarIcon.vue";
+import { Autoplay, Pagination } from "swiper/modules";
+import stadiumList1 from "@/assets/data/stadiumList.json";
 
 const router = useRouter();
 
@@ -95,9 +95,7 @@ const modules = [Autoplay, Pagination];
                       <a href="#" class="font-semibold text-zinc-900">
                         {{ list.title }}
                       </a>
-                      <p
-                        class="mb-4 mt-2 text-zinc-500 text-sm font-normal"
-                      >
+                      <p class="mb-4 mt-2 text-zinc-500 text-sm font-normal">
                         {{ list.Item }}
                       </p>
                     </div>
