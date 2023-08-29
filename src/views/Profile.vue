@@ -7,12 +7,14 @@ import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import ShapeIcon from "../assets/icons/ShapeIcon.vue";
 import playersList from "@/assets/data/playerLists.json";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
+import { useEditProfile } from "../stores/editProfile.store";
 
 const player = ref({});
 
 onMounted(() => {
   const randomNumber = Math.floor(Math.random() * 18 + 1);
   player.value = playersList[randomNumber];
+  useEditProfile().setEditProfile(player.value);
 });
 </script>
 
