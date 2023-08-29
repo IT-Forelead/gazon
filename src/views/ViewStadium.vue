@@ -1,20 +1,21 @@
 <script setup>
-import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
-import StarIcon from "@/assets/icons/StarIcon.vue";
-import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
+import { vMaska } from "maska";
 import { onMounted, ref } from "vue";
 import { useRoute } from "vue-router";
-import stadiumList2 from "@/data/stadiumList.json";
-import FieldIcon from "@/assets/icons/FieldIcon.vue";
-import { vMaska } from "maska";
 import { Swiper, SwiperSlide } from "swiper/vue";
+import StarIcon from "@/assets/icons/StarIcon.vue";
+import FieldIcon from "@/assets/icons/FieldIcon.vue";
 import { Autoplay, Pagination } from "swiper/modules";
+import stadiumList2 from "@/assets/data/stadiumList.json";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
+import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
 
-const modules = [Autoplay, Pagination];
 const hero = ref();
 const players = ref([]);
 const route = useRoute();
 const booking = ref([""]);
+const modules = [Autoplay, Pagination];
+
 onMounted(() => {
   hero.value = stadiumList2.filter((player) => player.id == route.params.id)[0];
   players.value = stadiumList2.filter((player) => player.id != route.params.id);
