@@ -26,11 +26,11 @@ onMounted(() => {
     <h2 class="text-2xl text-center font-semibold capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>
-    <button
-      class="mx-auto mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+    <router-link
+      to="/edit-profile"
+      class="mx-auto text-center mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+      >Edit</router-link
     >
-      <router-link to="/edit-profile">Edit</router-link>
-    </button>
     <hr />
     <div class="px-2">
       <div class="flex justify-between my-4">
