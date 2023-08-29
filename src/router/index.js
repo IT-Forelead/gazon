@@ -26,6 +26,12 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/match-list',
+    name: 'Match list',
+    component: () => import('../views/MatchList.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/Profile.vue'),
@@ -53,6 +59,12 @@ const routes = [
     path: '/forgot-password',
     name: 'Forgot password',
     component: () => import('../views/ForgotPassword.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
+    path: '/edit-profile',
+    name: 'Edit profile',
+    component: () => import('../views/EditProfile.vue'),
     meta: { layout: 'dashboard' },
   },
   {

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from "vue";
-import UserIcon from "@/assets/icons/UserIcon.vue";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
 import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
 import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
@@ -8,7 +8,10 @@ import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import UserRoleIcon from "@/assets/icons/UserRoleIcon.vue";
 
 const hidePassword = ref(true);
+const hideConfirmPassword = ref(true);
 const togglePassword = () => (hidePassword.value = !hidePassword.value);
+
+const toggleConfirmPassword = () => (hideConfirmPassword.value = !hideConfirmPassword.value);
 </script>
 <template>
   <div
@@ -18,7 +21,7 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
     <div class="flex flex-col space-y-4">
       <div class="relative flex items-center mt-8">
         <span class="absolute">
-          <UserIcon class="w-6 h-6 mx-3 text-teal-400" />
+          <UserBoldIcon class="w-6 h-6 mx-3 text-teal-400" />
         </span>
         <input
           type="text"
@@ -28,7 +31,7 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
       </div>
       <div class="relative flex items-center mt-8">
         <span class="absolute">
-          <UserIcon class="w-6 h-6 mx-3 text-teal-400" />
+          <UserBoldIcon class="w-6 h-6 mx-3 text-teal-400" />
         </span>
         <input
           type="text"
@@ -43,7 +46,7 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
         <select
           class="block w-full px-10 py-3 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-teal-400"
         >
-          <option selected>Rolni tanlang</option>
+          <option selected disabled>Rolni tanlang</option>
           <option value="player">Futbolchi</option>
           <option value="referee">Hakam</option>
           <option value="owner">Stadion egasi</option>
@@ -91,13 +94,13 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
           placeholder="Parolni tasdiqlang"
         />
         <EyeIcon
-          v-if="hidePassword"
-          @click="togglePassword()"
+            v-if="hideConfirmPassword"
+            @click="toggleConfirmPassword()"
           class="absolute z-10 text-gray-500 -translate-y-1/2 cursor-pointer top-1/2 right-6 w-7 h-7"
         />
         <EyeSlashIcon
           v-else
-          @click="togglePassword()"
+          @click="toggleConfirmPassword()"
           class="absolute z-10 text-gray-500 -translate-y-1/2 cursor-pointer top-1/2 right-6 w-7 h-7"
         />
       </div>

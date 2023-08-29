@@ -1,12 +1,14 @@
 <script setup>
 import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
-import UserIcon from "@/assets/icons/UserIcon.vue";
 import CallIcon from "@/assets/icons/CallIcon.vue";
-import StarIcon from "@/assets/icons/StarIcon.vue";
 import {onMounted, onUpdated, ref} from "vue";
+import StarIcon from "@/assets/icons/StarIcon.vue";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
+import {onMounted, ref} from "vue";
 import {useRoute} from "vue-router";
 import stadiumList2 from '@/data/stadiumList.json'
 import FieldIcon from "@/assets/icons/FieldIcon.vue";
+import { vMaska } from "maska"
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import {Autoplay, Pagination, Navigation, EffectCube} from "swiper/modules";
 import StadiumsListSection from "@/components/Home Sections/StadiumsListSection.vue";
@@ -78,7 +80,7 @@ onUpdated(() => {
       <span class="text-lg font-bold">Xususiyatlari:</span>
       <div class="flex justify-start space-x-6 items-center mt-1">
         <div class="flex space-x-1 items-center">
-          <h1 class="text-3xl font-bold"><UserIcon/></h1>
+          <h1 class="text-3xl font-bold"><UserBoldIcon/></h1>
           <h1 class="text-lg">{{hero?.reviews}}ta odam</h1>
         </div>
         <div class="flex space-x-1 items-center">

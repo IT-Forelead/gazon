@@ -10,7 +10,6 @@ import {useRoute, useRouter} from "vue-router"
 
 const router = useRouter()
 
-
 const screenSize = computed(() => {
   return window.innerWidth;
 });
@@ -41,8 +40,6 @@ const spaceBetween = computed(() => {
   }
 });
 const modules = [Autoplay, Pagination];
-
-
 </script>
 <template>
   <div class="relative mx-auto max-w-lg mb-8 pb-1 md:max-w-lg text-center">
