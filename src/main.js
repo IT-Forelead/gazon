@@ -1,9 +1,11 @@
 import '../style.css'
+import 'v-calendar/style.css'
 import 'flowbite'
 import { createApp } from 'vue'
-import Toast from 'vue-toast-notification';
-import 'vue-toast-notification/dist/theme-sugar.css';
+import Toast from 'vue-toast-notification'
+import 'vue-toast-notification/dist/theme-sugar.css'
 import { createPinia } from 'pinia'
+import VCalendar from 'v-calendar'
 
 import App from './App.vue'
 import router from './router'
@@ -14,7 +16,7 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-
+app.use(VCalendar, {})
 app.component('dashboard-layout', DashboardLayout)
 app.mount('#app')
 app.use(Vue3Marquee)

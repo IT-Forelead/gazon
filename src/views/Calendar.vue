@@ -1,9 +1,12 @@
 <script setup>
+import {ref} from "vue"
+
+const date = ref(new Date())
 
 </script>
 
 <template>
-    <h1 class="px-5">Assalomu alaykum Siz Calendar.vue sahifasidasiz!!!</h1>
+
 </template>
 
 <style scoped></style>

@@ -5,6 +5,7 @@ import RightIcon from "@/assets/icons/RightIcon.vue"
 import {ref} from "vue"
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
+import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
 
 const goBack = () => {
   router.back()
@@ -22,6 +23,9 @@ const toggleConfirmPassword = () => (hideConfirmPassword.value = !hideConfirmPas
   <div
       class="min-h-screen max-w-lg mx-auto py-6 mb-10 flex flex-col justify-center"
   >
+    <button @click="router.back()">
+      <LeftBackIcon class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"/>
+    </button>
     <div class="relative px-4 py-10 mx-8 md:mx-0">
       <div class="max-w-md mx-auto">
         <div class="flex justify-center items-center mt-12">
