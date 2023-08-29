@@ -2,10 +2,10 @@
 import { onMounted, ref } from "vue";
 import CupIcon from "../assets/icons/CupIcon.vue";
 import BallIcon from "../assets/icons/BallIcon.vue";
-import playersList from "@/assets/playerLists.json";
 import FootIcon from "../assets/icons/FootIcon.vue";
 import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import ShapeIcon from "../assets/icons/ShapeIcon.vue";
+import playersList from "@/assets/data/playerLists.json";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
 
 const player = ref({});

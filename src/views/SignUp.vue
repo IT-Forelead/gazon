@@ -1,11 +1,11 @@
 <script setup>
 import { ref } from "vue";
-import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
-import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
-import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
-import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
+import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
+import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
+import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import UserRoleIcon from "@/assets/icons/UserRoleIcon.vue";
+import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
 
 const hidePassword = ref(true);
 const hideConfirmPassword = ref(true);
