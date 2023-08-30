@@ -12,15 +12,26 @@ const router = useRouter()
 
 const screenSize = computed(() => {
   return window.innerWidth;
-});
+
+})
+
 
 const slidesPerView = computed(() => {
-  if (screenSize.value < 375) {
+  if (screenSize.value < 340) {
     // iPhone X portrait width
-    return 1.4;
-  } else if (screenSize.value < 768) {
+    return 1.3;
+  }
+  else if (screenSize.value < 376) {
+    // Other mobile devices
+    return 1.5;
+  }
+  else if (screenSize.value < 394) {
     // Other mobile devices
     return 1.6;
+  }
+  else if (screenSize.value < 768) {
+    // Other mobile devices
+    return 1.8;
   } else {
     // Desktop and larger screens
     return 2;
@@ -30,7 +41,7 @@ const slidesPerView = computed(() => {
 const spaceBetween = computed(() => {
   if (screenSize.value < 375) {
     // iPhone X portrait width
-    return -10;
+    return -8;
   } else if (screenSize.value < 768) {
     // Other mobile devices
     return -10;
@@ -75,12 +86,12 @@ const modules = [Autoplay, Pagination];
                     <div class="h-36 bg-cover bg-center rounded-t-lg" :style="{ backgroundImage: `url(/images/${list.listImage}.jpg)` }">
                     </div>
                   </div>
-                  <div class="p-3 flex flex-col">
+                  <div class="py-2.5 px-2.5 flex flex-col">
                     <div class="text-left  border-b-2">
                       <a href="#" class="font-semibold  text-zinc-900">
                         {{ list.title }}
                       </a>
-                      <p class="mb-4 mt-2 text-zinc-500 text-sm font-normal dark:text-zinc-400">{{ list.Item }}</p>
+                      <p class="mb-4 mt-1 text-zinc-500 text-sm font-normal dark:text-zinc-400">{{ list.Item }}</p>
                     </div>
                     <div class="flex justify-between items-center mt-2">
                       <button
@@ -88,7 +99,7 @@ const modules = [Autoplay, Pagination];
                         Booking
                       </button>
                       <div @click="router.push(`/View-stadiums/${list.id}`)"
-                        class="text-md mt-1 font-normal border-l-2 pl-6 text-zinc-500">
+                        class="text-lg mt-1 font-normal border-l-2 pl-5 text-zinc-500">
                      Batafsil...
                       </div>
                     </div>
