@@ -1,6 +1,6 @@
 <script setup>
 import "swiper/css";
-import { computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 import "swiper/css/navigation";
 import { useRouter } from "vue-router";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -10,17 +10,21 @@ import stadiumList1 from "@/assets/data/stadiumList.json";
 
 const router = useRouter();
 
-const screenSize = computed(() => {
-  return window.innerWidth;
-});
+const screenSize = ref(0);
 
 const slidesPerView = computed(() => {
-  if (screenSize.value < 375) {
-    // iPhone X portrait width
+  if (screenSize.value < 360) {
+    return 1.0;
+  } else if (screenSize.value < 415) {
+    return 1.0;
+  } else if (screenSize.value < 450) {
+    return 1.2;
+  } else if (screenSize.value < 568) {
     return 1.4;
-  } else if (screenSize.value < 768) {
-    // Other mobile devices
+  } else if (screenSize.value < 650) {
     return 1.6;
+  } else if (screenSize.value < 768) {
+    return 1.8;
   } else {
     // Desktop and larger screens
     return 2;
@@ -28,16 +32,38 @@ const slidesPerView = computed(() => {
 });
 
 const spaceBetween = computed(() => {
-  if (screenSize.value < 375) {
-    // iPhone X portrait width
+  if (screenSize.value < 360) {
+    return 12;
+  } else if (screenSize.value < 415) {
     return -10;
+  } else if (screenSize.value < 450) {
+    return -27;
+  } else if (screenSize.value < 568) {
+    return -7;
+  } else if (screenSize.value < 650) {
+    return -7;
   } else if (screenSize.value < 768) {
-    // Other mobile devices
+    //Other mobile device
     return -10;
   } else {
     // Desktop and larger screens
     return -30;
   }
+});
+
+const updateScreenWidth = () => {
+  screenSize.value = window.innerWidth;
+};
+
+const onScreenResize = () => {
+  window.addEventListener("resize", () => {
+    updateScreenWidth();
+  });
+};
+
+onMounted(() => {
+  updateScreenWidth();
+  onScreenResize();
 });
 
 const modules = [Autoplay, Pagination];
@@ -123,4 +149,8 @@ const modules = [Autoplay, Pagination];
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.swiper-slide {
+  min-width: fit-content;
+}
+</style>
