@@ -1,21 +1,21 @@
-import {defineStore} from "pinia"
+import { defineStore } from "pinia"
 
-export const useModalStore=defineStore('modal', {
-    state:()=>({
-        isFilterMatchListModalOpen:false,
-        isSearchMatchListModalOpen:false
+export const useModalStore = defineStore('modal', {
+    state: () => ({
+        isFilterMatchListModalOpen: false,
+        isSearchMatchListModalOpen: false
     }),
-    actions:{
-        openFilterMatchListModal(){
+    actions: {
+        openFilterMatchListModal() {
             this.isFilterMatchListModalOpen = true
         },
-        closeFilterMatchListModal(){
+        closeFilterMatchListModal() {
             this.isFilterMatchListModalOpen = false
         },
-        openSearchMatchListModal(){
+        openSearchMatchListModal() {
             this.isSearchMatchListModalOpen = true
         },
-        closeSearchMatchListModal(){
+        closeSearchMatchListModal() {
             this.isSearchMatchListModalOpen = false
         }
     }
