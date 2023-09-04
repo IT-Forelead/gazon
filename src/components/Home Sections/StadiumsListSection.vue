@@ -1,11 +1,14 @@
 <script setup>
 import StarIcon from "@/assets/icons/StarIcon.vue";
 import {computed } from "vue";
+import "swiper/css";
+import { ref, computed, onMounted } from "vue";
+import "swiper/css/navigation";
+import { useRouter } from "vue-router";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import stadiumList1 from '@/data/stadiumList.json'
-import {useRoute, useRouter} from "vue-router"
+import StarIcon from "@/assets/icons/StarIcon.vue";
+import { Autoplay, Pagination } from "swiper/modules";
+import stadiumList1 from "@/assets/data/stadiumList.json";
 
 
 const router = useRouter()
@@ -15,6 +18,7 @@ const screenSize = computed(() => {
 
 })
 
+const screenSize = ref(0);
 
 const slidesPerView = computed(() => {
   if (screenSize.value < 340) {
@@ -27,6 +31,9 @@ const slidesPerView = computed(() => {
   }
   else if (screenSize.value < 394) {
     // Other mobile devices
+  if (screenSize.value < 390) {
+    return 1.4;
+  } else if (screenSize.value < 464) {
     return 1.6;
   }
   else if (screenSize.value < 768) {
@@ -39,17 +46,41 @@ const slidesPerView = computed(() => {
 });
 
 const spaceBetween = computed(() => {
+  if (screenSize.value < 360) {
+    return 12;
+  } else if (screenSize.value < 415) {
+    return -10;
+  } else if (screenSize.value < 450) {
+    return -27;
+  } else if (screenSize.value < 568) {
+    return -7;
   if (screenSize.value < 375) {
     // iPhone X portrait width
     return -8;
   } else if (screenSize.value < 768) {
-    // Other mobile devices
+    //Other mobile device
     return -10;
   } else {
     // Desktop and larger screens
     return -30;
   }
 });
+
+const updateScreenWidth = () => {
+  screenSize.value = window.innerWidth;
+};
+
+const onScreenResize = () => {
+  window.addEventListener("resize", () => {
+    updateScreenWidth();
+  });
+};
+
+onMounted(() => {
+  updateScreenWidth();
+  onScreenResize();
+});
+
 const modules = [Autoplay, Pagination];
 </script>
 <template>
@@ -114,4 +145,8 @@ const modules = [Autoplay, Pagination];
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.swiper-slide {
+  min-width: fit-content;
+}
+</style>
