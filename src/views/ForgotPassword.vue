@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import { vMaska } from "maska";
 
 const phone = ref("");
 </script>
@@ -15,8 +16,8 @@ const phone = ref("");
         </p>
         <input
           id="phone"
+          v-maska
           data-maska="+998(##) ###-##-##"
-          data-maska-tokens="998"
           type="text"
           class="w-full py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-teal-500"
           placeholder="+998(00) 000-00-00"

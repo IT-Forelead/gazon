@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
+import { vMaska } from "maska";
 
 const hidePassword = ref(true);
 const togglePassword = () => (hidePassword.value = !hidePassword.value);
@@ -17,8 +18,8 @@ const togglePassword = () => (hidePassword.value = !hidePassword.value);
         <p class="pb-2 font-medium text-gray-500">Telefon raqam</p>
         <input
           id="phone"
+          v-maska
           data-maska="+998(##) ###-##-##"
-          data-maska-tokens="998"
           type="text"
           class="w-full py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-teal-500"
           placeholder="+998(00) 000-00-00"
