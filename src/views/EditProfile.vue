@@ -1,15 +1,18 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import router from "@/router";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import RightIcon from "@/assets/icons/RightIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
+import { useEditProfile } from "../stores/editProfile.store";
 import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
 
 const goBack = () => {
   router.back();
 };
+
+const player = ref({});
 const showPasswordChange = ref(false);
 const hideCurrentPassword = ref(true);
 const hideNewPassword = ref(true);
@@ -20,6 +23,10 @@ const toggleNewPassword = () =>
   (hideNewPassword.value = !hideNewPassword.value);
 const toggleConfirmPassword = () =>
   (hideConfirmPassword.value = !hideConfirmPassword.value);
+
+onMounted(() => {
+  player.value = useEditProfile().editProfile;
+});
 </script>
 <template>
   <div
@@ -34,7 +41,9 @@ const toggleConfirmPassword = () =>
           <div class="mb-6 text-center absolute">
             <div
               class="mx-auto w-36 h-36 border rounded-full bg-top bg-cover relative bg-gray-100 mb-4 shadow-inset"
-              :style="{ backgroundImage: `url(/bekzod.jpg)` }"
+              :style="{
+                backgroundImage: `url(/images/${player?.firstName}.jpg)`,
+              }"
             ></div>
             <label
               for="fileInput"
@@ -58,21 +67,24 @@ const toggleConfirmPassword = () =>
             <label class="text-teal-500">Ism</label>
             <input
               type="text"
-              class="px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
+              class="capitalize px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
               placeholder="Ism"
+              v-model="player.firstName"
             />
           </div>
           <div class="flex flex-col">
             <label class="text-teal-500">Familiya</label>
             <input
+              v-model="player.lastName"
               type="text"
-              class="px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
+              class="capitalize px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
               placeholder="Familiya"
             />
           </div>
           <div class="flex flex-col">
             <label class="text-teal-500">Username</label>
             <input
+              v-model="player.username"
               type="text"
               class="px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
               placeholder="Username"
@@ -81,6 +93,7 @@ const toggleConfirmPassword = () =>
           <div class="flex flex-col">
             <label class="text-teal-500">Telefon raqam</label>
             <input
+              v-model="player.phone"
               id="phone"
               data-maska="+998(##) ###-##-##"
               data-maska-tokens="998"
