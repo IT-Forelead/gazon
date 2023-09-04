@@ -21,7 +21,7 @@ const menuLists = [
       <li v-for="menu in menuLists" :key="menu" class="cursor-pointer">
         <router-link
           :to="`/${menu.path}`"
-          class="rounded-tl-full rounded-tr-full"
+          class="rounded-full border-0 border-[#fff] relative h-16 w-16 flex items-center justify-center"
         >
           <component :is="menu.icon" :class="menu.size + ' text-white'" />
         </router-link>
@@ -31,14 +31,38 @@ const menuLists = [
 </template>
 <style scoped>
 .router-link-active {
-  top: -10px;
-  height: 30px;
-  display: block;
-  position: relative;
-  transition: all 1s;
+  border-width: 5px;
+  margin-bottom: 66px;
+  transition: margin 0.5s;
+  background-color: #0694a2;
 }
 
-.router-link-active::before {
+/* .router-link-active::before,
+.router-link-active::after {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 14px;
+  top: 20px;
+  border-bottom: 7px solid rgb(6 148 162 / var(--tw-bg-opacity));
+  border-bottom: 7px solid #0694a2;
+} */
+
+.router-link-active:before {
+  right: -18.45px;
+  border-bottom-right-radius: 100%;
+}
+
+.router-link-active:after {
+  left: -18.45px;
+  border-bottom-left-radius: 100%;
+}
+
+.router-link-active svg {
+  /* color: #0694a2; */
+}
+
+/* .router-link-active::before {
   bottom: -15px;
   left: 50%;
   transition: all 1s;
@@ -49,7 +73,7 @@ const menuLists = [
   border-radius: 50%;
   transform: translateX(-50%);
   background-color: #fff;
-}
+} */
 
 /* a.router-link-active {
   width: 60px;
