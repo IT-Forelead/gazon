@@ -13,18 +13,10 @@ const router = useRouter();
 const screenSize = ref(0);
 
 const slidesPerView = computed(() => {
-  if (screenSize.value < 360) {
-    return 1.0;
-  } else if (screenSize.value < 415) {
-    return 1.0;
-  } else if (screenSize.value < 450) {
-    return 1.2;
-  } else if (screenSize.value < 568) {
+  if (screenSize.value < 390) {
     return 1.4;
-  } else if (screenSize.value < 650) {
+  } else if (screenSize.value < 464) {
     return 1.6;
-  } else if (screenSize.value < 768) {
-    return 1.8;
   } else {
     // Desktop and larger screens
     return 2;
@@ -39,8 +31,6 @@ const spaceBetween = computed(() => {
   } else if (screenSize.value < 450) {
     return -27;
   } else if (screenSize.value < 568) {
-    return -7;
-  } else if (screenSize.value < 650) {
     return -7;
   } else if (screenSize.value < 768) {
     //Other mobile device
