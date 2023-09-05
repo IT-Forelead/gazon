@@ -1,8 +1,8 @@
 <script setup>
 import "swiper/css";
-import { ref, computed, onMounted } from "vue";
 import "swiper/css/navigation";
 import { useRouter } from "vue-router";
+import { ref, computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import StarIcon from "@/assets/icons/StarIcon.vue";
 import { Autoplay, Pagination } from "swiper/modules";

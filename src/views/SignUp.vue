@@ -7,20 +7,33 @@ import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import UserRoleIcon from "@/assets/icons/UserRoleIcon.vue";
 import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
 import { vMaska } from "maska";
-import { useToast } from "vue-toast-notification";
+import notify from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
-const toast = useToast();
 const showToast = (text) => {
-  toast.error(text, {
-    position: "bottom-right",
-    duration: 5000,
+  notify.error({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
+  });
+};
+
+const showWarningToast = (text) => {
+  notify.warning({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
   });
 };
 
 const showSuccessToast = (text) => {
-  toast.success(text, {
-    position: "bottom-right",
-    duration: 5000,
+  notify.success({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
   });
 };
 
@@ -45,21 +58,36 @@ const isValidPassword = (password) => {
     password
   );
 };
-const submitLogin = () => {
+const submitRegister = () => {
   if (loginFormData.firstName.length == 0) {
-    showToast("Iltimos ismingizni kirgizing");
+    showToast("Iltimos ismingizni kiriting");
   } else if (loginFormData.lastName.length == 0) {
-    showToast("Iltimos familiangizni kirgizing");
+    showToast("Iltimos familyangizni kiriting");
   } else if (loginFormData.role.length == 0) {
     showToast("Iltimos rolni tanlang");
-  } else if (loginFormData.phoneNumber.length < 18) {
-    showToast("Iltimos telefon nomeringizni kirgizing");
+  } else if (loginFormData.phoneNumber.length == 0) {
+    showToast("Iltimos telefon nomeringizni kiriting");
+  } else if (
+    loginFormData.phoneNumber.length > 0 &&
+    loginFormData.phoneNumber.length < 18
+  ) {
+    showWarningToast("Iltimos telefon raqamingizni to'liq kiriting");
+  } else if (loginFormData.password.length == 0) {
+    showToast("Iltimos parolni kiritng");
   } else if (!isValidPassword(loginFormData.password)) {
-    showToast("Iltimos valid passwordni kirgizing");
+    showWarningToast(
+      "Uzunligi 8 va kamida 1 ta katta, 1 ta kichik harf, 1 ta raqam va 1 ta maxsus belgi bo'lishi kerak"
+    );
   } else if (loginFormData.password != loginFormData.repeatPassword) {
     showToast("Passwordlar teng emas");
   } else {
     showSuccessToast("Success");
+  }
+};
+
+const whenPressEnter = (e) => {
+  if (e.keyCode === 13) {
+    submitRegister();
   }
 };
 </script>
@@ -148,6 +176,7 @@ const submitLogin = () => {
           class="block w-full py-3 bg-white border border-gray-300 rounded-full px-11 focus:outline-none focus:ring-1 focus:ring-teal-400"
           placeholder="Parolni tasdiqlang"
           v-model="loginFormData.repeatPassword"
+          @keyup.enter="submitRegister"
         />
         <EyeIcon
           v-if="hideConfirmPassword"
@@ -162,7 +191,7 @@ const submitLogin = () => {
       </div>
       <div class="mt-6">
         <button
-          @click="submitLogin"
+          @click="submitRegister"
           type="submit"
           class="flex items-center justify-center w-full py-4 font-semibold text-white bg-teal-600 rounded-full cursor-pointer select-none hover:bg-teal-500"
         >
