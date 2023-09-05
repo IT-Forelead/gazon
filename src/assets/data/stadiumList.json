@@ -1,92 +1,93 @@
 [
   {
     "id": 0,
-    "listImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbNqFPWhGxt19V2DsmJPXhi2wtBrwYXEbAT3Wi1xvmab0uSrCG_7K43IY-7cOuo3pFlkU&usqp=CAU",
+    "reviews": 10,
+    "field": "50 m²",
+    "price": "50 000",
+    "description": "",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
-    "reviews": 10,
-    "price": "50 000",
-    "field": "50 m²"
+    "phone": "+998911234567",
+    "address": "Urganch tuman",
+    "images": ["Arsenal", "Arsenal1", "Arsenal2", "Arsenal3"]
   },
   {
     "id": 1,
-    "listImage": "https://www.austadiums.com/news/images/tottenham-hotspur-stadium-football1.jpg",
+    "reviews": 10,
+    "field": "50 m²",
+    "price": "60 000",
     "assessment": "4.9",
     "title": "Xorazm Palace",
-    "Item": "Hybrid * Indoor",
-    "reviews": 10,
-    "price": "60 000",
-    "field": "50 m²"
+    "phone": "+998917654321",
+    "address": "Urganch shahar",
+    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"]
   },
   {
     "id": 2,
-    "listImage": "https://i.guim.co.uk/img/media/936ffea3d696c9c42ad1741fc755542c0f1eb576/0_0_5700_3420/master/5700.jpg?width=1200&quality=85&auto=format&fit=max&s=f104a75e0cf7a96baa06e02f23003e24",
+    "reviews": 14,
+    "field": "50 m²",
+    "price": "70 000",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
-    "reviews": 14,
-    "price": "70 000",
-    "field": "50 m²"
+    "phone": "+998942469111",
+    "address": "Urganch tuman",
+    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"]
   },
   {
     "id": 3,
-    "listImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Vpv-doYPXFLoYXvo9lO1pCxzLfGDyvr386CRb6PCEUCiL7nS6UF_OVCS5RaKWEsPuzA&usqp=CAU",
+    "reviews": 12,
+    "field": "50 m²",
+    "price": "50 000",
     "assessment": "4.9",
     "title": "Xorazm Palace",
-    "Item": "Hybrid * Indoor",
-    "reviews": 12,
-    "price": "50 000",
-    "field": "50 m²"
+    "phone": "+998999099909",
+    "address": "Urganch shahar",
+    "images": ["Arena", "Arena1", "Arena2", "Arena3"]
   },
   {
     "id": 4,
-    "listImage": "https://www.the8log.com/wp-content/uploads/2019/12/Football-Stadiums.png",
+    "reviews": 10,
+    "field": "50 m²",
+    "price": "60 000",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
-    "reviews": 10,
-    "price": "60 000",
-    "field": "50 m²"
+    "phone": "+998917077707",
+    "address": "Urganch tuman",
+    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"]
   },
   {
     "id": 5,
-    "listImage": "https://ficazfootball.com/wp-content/uploads/2021/03/West-Ham-United-F.C.-London-Stadium-1.jpg",
-    "assessment": "4.9",
-    "title": "Xorazm Palace",
-    "Item": "Hybrid * Indoor",
     "reviews": 22,
+    "field": "50 m²",
     "price": "65 000",
-    "field": "50 m²"
+    "assessment": "4.9",
+    "phone": "+998998080888",
+    "title": "Xorazm Palace",
+    "address": "Urganch shahar",
+    "images": ["United", "United1", "United2", "United3"]
   },
   {
     "id": 6,
-    "listImage": "https://www.re-thinkingthefuture.com/wp-content/uploads/2021/02/A3309-Image-4_Allianz-Arena-Munich-Germany_%C2%A9allianz-arena.com_.jpg",
-    "assessment": "5.0",
-    "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
     "reviews": 16,
+    "field": "50 m²",
     "price": "70 000",
-    "field": "50 m²"
+    "assessment": "5.0",
+    "listImage": "Germany",
+    "title": "Milliy Gazon",
+    "phone": "+99894600666",
+    "address": "Urganch tuman",
+    "images": ["Germany", "Germany1", "Germany2", "Germany3"]
   },
   {
     "id": 7,
-    "listImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvwJ_s8CbcfO9FMA1raB6Ay76ljPOA4GJeykhxEweTalHc7JXTkecFlH--pwTC-w8gJT8&usqp=CAU",
+    "reviews": 12,
+    "field": "50 m²",
+    "price": "50 000",
+    "listImage": "Siti",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
-    "reviews": 12,
-    "price": "50 000",
-    "field": "50 m²"
-  },
-  {
-    "id": 8,
-    "listImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHcYeJ6UYeqJLiwjWihQ2aPEekNUVuQnvBkeUT0F3kOqvRVj_l9wcVjjFX_bOvxunTems&usqp=CAU",
-    "assessment": "5.0",
-    "title": "Milliy Gazon",
-    "Item": "Dedicated * Outdoor",
-    "reviews": 14,
-    "price": "60 000",
-    "field": "50 m²"
+    "phone": "+998905555005",
+    "address": "Urganch shahar",
+    "images": ["Siti", "Siti1", "Siti2", "Siti3"]
   }
 ]
