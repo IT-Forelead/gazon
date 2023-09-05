@@ -6,6 +6,7 @@ import RightIcon from "@/assets/icons/RightIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
 import { useEditProfile } from "../stores/editProfile.store";
+import { vMaska } from "maska";
 
 const goBack = () => {
   router.back();
@@ -91,8 +92,8 @@ onMounted(() => {
             <input
               v-model="player.phone"
               id="phone"
+              v-maska
               data-maska="+998(##) ###-##-##"
-              data-maska-tokens="998"
               type="text"
               class="px-4 py-3 border focus:ring-teal-500 focus:border-teal-500 w-full sm:text-sm border-gray-300 rounded-lg focus:outline-none"
               placeholder="+998(00) 000-00-00"
@@ -196,5 +197,4 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
