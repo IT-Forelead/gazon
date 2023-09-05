@@ -1,8 +1,45 @@
 <script setup>
 import { ref } from "vue";
 import { vMaska } from "maska";
+import notify from "izitoast";
+import "izitoast/dist/css/iziToast.min.css";
 
 const phone = ref("");
+
+const showToast = (text) => {
+  notify.error({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
+  });
+};
+
+const showWarningToast = (text) => {
+  notify.warning({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
+  });
+};
+
+const showSuccessToast = (text) => {
+  notify.success({
+    message: text,
+    messageSize: "23",
+    position: "bottomRight",
+    timeout: 10000,
+  });
+};
+
+const submitPhone = () => {
+  if (phone.value.length < 18) {
+    showToast("Iltimos telefon nomeringizni kiriting");
+  } else {
+    showSuccessToast("Success");
+  }
+};
 </script>
 <template>
   <div
@@ -21,6 +58,8 @@ const phone = ref("");
           type="text"
           class="w-full py-4 text-lg border border-gray-300 rounded-full focus:outline-none focus:ring-1 focus:ring-teal-500"
           placeholder="+998(00) 000-00-00"
+          v-model="phone"
+          @keyup.enter="submitPhone"
         />
       </label>
       <div class="text-gray-500 dark:text-gray-300">

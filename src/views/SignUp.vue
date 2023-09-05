@@ -84,12 +84,6 @@ const submitRegister = () => {
     showSuccessToast("Success");
   }
 };
-
-const whenPressEnter = (e) => {
-  if (e.keyCode === 13) {
-    submitRegister();
-  }
-};
 </script>
 <template>
   <div
