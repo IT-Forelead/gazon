@@ -59,7 +59,7 @@ onMounted(() => {
 const modules = [Autoplay, Pagination];
 </script>
 <template>
-  <div class="relative mx-auto max-w-3xl mb-8 pb-1 text-center">
+  <div class="relative mx-a uto max-w-3xl mb-4 pb-1 text-center">
     <div>
       <div
         class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2"
