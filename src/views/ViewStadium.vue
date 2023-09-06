@@ -140,7 +140,3 @@ onUpdated(() => {
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Scoped styles go here */
-</style>
