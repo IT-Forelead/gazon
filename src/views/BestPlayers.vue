@@ -1,14 +1,15 @@
 <script setup>
 import { computed, ref } from "vue";
 import PlaceIcon from "@/assets/icons/PlaceIcon.vue";
-import bestPlayers from '@/assets/data/playerLists.json'
+import bestPlayers from "@/assets/data/playerLists.json";
 import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue";
 import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue";
 import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue";
 
-const best = ref('daily')
-const reportBestPlayer = computed(() => bestPlayers.filter(player => player.status == best.value))
-
+const best = ref("daily");
+const reportBestPlayer = computed(() =>
+  bestPlayers.filter((player) => player.status == best.value)
+);
 </script>
 
 <template>
@@ -25,7 +26,7 @@ const reportBestPlayer = computed(() => bestPlayers.filter(player => player.stat
       >
         Eng zo'r futbolchilar
       </h2>
-      <ul class="flex mt-2 space-x-2">
+      <ul class="flex mt-2 gap-x-2">
         <li>
           <button
             class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
