@@ -13,11 +13,11 @@ const router = useRouter();
 
 const slidesPerView = computed(() => {
   if (screenSize.value < 340) {
-    return 1.3;
-  } else if (screenSize.value < 377) {
     return 1.5;
+  } else if (screenSize.value < 377) {
+    return 1.7;
   } else if (screenSize.value < 400) {
-    return 1.6;
+    return 1.7;
   } else if (screenSize.value < 440) {
     return 1.7;
   } else if (screenSize.value < 464) {
@@ -25,19 +25,19 @@ const slidesPerView = computed(() => {
   } else if (screenSize.value < 510) {
     return 2;
   } else {
-    return 4;
+    return 2;
   }
 });
 
 const spaceBetween = computed(() => {
   if (screenSize.value < 360) {
-    return 12;
+    return 10;
   } else if (screenSize.value < 415) {
-    return -10;
+    return 10;
   } else if (screenSize.value < 450) {
-    return -27;
+    return -10;
   } else if (screenSize.value < 568) {
-    return -7;
+    return -10;
   }
 });
 
@@ -62,8 +62,7 @@ const modules = [Autoplay, Pagination];
   <div class="relative mx-a uto max-w-3xl mb-4 pb-1 text-center">
     <div>
       <div
-        class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2"
-      >
+        class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2">
         <h1 class="text-xl">Stadionlar ro'yhati</h1>
         <a href="" class="text-xs">Barchasi</a>
       </div>
@@ -79,56 +78,39 @@ const modules = [Autoplay, Pagination];
         }"
         :loop="true"
         :modules="modules"
-        class="mySwiper"
-      >
+        class="mySwiper">
         <swiper-slide
           v-for="(list, index) in stadiumList"
           :key="index"
-          @click="router.push(`/View-stadiums/${list.id}`)"
-        >
-          <div class="overflow-hidden -mr-10 mt-6">
-            <div class="flex transition-transform duration-500 ease-in-out">
-              <div class="px-4">
-                <div
-                  class="bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
-                >
-                  <div class="relative">
-                    <div
-                      class="w-20 h-8 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2"
-                    >
-                      <StarIcon />
-                      <a class="text-lg font-semibold ml-2">{{
-                        list.assessment
-                      }}</a>
+          @click="router.push(`/View-stadiums/${list.id}`)">
+          <div class="max-w-3xl mx-auto -mr-10 mt-6">
+              <div :class="[ $route.href === '/' ? 'px-4' :'px-5']" >
+                <div :class="[ $route.href === '/' ? 'bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl' :' ']">
+                  <div class="relative  ">
+                    <div  :class="[ $route.href === '/' ? ' hidden' :'  text-lg  items-center absolute top-3 right-3 text-']" class="">
+                      {{ list.title }}
                     </div>
-                    <div
-                      class="h-36 bg-cover bg-center rounded-t-lg"
-                      :style="{
-                        backgroundImage: `url(/images/${list.images[0]}.jpg)`,
-                      }"
-                    ></div>
+                     <div  class="w-20 h-8 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2">
+                       <StarIcon />
+                       <a class="text-lg font-semi-bold ml-2">
+                         {{list.assessment }}
+                       </a>
+                     </div>
+                    <div  :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg' :'h-36 bg-cover bg-center rounded-lg']"
+                      :style="{backgroundImage: `url(/images/${list.images[0]}.jpg)`,}"></div>
                   </div>
-                  <div class="py-2.5 px-2.5 flex flex-col">
-                    <div class="text-left border-b-2">
-                      <a href="#" class="font-semibold text-zinc-900">
-                        {{ list.title }}
+                  <div :class="[ $route.href === '/' ? 'py-2.5 px-2.5 flex flex-col' :'hidden']">
+                    <div class=""  :class="[ $route.href === '/' ? 'text-left border-b-2' :'']">
+                      <a href="#"  :class="[ $route.href === '/' ? 'font-semi-bold text-zinc-900' :'none']">{{ list.title }}
                       </a>
-                      <p
-                        class="mb-4 mt-1 text-zinc-500 text-sm font-normal dark:text-zinc-400"
-                      >
-                        {{ list.address }}
+                      <p  :class="[$route.href === '/' ? 'mb-4 mt-1 text-zinc-500 text-sm font-normal' :'none']">{{ list.address }}
                       </p>
                     </div>
-                    <div class="flex justify-between items-center mt-2">
-                      <button
-                        class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semibold text-gray-50 rounded-full p- py-1.5 px-4"
-                      >
-                        Booking
+                    <div  :class="[ $route.href === '/' ? 'flex justify-between items-center mt-2' :'']" class="">
+                      <button :class="[$route.href === '/' ? 'bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semi-bold text-gray-50 rounded-full p- py-1.5 px-4' :'none']">
+                        Band qilish
                       </button>
-                      <div
-                        @click="router.push(`/View-stadiums/${list.id}`)"
-                        class="text-lg mt-1 font-normal border-l-2 pl-5 text-zinc-500"
-                      >
+                      <div :class="[$route.href === '/' ? 'text-lg mt-1 font-normal border-l-2 pl-3 text-zinc-500' :'none']" @click="router.push(`/View-stadiums/${list.id}`)">
                         Batafsil...
                       </div>
                     </div>
@@ -136,7 +118,6 @@ const modules = [Autoplay, Pagination];
                 </div>
               </div>
             </div>
-          </div>
         </swiper-slide>
       </swiper>
     </div>

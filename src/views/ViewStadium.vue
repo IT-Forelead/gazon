@@ -15,6 +15,7 @@ import StadiumsListSection from "@/components/Home Sections/StadiumsListSection.
 const stadion = ref();
 const stdions = ref([]);
 const route = useRoute();
+const scrollContainer = ref(null);
 const modules = [Autoplay, Pagination, Navigation, EffectCube];
 
 onMounted(() => {
@@ -30,11 +31,20 @@ onUpdated(() => {
   stdions.value = stadiumList.filter((item) => item.id != route.params.id);
   stdions.value.unshift(stadion.value);
 });
+
+
+const scrollToBottom = () => {
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollTop = scrollContainer.value.scrollHeight;
+  }
+};
+onMounted(scrollToBottom);
+
 </script>
 
 <template>
   <div class="max-w-lg px-1 pb-1 md:max-w-lg mx-auto md:mx-auto">
-    <div class="flex space-x-32 items-center mb-6">
+    <div class="flex md:space-x-32 space-x-20 items-center mb-6">
       <RouterLink to="/" class="">
         <ArrowLeftIcon/>
       </RouterLink>
@@ -61,18 +71,17 @@ onUpdated(() => {
 
     <div class="mt-2 relative">
       <div class="   w-full bg-white z-10">
-        <StadiumsListSection/>
+        <StadiumsListSection  />
       </div>
     </div>
 
-  <div class="overflow-y-auto h-96" >
+  <div class="h-96 overflow-y-auto" ref="scrollContainer"  >
   <div class="flex mt-2 space-x-2">
     <span class="text-blue-700 font-bold"><LocationIcon/></span>
     <p class="text-md">
       {{ stadion?.Item }} Xorazm Palace 24-son maktab yoni
     </p>
   </div>
-
   <div class="w-full h-64">
     <iframe
         class="rounded-2xl my-3.5 mx-auto w-full h-full " width="500" height="350"
@@ -80,7 +89,6 @@ onUpdated(() => {
         frameborder="0"
     ></iframe>
   </div>
-
   <div class="flex justify-between items-center mt-2">
     <div class="flex items-center space-x-2">
       <h1 class="text-3xl font-bold">
@@ -94,7 +102,6 @@ onUpdated(() => {
       <h1 class="text-md md:text-lg ml-1">so'm</h1>
     </div>
   </div>
-
   <div class="items-center mt-3">
     <span class="text-lg font-bold">Xususiyatlari:</span>
     <div class="flex justify-start space-x-6 items-center mt-1">
@@ -110,7 +117,6 @@ onUpdated(() => {
       </div>
     </div>
   </div>
-
   <div class="items-center mt-3">
     <span class="text-lg font-bold">Tasnifi:</span>
     <p class="text-left">
@@ -118,7 +124,6 @@ onUpdated(() => {
       industry. Lorem Ipsum has been the industry's
     </p>
   </div>
-
   <div class="items-center mb-auto mt-2">
     <div class="flex justify-around mb-3 mt-2 text-center items-center">
       <div class="flex">
@@ -140,8 +145,6 @@ onUpdated(() => {
     </div>
   </div>
 </div>
-
-
   </div>
 </template>
 
