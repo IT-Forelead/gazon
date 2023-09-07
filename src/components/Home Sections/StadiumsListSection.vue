@@ -7,9 +7,11 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import StarIcon from "@/assets/icons/StarIcon.vue";
 import { Autoplay, Pagination } from "swiper/modules";
 import stadiumList from "@/assets/data/stadiumList.json";
+import useMoneyFormatter from "../../mixins/currencyFormatter";
 
 const screenSize = ref(0);
 const router = useRouter();
+const modules = [Autoplay, Pagination];
 
 const slidesPerView = computed(() => {
   if (screenSize.value < 340) {
@@ -56,7 +58,15 @@ onMounted(() => {
   onScreenResize();
 });
 
-const modules = [Autoplay, Pagination];
+const currentStadion = ref("all");
+const reportStadion = computed(() => {
+  if (currentStadion.value == "all") return stadiumList;
+  if (currentStadion.value == "money")
+    return stadiumList.sort((a, b) => b.price - a.price);
+  return stadiumList.filter(
+    (stadion) => stadion.status == currentStadion.value
+  );
+});
 </script>
 <template>
   <div class="relative mx-auto max-w-3xl mb-8">
@@ -64,11 +74,49 @@ const modules = [Autoplay, Pagination];
       class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2"
     >
       <h1 class="text-xl">Stadionlar ro'yhati</h1>
-      <a href="" class="text-xs">Barchasi</a>
+      <router-link to="/" class="text-xs">Barchasi</router-link>
     </div>
+    <ul class="flex my-2 gap-x-2">
+      <li>
+        <button
+          class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
+          :class="{ 'bg-teal-500 text-white': currentStadion == 'all' }"
+          @click="currentStadion = 'all'"
+        >
+          Barchasi
+        </button>
+      </li>
+      <li>
+        <button
+          class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
+          :class="{ 'bg-teal-500 text-white': currentStadion == 'occupied' }"
+          @click="currentStadion = 'occupied'"
+        >
+          Band
+        </button>
+      </li>
+      <li>
+        <button
+          class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
+          :class="{ 'bg-teal-500 text-white': currentStadion == 'unoccupied' }"
+          @click="currentStadion = 'unoccupied'"
+        >
+          Band bo'lmagan
+        </button>
+      </li>
+      <li class="ml-auto">
+        <button
+          class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
+          :class="{ 'bg-teal-500 text-white': currentStadion == 'money' }"
+          @click="currentStadion = 'money'"
+        >
+          Narxi bo'yicha
+        </button>
+      </li>
+    </ul>
+    <!-- :centeredSlides="true" -->
     <swiper
       :slidesPerView="slidesPerView"
-      :centeredSlides="true"
       :spaceBetween="spaceBetween"
       :grabCursor="true"
       :pagination="{ clickable: true }"
@@ -81,12 +129,12 @@ const modules = [Autoplay, Pagination];
       class="mySwiper"
     >
       <swiper-slide
-        v-for="(list, index) in stadiumList"
+        v-for="(stadion, index) in reportStadion"
         :key="index"
-        @click="router.push(`/view-stadiums/${list.id}`)"
+        @click="router.push(`/view-stadiums/${stadion.id}`)"
       >
         <div
-          class="flex transition-transform duration-500 ease-in-out rounded-xl"
+          class="overflow-hidden flex transition-transform duration-500 ease-in-out rounded-xl"
         >
           <div
             class="border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
@@ -96,35 +144,38 @@ const modules = [Autoplay, Pagination];
                 class="w-20 h-8 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2"
               >
                 <StarIcon />
-                <a class="text-lg font-semibold ml-2">{{ list.assessment }}</a>
+                <a class="text-lg font-semibold ml-2">{{
+                  stadion.assessment
+                }}</a>
               </div>
               <div
                 class="h-36 bg-cover bg-center rounded-t-lg"
                 :style="{
-                  backgroundImage: `url(/images/${list.images[0]}.jpg)`,
+                  backgroundImage: `url(/images/${stadion.images[0]}.jpg)`,
                 }"
               ></div>
             </div>
-            <div class="py-2.5 px-2.5 flex flex-col">
-              <div class="text-left border-b-2">
-                <a href="#" class="font-semibold text-zinc-900">
-                  {{ list.title }}
-                </a>
-                <p
-                  class="mb-4 mt-1 text-zinc-500 text-sm font-normal dark:text-zinc-400"
+            <div class="p-2">
+              <div class="border-b-2 pb-1">
+                <h3 class="font-semibold text-zinc-900">
+                  {{ stadion.title }}
+                </h3>
+                <div
+                  class="flex justify-between text-zinc-500 text-sm font-normal"
                 >
-                  {{ list.address }}
-                </p>
+                  <p>{{ stadion.address }}</p>
+                  <p>{{ useMoneyFormatter(stadion.price) }}</p>
+                </div>
               </div>
               <div class="flex justify-between items-center mt-2">
                 <button
-                  class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semibold text-gray-50 rounded-full p- py-1.5 px-4"
+                  class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm text-gray-50 rounded-full py-1.5 px-4"
                 >
                   Booking
                 </button>
                 <router-link
-                  :to="`/view-stadiums/${list.id}`"
-                  class="font-normal border-l-2 pl-4 text-zinc-500"
+                  :to="`/view-stadiums/${stadion.id}`"
+                  class="font-normal border-l-2 pl-5 text-zinc-500 text-lg hover:text-teal-400"
                 >
                   Batafsil...
                 </router-link>
