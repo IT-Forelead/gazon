@@ -1,26 +1,10 @@
+
 <template>
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="1em"
-    height="1em"
-    viewBox="0 0 14 14"
-  >
-    <g
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    >
-      <path
-        d="M11.5 5c0 2.49-4.5 8.5-4.5 8.5S2.5 7.49 2.5 5a4.5 4.5 0 0 1 9 0Z"
-      ></path>
-      <circle cx="7" cy="5" r="1.5"></circle>
-    </g>
-  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" class="text-blue-600 h-5 w-5" viewBox="0 0 16 16"><path fill="currentColor" d="m12.596 11.596l-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193a6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path></svg>
 </template>
 
-<script lang="ts">
+<script>
 export default {
-  name: "LocationIcon",
-};
+  name: 'OcticonLocation16'
+}
 </script>

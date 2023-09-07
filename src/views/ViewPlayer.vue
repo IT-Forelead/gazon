@@ -17,25 +17,8 @@ const route = useRoute();
 const currentImage = ref(-1);
 const modules = ref([EffectCards]);
 
-const onSwiper = (swiper) => {
-  console.log(swiper.activeIndex);
-  swiper.activeIndex = currentImage.value;
-};
-const onSlideChange = (seip) => {
-  console.log("slide change");
-  console.log(seip.activeIndex);
-};
-const swp = () => {
-  console.log(SwiperSlide.props);
-  console.log(SwiperSlide.props.tag);
-  console.log(SwiperSlide.props.swiperRef);
-  console.log(SwiperSlide.props.swiperSlideIndex);
-  console.log(SwiperSlide.props.zoom);
-  console.log(SwiperSlide.props.lazy);
-};
 onMounted(() => {
   hero.value = playerLists.filter((player) => player.id == route.params.id)[0];
-  // console.log(SwiperSlide);
 });
 </script>
 
@@ -124,22 +107,14 @@ onMounted(() => {
     </ul>
 
     <div v-if="currentImage > -1" class="fixed inset-0">
-      <h1 class="pl-20 text-4xl text-red-300">{{ currentImage }}</h1>
       <div
         class="z-1 fixed inset-0 bg-[#ffffff4f]"
         @click="currentImage = -1"
       ></div>
       <swiper
-        :pagination="{
-          clickable: true,
-        }"
-        @slideChange="swp"
-        :zoom="true"
-        :mousewheel="true"
         :effect="'cards'"
         :grabCursor="true"
         :modules="modules"
-        :autoplay="true"
         :loop="true"
         class="absolute top-1/2 -translate-y-1/2 w-80 max-w-lg h-3/5 max-h-lg"
       >

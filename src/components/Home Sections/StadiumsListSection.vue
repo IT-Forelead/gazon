@@ -1,52 +1,68 @@
 <script setup>
 import "swiper/css";
-import { computed } from "vue";
 import "swiper/css/navigation";
 import { useRouter } from "vue-router";
+import { ref, computed, onMounted } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import StarIcon from "@/assets/icons/StarIcon.vue";
 import { Autoplay, Pagination } from "swiper/modules";
-import stadiumList1 from "@/assets/data/stadiumList.json";
+import stadiumList from "@/assets/data/stadiumList.json";
 
+const screenSize = ref(0);
 const router = useRouter();
 
-const screenSize = computed(() => {
-  return window.innerWidth;
-});
-
 const slidesPerView = computed(() => {
-  if (screenSize.value < 375) {
-    // iPhone X portrait width
-    return 1.4;
-  } else if (screenSize.value < 768) {
-    // Other mobile devices
+  if (screenSize.value < 340) {
+    return 1.3;
+  } else if (screenSize.value < 377) {
+    return 1.5;
+  } else if (screenSize.value < 400) {
     return 1.6;
-  } else {
-    // Desktop and larger screens
+  } else if (screenSize.value < 440) {
+    return 1.7;
+  } else if (screenSize.value < 464) {
+    return 1.8;
+  } else if (screenSize.value < 510) {
     return 2;
+  } else {
+    return 4;
   }
 });
 
 const spaceBetween = computed(() => {
-  if (screenSize.value < 375) {
-    // iPhone X portrait width
+  if (screenSize.value < 360) {
+    return 12;
+  } else if (screenSize.value < 415) {
     return -10;
-  } else if (screenSize.value < 768) {
-    // Other mobile devices
-    return -10;
-  } else {
-    // Desktop and larger screens
-    return -30;
+  } else if (screenSize.value < 450) {
+    return -27;
+  } else if (screenSize.value < 568) {
+    return -7;
   }
+});
+
+const updateScreenWidth = () => {
+  screenSize.value = window.innerWidth;
+};
+
+const onScreenResize = () => {
+  window.addEventListener("resize", () => {
+    updateScreenWidth();
+  });
+};
+
+onMounted(() => {
+  updateScreenWidth();
+  onScreenResize();
 });
 
 const modules = [Autoplay, Pagination];
 </script>
 <template>
-  <div class="relative mx-auto max-w-lg mb-8 pb-1 md:max-w-lg text-center">
+  <div class="relative mx-auto max-w-3xl mb-8 pb-1 text-center">
     <div>
       <div
-        class="flex justify-between max-w-lg items-center md:mx-auto text-teal-600 font-bold px-2"
+        class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2"
       >
         <h1 class="text-xl">Stadionlar ro'yhati</h1>
         <a href="" class="text-xs">Barchasi</a>
@@ -66,7 +82,7 @@ const modules = [Autoplay, Pagination];
         class="mySwiper"
       >
         <swiper-slide
-          v-for="(list, index) in stadiumList1"
+          v-for="(list, index) in stadiumList"
           :key="index"
           @click="router.push(`/View-stadiums/${list.id}`)"
         >
@@ -74,7 +90,7 @@ const modules = [Autoplay, Pagination];
             <div class="flex transition-transform duration-500 ease-in-out">
               <div class="px-4">
                 <div
-                  class="bg-white border hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
+                  class="bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl"
                 >
                   <div class="relative">
                     <div
@@ -85,29 +101,33 @@ const modules = [Autoplay, Pagination];
                         list.assessment
                       }}</a>
                     </div>
-                    <img
+                    <div
                       class="h-36 bg-cover bg-center rounded-t-lg"
-                      :src="list.listImage"
-                    />
+                      :style="{
+                        backgroundImage: `url(/images/${list.images[0]}.jpg)`,
+                      }"
+                    ></div>
                   </div>
-                  <div class="p-3 flex flex-col">
+                  <div class="py-2.5 px-2.5 flex flex-col">
                     <div class="text-left border-b-2">
                       <a href="#" class="font-semibold text-zinc-900">
                         {{ list.title }}
                       </a>
-                      <p class="mb-4 mt-2 text-zinc-500 text-sm font-normal">
-                        {{ list.Item }}
+                      <p
+                        class="mb-4 mt-1 text-zinc-500 text-sm font-normal dark:text-zinc-400"
+                      >
+                        {{ list.address }}
                       </p>
                     </div>
                     <div class="flex justify-between items-center mt-2">
                       <button
-                        class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-semibold text-gray-50 rounded-full p- py-1.5 px-4"
+                        class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semibold text-gray-50 rounded-full p- py-1.5 px-4"
                       >
                         Booking
                       </button>
                       <div
                         @click="router.push(`/View-stadiums/${list.id}`)"
-                        class="text-md mt-1 font-normal border-l-2 pl-6 text-zinc-500"
+                        class="text-lg mt-1 font-normal border-l-2 pl-5 text-zinc-500"
                       >
                         Batafsil...
                       </div>
@@ -123,4 +143,8 @@ const modules = [Autoplay, Pagination];
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.swiper-slide {
+  min-width: fit-content;
+}
+</style>
