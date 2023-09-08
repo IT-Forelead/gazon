@@ -143,7 +143,7 @@ const reportStadion = computed(() => {
                 Booking
               </button>
               <div
-                class="absolute left-1/2 ml-2 bg-zinc-400 top-0 border-l h-8 w-0.5"
+                class="absolute left-1/2 ml-2 bg-zinc-400 top-0 border-l h-7 md:h-8 w-0.5"
               ></div>
               <router-link
                 :to="`/view-stadiums/${stadion.id}`"
