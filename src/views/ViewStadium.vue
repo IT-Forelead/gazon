@@ -12,24 +12,24 @@ import {Autoplay, Pagination, Navigation, EffectCube} from "swiper/modules";
 import stadiumList from "@/assets/data/stadiumList.json";
 import StadiumsListSection from "@/components/Home Sections/StadiumsListSection.vue";
 
-const stadion = ref();
-const stdions = ref([]);
+const stadium = ref();
+const stadiums = ref([]);
 const route = useRoute();
 const modules = [Autoplay, Pagination, Navigation, EffectCube];
 
 
 onMounted(() => {
-  stadion.value = stadiumList.filter((item) => item.id == route.params.id)[0];
-  stdions.value = stadiumList.filter((item) => item.id != route.params.id);
-  stdions.value.unshift(stadion.value);
+  stadium.value = stadiumList.filter((item) => item.id == route.params.id)[0];
+  stadiums.value = stadiumList.filter((item) => item.id != route.params.id);
+  stadiums.value.unshift(stadium.value);
 });
 
 onUpdated(() => {
-  stadion.value = stadiumList.filter(
-      (player) => player.id == route.params.id
+  stadium.value = stadiumList.filter(
+    (player) => player.id == route.params.id
   )[0];
-  stdions.value = stadiumList.filter((item) => item.id != route.params.id);
-  stdions.value.unshift(stadion.value);
+  stadiums.value = stadiumList.filter((item) => item.id != route.params.id);
+  stadiums.value.unshift(stadium.value);
 });
 </script>
 
@@ -39,7 +39,7 @@ onUpdated(() => {
       <RouterLink to="/" class="">
         <ArrowLeftIcon/>
       </RouterLink>
-      <h1 class="text-3xl text-center md:text-4xl font-bold mx-auto">{{ stadion?.title }}</h1>
+      <h1 class="text-3xl text-center md:text-4xl font-bold mx-auto">{{ stadium?.title }}</h1>
     </div>
     <swiper
         :slidesPerView="1"
@@ -50,7 +50,7 @@ onUpdated(() => {
      }"
         :modules="modules"
         class="mySwiper">
-      <swiper-slide v-for="(image, key) in stadion?.images" :key="key">
+      <swiper-slide v-for="(image, key) in stadium?.images" :key="key">
         <div class="w-full h-80">
           <div class="w-full h-full mx-auto rounded-xl bg-cover bg-center"
                :style="{ backgroundImage: `url(/images/${image}.jpg)` }">
@@ -65,7 +65,7 @@ onUpdated(() => {
   <div class="flex mt-2 space-x-2">
     <span class="text-blue-700 font-bold"><LocationIcon/></span>
     <p class="text-md">
-      {{ stadion?.Item }} Xorazm Palace 24-son maktab yoni
+      {{ stadium?.Item }} Xorazm Palace 24-son maktab yoni
     </p>
   </div>
   <div class="w-full h-64">
@@ -80,11 +80,11 @@ onUpdated(() => {
       <h1 class="text-3xl font-bold">
         <StarIcon/>
       </h1>
-      <h1 class="text-lg font-semi-bold">{{ stadion?.assessment}}</h1>
-      <h1 class="text-lg">({{ stadion?.reviews }} Reviews)</h1>
+      <h1 class="text-lg font-semi-bold">{{ stadium?.assessment}}</h1>
+      <h1 class="text-lg">({{ stadium?.reviews }} Reviews)</h1>
     </div>
     <div class="flex items-center">
-      <h1 class="text-2xl md:text-3xl font-bold">{{ stadion?.price}}</h1>
+      <h1 class="text-2xl md:text-3xl font-bold">{{ stadium?.price}}</h1>
       <h1 class="text-md md:text-lg ml-1">so'm</h1>
     </div>
   </div>
@@ -96,23 +96,23 @@ onUpdated(() => {
           <UserIcon/>
         </h1>
         <h1 class="text-lg">
-          {{ stadion?.reviews }}ta odam
+          {{ stadium?.reviews }}ta odam
         </h1>
       </div>
       <div class="flex space-x-1 items-center">
         <FieldIcon/>
-        <h1 class="text-lg">{{ stadion?.field }}</h1>
+        <h1 class="text-lg">{{ stadium?.field }}</h1>
       </div>
     </div>
     <span class="text-lg mt-4 font-bold">Tasnifi:</span>
     <p class="text-left">
-      {{ stadion?.description }}
+      {{ stadium?.description }}
     </p>
   </div>
     <div class="flex justify-around mb-3 mt-2 items-center">
       <div class="flex">
         <h1 class="text-lg rounded-l-lg border-2 px-4 py-1.5 bg-teal-50 border-teal-50 hover:bg-teal-50 transition duration-300">
-          {{ stadion?.phone }}
+          {{ stadium?.phone }}
         </h1>
         <button class="px-4 py-2 bg-teal-400 hover:hover:bg-teal-500 transition duration-300 rounded-r-lg">
           <a href="tel:+998942469111">
