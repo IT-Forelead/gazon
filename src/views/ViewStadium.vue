@@ -17,16 +17,6 @@ const stdions = ref([]);
 const route = useRoute();
 const modules = [Autoplay, Pagination, Navigation, EffectCube];
 
-const scrollContainer = ref(null);
-
-const scrollToBottom = () => {
-  if (scrollContainer.value) {
-    scrollContainer.value.scrollTop = scrollContainer.value.scrollHeight;
-  }
-};
-
-// Scroll to the end when the component is mounted
-onMounted(scrollToBottom);
 
 onMounted(() => {
   stadion.value = stadiumList.filter((item) => item.id == route.params.id)[0];
@@ -41,10 +31,6 @@ onUpdated(() => {
   stdions.value = stadiumList.filter((item) => item.id != route.params.id);
   stdions.value.unshift(stadion.value);
 });
-
-
-
-
 </script>
 
 <template>
@@ -72,19 +58,16 @@ onUpdated(() => {
         </div>
       </swiper-slide>
     </swiper>
-
     <div>
       <StadiumsListSection/>
     </div>
 
-  <div class="h-96 overflow-y-auto "  ref="scrollContainer">
   <div class="flex mt-2 space-x-2">
     <span class="text-blue-700 font-bold"><LocationIcon/></span>
     <p class="text-md">
       {{ stadion?.Item }} Xorazm Palace 24-son maktab yoni
     </p>
   </div>
-
   <div class="w-full h-64">
     <iframe
         class="rounded-2xl my-3.5 mx-auto w-full h-full"
@@ -92,7 +75,6 @@ onUpdated(() => {
         frameborder="0"
     ></iframe>
   </div>
-
   <div class="flex justify-between items-center mt-2">
     <div class="flex items-center space-x-2">
       <h1 class="text-3xl font-bold">
@@ -106,7 +88,6 @@ onUpdated(() => {
       <h1 class="text-md md:text-lg ml-1">so'm</h1>
     </div>
   </div>
-
   <div class="items-center mt-3">
     <span class="text-lg font-bold">Xususiyatlari:</span>
     <div class="flex justify-start mb-2 space-x-6 items-center mt-1">
@@ -128,7 +109,6 @@ onUpdated(() => {
       {{ stadion?.description }}
     </p>
   </div>
-
     <div class="flex justify-around mb-3 mt-2 items-center">
       <div class="flex">
         <h1 class="text-lg rounded-l-lg border-2 px-4 py-1.5 bg-teal-50 border-teal-50 hover:bg-teal-50 transition duration-300">
@@ -144,9 +124,7 @@ onUpdated(() => {
         <label class="text-gray-50">Band qilish</label>
       </button>
     </div>
-
 </div>
-  </div>
 </template>
 
 <style scoped>
