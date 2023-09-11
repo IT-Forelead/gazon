@@ -4,12 +4,12 @@
     "reviews": 10,
     "field": "50 m²",
     "price": "50 000",
-    "description": "",
     "assessment": "4.5",
     "title": "Milliy Gazon",
     "phone": "+998911234567",
     "address": "Urganch tuman",
-    "images": ["Arsenal", "Arsenal1", "Arsenal2", "Arsenal3"]
+    "images": ["Arsenal", "Arsenal1", "Arsenal2", "Arsenal3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 1,
@@ -20,7 +20,8 @@
     "title": "Xorazm Palace",
     "phone": "+998917654321",
     "address": "Urganch shahar",
-    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"]
+    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 2,
@@ -29,9 +30,10 @@
     "price": "70 000",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "phone": "+998942469111",
+    "phone": "+998911234567",
     "address": "Urganch tuman",
-    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"]
+    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 3,
@@ -40,9 +42,10 @@
     "price": "50 000",
     "assessment": "4.9",
     "title": "Xorazm Palace",
-    "phone": "+998999099909",
+    "phone": "+998917654321",
     "address": "Urganch shahar",
-    "images": ["Arena", "Arena1", "Arena2", "Arena3"]
+    "images": ["Arena", "Arena1", "Arena2", "Arena3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 4,
@@ -51,9 +54,10 @@
     "price": "60 000",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "phone": "+998917077707",
+    "phone": "+998911234567",
     "address": "Urganch tuman",
-    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"]
+    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 5,
@@ -61,10 +65,11 @@
     "field": "50 m²",
     "price": "65 000",
     "assessment": "4.9",
-    "phone": "+998998080888",
+    "phone": "+998917654321",
     "title": "Xorazm Palace",
     "address": "Urganch shahar",
-    "images": ["United", "United1", "United2", "United3"]
+    "images": ["United", "United1", "United2", "United3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 6,
@@ -74,9 +79,10 @@
     "assessment": "5.0",
     "listImage": "Germany",
     "title": "Milliy Gazon",
-    "phone": "+99894600666",
+    "phone": "+998911234567",
     "address": "Urganch tuman",
-    "images": ["Germany", "Germany1", "Germany2", "Germany3"]
+    "images": ["Germany", "Germany1", "Germany2", "Germany3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 7,
@@ -86,8 +92,9 @@
     "listImage": "Siti",
     "assessment": "4.5",
     "title": "Milliy Gazon",
-    "phone": "+998905555005",
+    "phone": "+998917654321",
     "address": "Urganch shahar",
-    "images": ["Siti", "Siti1", "Siti2", "Siti3"]
+    "images": ["Siti", "Siti1", "Siti2", "Siti3"],
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   }
 ]

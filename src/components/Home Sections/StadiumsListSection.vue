@@ -10,7 +10,7 @@ import stadiumList from "@/assets/data/stadiumList.json";
 
 const screenSize = ref(0);
 const router = useRouter();
-
+const modules = [Autoplay, Pagination];
 const slidesPerView = computed(() => {
   if (screenSize.value < 340) {
     return 1.5;
@@ -23,8 +23,10 @@ const slidesPerView = computed(() => {
   } else if (screenSize.value < 464) {
     return 1.8;
   } else if (screenSize.value < 510) {
+    return 1.9;
+  } else if (screenSize.value < 980)  {
     return 2;
-  } else {
+  }else{
     return 2;
   }
 });
@@ -56,13 +58,12 @@ onMounted(() => {
   onScreenResize();
 });
 
-const modules = [Autoplay, Pagination];
+
 </script>
 <template>
-  <div class="relative mx-a uto max-w-3xl mb-4 pb-1 text-center">
+  <div class="relative mx-auto max-w-3xl mb-4 pb-1 text-center">
     <div>
-      <div
-        class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2">
+      <div  class="flex justify-between items-center md:mx-auto text-teal-600 font-bold mt-4 px-2">
         <h1 class="text-xl">Stadionlar ro'yhati</h1>
         <a href="" class="text-xs">Barchasi</a>
       </div>
@@ -83,11 +84,11 @@ const modules = [Autoplay, Pagination];
           v-for="(list, index) in stadiumList"
           :key="index"
           @click="router.push(`/View-stadiums/${list.id}`)">
-          <div class="max-w-3xl mx-auto -mr-10 mt-6">
+          <div class="max-w-3xl overflow-hidden mx-auto -mr-9 mt-2">
               <div :class="[ $route.href === '/' ? 'px-4' :'px-5']" >
                 <div :class="[ $route.href === '/' ? 'bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl' :' ']">
                   <div class="relative  ">
-                    <div  :class="[ $route.href === '/' ? ' hidden' :'  text-lg  items-center absolute top-3 right-3 text-']" class="">
+                    <div  :class="[ $route.href === '/' ? ' hidden' :'text-lg items-center absolute top-3 right-3']">
                       {{ list.title }}
                     </div>
                      <div  class="w-20 h-8 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2">
@@ -101,7 +102,7 @@ const modules = [Autoplay, Pagination];
                   </div>
                   <div :class="[ $route.href === '/' ? 'py-2.5 px-2.5 flex flex-col' :'hidden']">
                     <div class=""  :class="[ $route.href === '/' ? 'text-left border-b-2' :'']">
-                      <a href="#"  :class="[ $route.href === '/' ? 'font-semi-bold text-zinc-900' :'none']">{{ list.title }}
+                      <a href="#"  :class="[ $route.href === '/' ? 'font-semi-bold text-zinc-900' :'none']">{{ list.title}}
                       </a>
                       <p  :class="[$route.href === '/' ? 'mb-4 mt-1 text-zinc-500 text-sm font-normal' :'none']">{{ list.address }}
                       </p>
@@ -129,3 +130,5 @@ const modules = [Autoplay, Pagination];
   min-width: fit-content;
 }
 </style>
+
+
