@@ -77,7 +77,7 @@ const reportStadion = computed(() => {
     </ul>
     <select
       v-model="currentStadion"
-      class="bg-gray-50 my-2 border-teal-500 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-teal-700 hidden max-[373px]:inline"
+      class="py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400 hidden max-[373px]:inline"
     >
       <option
         v-for="(item, index) in titleList"
