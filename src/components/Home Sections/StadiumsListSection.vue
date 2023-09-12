@@ -87,27 +87,27 @@ onMounted(() => {
           <div class="max-w-3xl overflow-hidden mx-auto -mr-9 mt-2">
               <div :class="[ $route.href === '/' ? 'px-4' :'px-5']" >
                 <div :class="[ $route.href === '/' ? 'bg-white border shadow-xl hover:shadow-xl w-56 transition duration-300 flex flex-col rounded-xl' :' ']">
-                  <div class="relative  ">
+                  <div class="relative">
                     <div  :class="[ $route.href === '/' ? ' hidden' :'text-lg items-center absolute top-3 right-3']">
                       {{ list.title }}
                     </div>
                      <div  class="w-20 h-8 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2">
-                       <StarIcon />
+                       <StarIcon/>
                        <a class="text-lg font-semi-bold ml-2">
                          {{list.assessment }}
                        </a>
                      </div>
-                    <div  :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg' :'h-36 bg-cover bg-center rounded-lg']"
+                    <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg' :'h-36 bg-cover bg-center rounded-lg']"
                       :style="{backgroundImage: `url(/images/${list.images[0]}.jpg)`,}"></div>
                   </div>
                   <div :class="[ $route.href === '/' ? 'py-2.5 px-2.5 flex flex-col' :'hidden']">
-                    <div class=""  :class="[ $route.href === '/' ? 'text-left border-b-2' :'']">
-                      <a href="#"  :class="[ $route.href === '/' ? 'font-semi-bold text-zinc-900' :'none']">{{ list.title}}
+                    <div :class="[ $route.href === '/' ? 'text-left border-b-2' :'']">
+                      <a href="#" :class="[ $route.href === '/' ? 'font-semi-bold text-zinc-900' :'none']">{{ list.title}}
                       </a>
-                      <p  :class="[$route.href === '/' ? 'mb-4 mt-1 text-zinc-500 text-sm font-normal' :'none']">{{ list.address }}
+                      <p :class="[$route.href === '/' ? 'mb-4 mt-1 text-zinc-500 text-sm font-normal' :'none']">{{ list.address }}
                       </p>
                     </div>
-                    <div  :class="[ $route.href === '/' ? 'flex justify-between items-center mt-2' :'']" class="">
+                    <div  :class="[$route.href === '/' ? 'flex justify-between items-center mt-2' :'']">
                       <button :class="[$route.href === '/' ? 'bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm font-Semi-bold text-gray-50 rounded-full p- py-1.5 px-4' :'none']">
                         Band qilish
                       </button>
