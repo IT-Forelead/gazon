@@ -19,10 +19,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="overflow-hidden max-w-lg mx-auto">
+  <section class="overflow-hidden">
     <ShapeIcon />
     <div
-      class="bg-top bg-cover w-32 h-32 bg-no-repeat rounded-full mx-auto -mt-16 shadow-2xl"
+      class="bg-top bg-cover w-32 h-32 md:w-40 md:h-40 xl:w-60 xl:h-60 bg-no-repeat rounded-full mx-auto md:-mt-[18%] -mt-[15%] shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
     ></div>
     <h2 class="text-2xl text-center font-semibold capitalize">
@@ -37,22 +37,28 @@ onMounted(() => {
     <div class="px-2">
       <div class="flex justify-between my-4">
         <h4 class="font-semibold">Statistika</h4>
-        <select class="py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400">
+        <select
+          class="py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400"
+        >
           <option value="0">Daily</option>
           <option value="1">Weekly</option>
           <option value="2">Monthly</option>
         </select>
       </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div
-          class="flex items-center gap-x-4 bg-white py-2 px-4 rounded shadow"
-        >
+      <div
+        class="grid grid-cols-2 max-[375px]:grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5"
+      >
+        <div class="flex items-center bg-white p-2 md:px-4 rounded shadow">
           <FootIcon
             :class="[
-              player.foot == 'Chap'
-                ? 'rotate-y-180 text-teal-400'
-                : 'text-teal-500',
-              'w-9 h-9',
+              'w-7 h-7 -rotate-[30deg]',
+              player.foot == 'Chap' ? 'text-teal-400' : '',
+            ]"
+          />
+          <FootIcon
+            :class="[
+              '-ml-4 mr-3 w-7 h-7 rotate-y-180 rotate-right',
+              player.foot != 'Chap' ? 'text-teal-400' : '',
             ]"
           />
           <div>
@@ -61,7 +67,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center gap-x-5 bg-white p-2 md:px-4 rounded shadow"
         >
           <ShoesIcon class="w-8 h-8 text-teal-400" />
           <div>
@@ -70,7 +76,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center gap-x-5 bg-white p-2 md:px-4 rounded shadow"
         >
           <BallIcon class="w-8 h-8 text-teal-400" />
           <div>
@@ -79,7 +85,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center gap-x-5 bg-white p-2 md:px-4 rounded shadow"
         >
           <CupIcon class="w-8 h-8 text-yellow-400" />
           <div>
@@ -88,7 +94,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center gap-x-5 bg-white p-2 md:px-4 rounded shadow"
         >
           <div class="relative">
             <CupIcon class="w-8 h-8 text-red-500" />
