@@ -22,7 +22,7 @@ const slidesPerView = computed(() => {
   } else if (screenSize.value < 510) {
     return 2.5;
   } else if (screenSize.value < 910) {
-    return 3;
+    return 2.7;
   } else {
     return 4;
   }
@@ -55,7 +55,7 @@ const reportStadion = computed(() => {
 });
 </script>
 <template>
-  <div class="relative mx-auto mb-8 px-2">
+  <div class="relative mx-auto mb-4 mt-2 px-2">
     <div
       class="flex justify-between items-center md:mx-auto text-teal-600 font-bold"
     >
@@ -111,32 +111,34 @@ const reportStadion = computed(() => {
           class="border w-full transition duration-300 flex flex-col rounded-xl"
         >
           <div class="relative">
-            <div
-              class="w-20 h-8 gap-x-2 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2"
-            >
+            <div  :class="[ $route.href === '/' ? ' hidden' :'text-lg items-center absolute top-3 right-3']">
+              {{ stadion.title }}
+            </div>
+            <div class="w-20 h-8 gap-x-2 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2">
               <StarIcon />
               <p class="text-lg font-semibold">{{ stadion.assessment }}</p>
+
             </div>
-            <div
-              class="h-36 bg-cover bg-center rounded-t-lg lg:h-40 xl:h-48 2xl:h-52"
+            <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg lg:h-40 xl:h-48 2xl:h-52' :'h-36 bg-cover bg-center rounded-lg lg:h-40 xl:h-48 2xl:h-52']"
               :style="{
                 backgroundImage: `url(/images/${stadion.images[0]}.jpg)`,
               }"
             ></div>
           </div>
-          <div class="p-2">
-            <div class="border-b-2 pb-1">
-              <h3 class="font-semibold text-zinc-900 md:text-xl text-lg">
+
+          <div :class="[ $route.href === '/' ? 'p-2' :'hidden']">
+            <div  class="border-b-2 pb-1">
+              <h3 :class="[ $route.href === '/' ? 'ont-semi-bold text-zinc-900 md:text-xl text-lg' :'hidden']">
                 {{ stadion.title }}
               </h3>
-              <div
-                class="flex justify-between text-zinc-500 text-sm font-normal gap-x-2"
+              <div  :class="[ $route.href === '/' ? 'flex justify-between text-zinc-500 text-sm font-normal gap-x-2' :'hidden']"
+
               >
-                <p>{{ stadion.address }}</p>
+                <p >{{ stadion.address }}</p>
                 <p>{{ useMoneyFormatter(stadion.price) }}</p>
               </div>
             </div>
-            <div class="flex justify-between items-center mt-2 relative">
+            <div :class="[ $route.href === '/' ? 'flex justify-between items-center mt-2 relative' :'hidden']">
               <button
                 class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm text-gray-50 rounded-full py-1 md:py-1.5 px-3 md:px-5"
               >
