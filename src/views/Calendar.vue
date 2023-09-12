@@ -14,13 +14,19 @@ import UserIcon from "@/assets/icons/UserIcon.vue"
 import {useModalStore} from "@/stores/modal.store"
 import SuccessBookingStadiumModal from "@/components/Modals/SuccessBookingStadiumModal.vue"
 import {useStadiumStore} from "@/stores/stadiums.store"
+import router from "@/router";
+import useMoneyFormatter from "../mixins/currencyFormatter";
 
 let searchStadium = ref('')
 const currentStep = ref(1)
 const clientName = ref('')
 
 const goBackToPreviousStep = () => {
-  currentStep.value--;
+  if (currentStep.value === 1){
+    router.push({ path: '/' })
+  }else {
+    currentStep.value--;
+  }
 }
 const selectedDate = ref(new Date())
 const startTime = ref('12:00')
@@ -71,12 +77,9 @@ const endTime = computed(() => {
   const startTimeParts = startTime.value.split(":");
   const startHour = parseInt(startTimeParts[0], 10);
   const startMinute = parseInt(startTimeParts[1], 10);
-
   let endHour = startHour;
   let endMinute = startMinute;
-
   const selectedMatchTime = matchTime.value;
-
   if (selectedMatchTime === '1') {
     endHour += 1;
   } else if (selectedMatchTime === '2') {
@@ -90,36 +93,27 @@ const endTime = computed(() => {
     endHour = 23;
     endMinute = 59;
   }
-
   // Check if the end time exceeds 23:59
   if (endHour >= 24) {
     // You can choose to display 24:00 instead of 00:00
     endHour -= 24;
   }
-
   return `${String(endHour).padStart(2, '0')}:${String(endMinute).padStart(2, '0')}`;
 });
 
-
 const validateCustomerName = () => {
   const name = clientName.value.trim();
-
   if (name === "") {
     showWarningToast("Iltimos, ismingizni kiriting!");
     return false;
   }
-
   const nameParts = name.split(" ");
-
   if (nameParts.length < 1 || nameParts.some(part => !/^[a-zA-Z]+$/.test(part))) {
     showWarningToast("Iltimos, ismingiz va familiyangizni faqat harflardan foydalanib to'liq kiriting!");
     return false;
   }
-
   return true;
 };
-
-
 
 const goToNextStep = () => {
   if (validateStartTime() && validateCustomerName()) {
@@ -162,7 +156,7 @@ const goToThirdStep = () => {
       </ol>
     </div>
     <!-- Step 1 -->
-    <div v-if="currentStep === 1" class="flex flex-col w-full px-4 mt-3 md:mx-auto">
+    <div v-if="currentStep === 1" class="flex flex-col w-full px-2 mt-3 md:mx-auto">
       <div class="flex flex-wrap justify-center mt-1">
         <div class="max-w-sm p-4">
           <datepicker
@@ -221,34 +215,35 @@ const goToThirdStep = () => {
       </div>
     </div>
     <!--    Step 3-->
-    <div class="max-w-3xl mx-4 mt-6 md:mx-auto" v-if="currentStep === 3">
+    <div class="max-w-3xl px-2 mt-6 md:mx-auto" v-if="currentStep === 3">
       <div class="relative flex flex-col w-full text-gray-700 bg-white border rounded-lg">
-        <div class="md:h-80 h-60 relative bg-center bg-cover mx-4 mt-4 overflow-hidden text-white shadow-lg rounded-lg"
+        <div class="md:h-80 h-60 relative bg-center bg-cover mx-3 mt-4 overflow-hidden text-white shadow-lg rounded-lg"
              :style="{ backgroundImage:
       `url(/images/${useStadiumStore().selectStadium.images[0]}.jpg)` }">
           <div class="absolute inset-0 w-full h-full to-bg-black-10 bg-gradient-to-tr from-transparent via-transparent to-black/60"></div>
         </div>
-        <div class="p-5">
+        <div class="p-3">
           <div class="flex items-center py-2">
-            <LocationIcon class="w-7 h-7"/>
-            <h1 class="px-1 text-lg font-medium">{{ useStadiumStore().selectStadium.title }}, {{ useStadiumStore().selectStadium.address }}</h1>
+            <LocationIcon class="w-6 h-6"/>
+            <h1 class="px-1 text-sm font-medium">{{ useStadiumStore().selectStadium.title }}, {{ useStadiumStore().selectStadium.address }}</h1>
           </div>
           <div v-if="selectedDateTime(startTime)">
-            <div class="flex items-center py-2">
-              <CalendarIcon class="w-7 h-7"/>
-              <h1 class="px-1 text-lg font-medium capitalize">
+            <div class="flex min-[383px]:items-center py-2">
+              <div class="w-6 h-6">
+                <CalendarIcon class="w-6 h-6"/>
+              </div>
+              <h1 class="px-1 text-sm font-medium capitalize">
                 {{ selectedDateTime(startTime) }} - {{ endTime }}
               </h1>
             </div>
           </div>
           <div class="flex items-center py-2">
-            <PriceIcon class="w-7 h-7"/>
-            <h1 class="px-1 text-lg font-medium">{{ useStadiumStore().selectStadium.price }}</h1>
-            <p class="text-md">so'm</p>
+            <PriceIcon class="w-6 h-6"/>
+            <h1 class="px-1 text-sm font-medium">{{ useMoneyFormatter(useStadiumStore().selectStadium.price) }}</h1>
           </div>
           <div class="flex items-center py-2">
-            <UserIcon class="w-7 h-7"/>
-            <h1 class="px-1 text-lg font-medium">{{ clientName }}</h1>
+            <UserIcon class="w-6 h-6"/>
+            <h1 class="px-1 text-sm font-medium">{{ clientName }}</h1>
           </div>
         </div>
         <div class="p-4">

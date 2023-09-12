@@ -8,6 +8,7 @@ import RightIcon from "@/assets/icons/RightIcon.vue"
 import {useDropDownStore} from "@/stores/dropdown.store"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
 import {useStadiumStore} from "@/stores/stadiums.store"
+import useMoneyFormatter from "../mixins/currencyFormatter";
 
 const inputRef = ref(null)
 const searchQuery = ref("")
@@ -44,7 +45,7 @@ const handleClick = (stadium) => {
 </script>
 <template>
   <!--SearchInput-->
-  <div class="max-w-3xl px-4 mt-10 md:mx-auto">
+  <div class="max-w-3xl px-2 mt-10 md:mx-auto">
     <div class="relative max-w-3xl pb-1 mx-auto">
       <div class="absolute inset-y-0 flex items-center pl-3">
         <SearchIcon class="w-5 h-5 text-teal-600"/>
@@ -58,10 +59,10 @@ const handleClick = (stadium) => {
     </div>
     <!--    StadiumList-->
     <div class="px-1">
-      <ul v-if="useDropDownStore().isOpenSelectStadiums" class="flex flex-col h-48 overflow-y-scroll border rounded-lg">
+      <ul v-if="useDropDownStore().isOpenSelectStadiums" class="flex flex-col h-48 overflow-y-scroll rounded-lg">
         <li v-for="(stadium, index) in filterStadiums()" :key="index" class="mb-0.5">
           <div @click="handleClick(stadium)"
-               class="justify-between transition duration-300 shadow hover:-translate-y-0.5 hover:shadow select-none cursor-pointer bg-white  flex flex-1 items-center py-1 px-3">
+               class="justify-between transition duration-300 shadow hover:-translate-y-0.5 hover:shadow select-none cursor-pointer bg-white  flex flex-1 items-center py-1 pr-2">
             <div class="flex flex-col items-center justify-center w-10 h-10 mr-4 bg-center bg-cover rounded-full"
                  :style="{ backgroundImage:
       `url(/images/${stadium.images[0]}.jpg)` }">
@@ -75,18 +76,16 @@ const handleClick = (stadium) => {
               </div>
             </div>
             <div class="text-xs text-gray-600 dark:text-gray-200">
-              {{ stadium.price }}
+              {{ useMoneyFormatter(stadium.price) }}
             </div>
-            <button class="flex justify-end w-24 text-right">
-              <RightIcon class="w-5 h-5 text-gray-500"/>
-            </button>
+
           </div>
         </li>
       </ul>
     </div>
   </div>
 <!--Selected Stadium Info-->
-  <div v-if="useStadiumStore().selectStadium.title" class="flex flex-col items-center justify-center w-full max-w-lg px-4 mx-auto mt-4">
+  <div v-if="useStadiumStore().selectStadium.title" class="flex flex-col items-center justify-center w-full max-w-lg px-2 mx-auto mt-4">
     <div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" :style="{ backgroundImage:
       `url(/images/${useStadiumStore().selectStadium.images[0]}.jpg)` }">
     </div>
@@ -97,7 +96,7 @@ const handleClick = (stadium) => {
         <span class="text-xs font-bold">{{ useStadiumStore().selectStadium.address }}</span>
         <div
             class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-teal-700 rounded hover:bg-teal-600 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">
-          {{ useStadiumStore().selectStadium.price }}
+          {{ useMoneyFormatter(useStadiumStore().selectStadium.price) }}
         </div>
       </div>
     </div>
