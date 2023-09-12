@@ -58,7 +58,7 @@ onUpdated(() => {
       </swiper-slide>
     </swiper>
     <div class="flex justify-between items-center mt-4">
-      <h1 class="text-3xl md:text-4xl font-bold">{{ stadion?.title }}</h1>
+      <h1 class="text-4xl font-bold">{{ hero?.title }}</h1>
       <button
         class="text-md text-teal-600 bg-teal-100 rounded-md hover:bg-teal-50 font-black ml-8 px-3 py-2"
       >
