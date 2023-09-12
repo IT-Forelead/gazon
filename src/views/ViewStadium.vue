@@ -86,7 +86,7 @@ onUpdated(() => {
   <div class="flex justify-between items-center mt-2">
     <div class="flex items-center space-x-2">
       <h1 class="text-3xl font-bold">
-        <StarIcon/>
+        <StarIcon  class="text-yellow-500 h-6 w-6"/>
       </h1>
       <h1 class="text-lg font-semi-bold">{{ stadium?.assessment}}</h1>
       <h1 class="text-lg">({{ stadium?.reviews }} Reviews)</h1>

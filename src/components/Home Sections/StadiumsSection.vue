@@ -114,9 +114,9 @@ const reportStadion = computed(() => {
             <div  :class="[ $route.href === '/' ? ' hidden' :'text-lg items-center absolute top-3 right-3']">
               {{ stadion.title }}
             </div>
-            <div class="w-20 h-8 gap-x-2 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2">
-              <StarIcon />
-              <p class="text-lg font-semibold">{{ stadion.assessment }}</p>
+            <div class="w-14 h-5 gap-x-1 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-sm rounded-3xl p-2">
+              <StarIcon class="text-yellow-500 "/>
+              <p>{{ stadion.assessment }}</p>
 
             </div>
             <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg lg:h-40 xl:h-48 2xl:h-52' :'h-36 bg-cover bg-center rounded-lg lg:h-40 xl:h-48 2xl:h-52']"
