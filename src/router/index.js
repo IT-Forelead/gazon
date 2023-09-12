@@ -38,7 +38,7 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
-    path: '/View-stadiums/:id',
+    path: '/view-stadiums/:id',
     name: 'ViewStadium',
     component: () => import('../views/ViewStadium.vue'),
     meta: { layout: 'dashboard' },

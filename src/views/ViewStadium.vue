@@ -10,7 +10,7 @@ import stadiumList from "@/assets/data/stadiumList.json";
 import LocationIcon from "@/assets/icons/LocationIcon.vue";
 import ArrowLeftIcon from "@/assets/icons/ArrowLeftIcon.vue";
 import { Autoplay, Pagination, Navigation, EffectCube } from "swiper/modules";
-import StadiumsListSection from "@/components/Home Sections/StadiumsListSection.vue";
+import StadiumsSection from "@/components/Home Sections/StadiumsSection.vue";
 
 const stadion = ref();
 const stdions = ref([]);
@@ -113,7 +113,6 @@ onUpdated(() => {
     </div>
     <div class="items-center mb-auto mt-2">
       <span class="text-lg font-bold">Band qilish:</span>
-
       <div class="flex justify-around mb-3 mt-2 text-center items-center">
         <div class="flex">
           <h1
@@ -127,7 +126,6 @@ onUpdated(() => {
             <a href="tel:+998942469111"><CallIcon /></a>
           </button>
         </div>
-
         <button
           class="border-2 px-6 py-2 bg-teal-200 border-teal-200 hover:bg-teal-100 transition duration-300 rounded-xl"
         >
@@ -136,11 +134,7 @@ onUpdated(() => {
       </div>
     </div>
     <div class="mb-10">
-      <StadiumsListSection />
+      <StadiumsSection />
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Scoped styles go here */
-</style>
