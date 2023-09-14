@@ -1,28 +1,27 @@
 import { defineStore } from "pinia"
 export const useModalStore = defineStore('modal', {
     state: () => ({
-        isFilterMatchListModalOpen: false,
-        isSearchMatchListModalOpen: false,
-        isSuccessBookingStadiumModalOpen:false
+        isSuccessBookingStadiumModalOpen:false,
+        isMyTeleportOpen: false,
+        modal: "",
     }),
     actions: {
-        openFilterMatchListModal() {
-            this.isFilterMatchListModalOpen = true
-        },
-        closeFilterMatchListModal() {
-            this.isFilterMatchListModalOpen = false
-        },
-        openSearchMatchListModal() {
-            this.isSearchMatchListModalOpen = true
-        },
-        closeSearchMatchListModal() {
-            this.isSearchMatchListModalOpen = false
-        },
         openSuccessBookingStadiumModal(){
             this.isSuccessBookingStadiumModalOpen = true
         },
         closeSuccessBookingStadiumModal(){
             this.isSuccessBookingStadiumModalOpen = false
-        }
+        },
+        openTeleport(modalName) {
+              console.log(modalName);
+              this.modal = modalName;
+              this.modalName = true;
+
+              this.isMyTeleportOpen = true;
+            },
+            closeTeleport() {
+              this.isMyTeleportOpen = false;
+            },
     }
 })
+
