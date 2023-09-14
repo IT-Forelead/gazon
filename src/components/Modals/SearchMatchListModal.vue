@@ -11,25 +11,25 @@ const closeModal = () => {
 <template>
   <div
     v-if="useModalStore().isSearchMatchListModalOpen"
-    class="fixed inset-0 bg-black opacity-50 z-40"
+    class="fixed inset-0 z-40 bg-black opacity-50"
     @click="closeModal"
   ></div>
   <div
     v-if="useModalStore().isSearchMatchListModalOpen"
-    class="fixed top-20 left-0 right-0 flex items-center justify-center z-50 bg-white rounded-lg border max-w-md md:mx-auto mx-4"
+    class="fixed left-0 right-0 z-50 flex items-center justify-center max-w-md mx-4 bg-white border rounded-lg top-20 md:mx-auto"
   >
-    <div class="w-full md:p-2 shadow-md p-3">
+    <div class="w-full p-3 shadow-md md:p-2">
       <div class="flex justify-between">
         <h3 class="text-xl font-semibold text-teal-600">Qidirish</h3>
         <button
           @click="closeModal"
           type="button"
-          class="text-gray-400 bg-transparent hover:bg-teal-200 hover:text-teal-500 rounded-lg w-8 h-8 ml-auto inline-flex justify-center items-center"
+          class="inline-flex items-center justify-center w-8 h-8 ml-auto text-gray-400 bg-transparent rounded-lg hover:bg-teal-200 hover:text-teal-500"
         >
           <CloseIcon class="w-5 h-5" />
         </button>
       </div>
-      <div class="flex my-2 w-full">
+      <div class="flex w-full my-2">
         <input
           type="text"
           id="simple-search"
