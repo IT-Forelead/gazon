@@ -1,16 +1,16 @@
 <script setup>
-import "swiper/css";
-import "swiper/css/effect-cards";
-import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
-import { EffectCards } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import CupIcon from "../assets/icons/CupIcon.vue";
-import BallIcon from "../assets/icons/BallIcon.vue";
-import FootIcon from "../assets/icons/FootIcon.vue";
-import ShoesIcon from "../assets/icons/ShoesIcon.vue";
-import playerLists from "@/assets/data/playerLists.json";
-import LightingIcon from "../assets/icons/LightingIcon.vue";
+import "swiper/css"
+import "swiper/css/effect-cards"
+import { onMounted, ref } from "vue"
+import { useRoute } from "vue-router"
+import { EffectCards } from "swiper/modules"
+import { Swiper, SwiperSlide } from "swiper/vue"
+import CupIcon from "../assets/icons/CupIcon.vue"
+import BallIcon from "../assets/icons/BallIcon.vue"
+import FootIcon from "../assets/icons/FootIcon.vue"
+import ShoesIcon from "../assets/icons/ShoesIcon.vue"
+import playerLists from "@/assets/data/playerLists.json"
+import LightingIcon from "../assets/icons/LightingIcon.vue"
 
 const hero = ref();
 const route = useRoute();

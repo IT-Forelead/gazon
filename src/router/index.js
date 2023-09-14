@@ -14,6 +14,12 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/drop',
+    name: 'drop',
+    component: () => import('../components/SearchStadium.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/best-players',
     name: 'BestPlayer',
     component: () => import('../views/BestPlayers.vue'),

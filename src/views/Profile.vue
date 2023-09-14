@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted, ref } from "vue";
-import CupIcon from "../assets/icons/CupIcon.vue";
-import BallIcon from "../assets/icons/BallIcon.vue";
-import FootIcon from "../assets/icons/FootIcon.vue";
-import ShoesIcon from "../assets/icons/ShoesIcon.vue";
-import ShapeIcon from "../assets/icons/ShapeIcon.vue";
-import playersList from "@/assets/data/playerLists.json";
-import LightingIcon from "../assets/icons/LightingIcon.vue";
-import { useEditProfile } from "../stores/editProfile.store";
+import { onMounted, ref } from "vue"
+import CupIcon from "../assets/icons/CupIcon.vue"
+import BallIcon from "../assets/icons/BallIcon.vue"
+import FootIcon from "../assets/icons/FootIcon.vue"
+import ShoesIcon from "../assets/icons/ShoesIcon.vue"
+import ShapeIcon from "../assets/icons/ShapeIcon.vue"
+import playersList from "@/assets/data/playerLists.json"
+import LightingIcon from "../assets/icons/LightingIcon.vue"
+import { useEditProfile } from "../stores/editProfile.store"
 
 const player = ref({});
 
@@ -25,7 +25,7 @@ onMounted(() => {
       class="bg-top bg-cover w-32 h-32 md:w-40 md:h-40 xl:w-60 xl:h-60 bg-no-repeat rounded-full mx-auto md:-mt-[18%] -mt-[15%] shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
     ></div>
-    <h2 class="text-2xl text-center font-semibold capitalize">
+    <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>
     <router-link
