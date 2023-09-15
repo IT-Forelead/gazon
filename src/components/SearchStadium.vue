@@ -59,7 +59,7 @@ const handleClick = (stadium) => {
     </div>
     <!--    StadiumList-->
     <div class="px-1">
-      <ul v-if="useDropDownStore().isOpenSelectStadiums" class="flex flex-col h-48 overflow-y-scroll rounded-lg">
+      <ul v-if="useDropDownStore().isOpenSelectStadiums" class="flex flex-col max-h-48 overflow-y-scroll rounded-lg">
         <li v-for="(stadium, index) in filterStadiums()" :key="index" class="mb-0.5">
           <div @click="handleClick(stadium)"
                class="justify-between transition duration-300 shadow hover:-translate-y-0.5 hover:shadow select-none cursor-pointer bg-white  flex flex-1 items-center py-1 pr-2">
