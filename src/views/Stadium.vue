@@ -1,5 +1,5 @@
 <script setup>
-import SearchMatchListModal from "../components/Modals/SearchMatchListModal.vue";
+import MyTeleport from "../MyTeleport.vue";
 import { useModalStore } from "../stores/modal.store";
 </script>
 
@@ -8,11 +8,11 @@ import { useModalStore } from "../stores/modal.store";
     Assalomu alaykum Siz Stadium.vue dasiz.
   </h1>
 
-  <button @click="useModalStore().openSearchMatchListModal()">open</button>
+  <button @click="useModalStore().openTeleport()">open</button>
 
-  <SearchMatchListModal>
+  <MyTeleport>
     <h1>Azizbekdan salom</h1>
-  </SearchMatchListModal>
+  </MyTeleport>
 </template>
 
 <style scoped></style>

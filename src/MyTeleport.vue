@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 <template>
   <Teleport to="body">
-    <Transition>
+    <Transition appear>
       <div
         v-if="useModalStore().isMyTeleportOpen"
         class="modal modal-mask fixed top-20 left-0 right-0 flex items-center p-3 justify-center z-50 bg-white rounded-lg max-w-md md:mx-auto mx-4"
