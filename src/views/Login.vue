@@ -1,10 +1,10 @@
 <script setup>
+import notify from "izitoast";
+import { vMaska } from "maska";
 import { ref, reactive } from "vue";
+import "izitoast/dist/css/iziToast.min.css";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
-import { vMaska } from "maska";
-import notify from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
 
 const hidePassword = ref(true);
 const togglePassword = () => (hidePassword.value = !hidePassword.value);
