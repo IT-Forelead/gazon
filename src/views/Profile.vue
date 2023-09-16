@@ -1,26 +1,61 @@
 <script setup>
-import { onMounted, ref } from "vue"
-import CupIcon from "../assets/icons/CupIcon.vue"
-import BallIcon from "../assets/icons/BallIcon.vue"
-import FootIcon from "../assets/icons/FootIcon.vue"
-import ShoesIcon from "../assets/icons/ShoesIcon.vue"
-import ShapeIcon from "../assets/icons/ShapeIcon.vue"
-import playersList from "@/assets/data/playerLists.json"
-import LightingIcon from "../assets/icons/LightingIcon.vue"
-import { useEditProfile } from "../stores/editProfile.store"
+import CupIcon from "../assets/icons/CupIcon.vue";
+import BallIcon from "../assets/icons/BallIcon.vue";
+import FootIcon from "../assets/icons/FootIcon.vue";
+import ShoesIcon from "../assets/icons/ShoesIcon.vue";
+import ShapeIcon from "../assets/icons/ShapeIcon.vue";
+import SearchIcon from "../assets/icons/SearchIcon.vue";
+import playersList from "@/assets/data/playerLists.json";
+import LightingIcon from "../assets/icons/LightingIcon.vue";
+import { useEditProfile } from "../stores/editProfile.store";
+import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const player = ref({});
-
 onMounted(() => {
   const randomNumber = Math.floor(Math.random() * 18 + 1);
   player.value = playersList[randomNumber];
   useEditProfile().setEditProfile(player.value);
 });
+
+const search = ref("");
+const open = ref(false);
+const inputRef = ref(null);
+const closePlayerList = (event) => {
+  if (inputRef.value && !inputRef.value.contains(event.target)) {
+    open.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", closePlayerList);
+});
+
+onBeforeUnmount(() => {
+  document.removeEventListener("click", closePlayerList);
+});
+
+const team = ref([]);
+const playerSSSSSS = ref([]);
+
+playerSSSSSS.value = playersList;
+const addPlayer = (id) => {
+  search.value = "";
+  team.value.push(playerSSSSSS.value.filter((player) => player.id == id)[0]);
+  playerSSSSSS.value = playerSSSSSS.value.filter((player) => player.id != id);
+};
+
+const searchPlayer = computed(() => {
+  console.log(playerSSSSSS);
+  return playerSSSSSS.value.filter((player) =>
+    player.firstName.toLowerCase().includes(search.value.toLowerCase())
+  );
+});
 </script>
 
+
 <template>
-  <section class="overflow-hidden">
-    <ShapeIcon />
+  <section>
+    <ShapeIcon class="md:-mt-[7%]" />
     <div
       class="bg-top bg-cover w-32 h-32 md:w-40 md:h-40 xl:w-60 xl:h-60 bg-no-repeat rounded-full mx-auto md:-mt-[18%] -mt-[15%] shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
@@ -30,12 +65,12 @@ onMounted(() => {
     </h2>
     <router-link
       to="/edit-profile"
-      class="mx-auto text-center mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+      class="mx-auto text-center my-3 block py-2 w-32 md:w-60 rounded-3xl bg-teal-500 text-white font-semibold"
       >Edit</router-link
     >
     <hr />
     <div class="px-2">
-      <div class="flex justify-between my-4">
+      <div class="flex justify-between items-center my-4">
         <h4 class="font-semibold">Statistika</h4>
         <select
           class="py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400"
@@ -52,13 +87,13 @@ onMounted(() => {
           <FootIcon
             :class="[
               'w-7 h-7 -rotate-[30deg]',
-              player.foot == 'Chap' ? 'text-teal-400' : '',
+              player.foot == 'Chap' ? 'text-teal-400' : 'text-zinc-400',
             ]"
           />
           <FootIcon
             :class="[
-              '-ml-4 mr-3 w-7 h-7 rotate-y-180 rotate-right',
-              player.foot != 'Chap' ? 'text-teal-400' : '',
+              '-ml-4 mr-3 w-7 h-7 rotate-right',
+              player.foot != 'Chap' ? 'text-teal-400' : 'text-zinc-400',
             ]"
           />
           <div>
@@ -105,6 +140,68 @@ onMounted(() => {
             <p class="text-[#666]">Loses</p>
           </div>
         </div>
+      </div>
+      <div class="md:flex items-start gap-x-10 my-2 w-full">
+        <div class="md:w-96">
+          <label
+            ref="inputRef"
+            @click="open = true"
+            class="mt-2 flex items-center justify-between border border-teal-500 px-3 rounded w-full"
+          >
+            <SearchIcon class="text-teal-600 w-6 h-6 cursor-pointer" />
+            <input
+              type="search"
+              v-model="search"
+              placeholder="Jamoa qo'shish"
+              class="border-0 focus:ring-0 w-full"
+            />
+          </label>
+          <ul class="max-h-52 overflow-y-scroll w-full mt-2 pr-2" v-show="open">
+            <li
+              @click="addPlayer(player.id)"
+              class="py-1 flex justify-between border-b cursor-pointer duration-300 hover:-translate-y-0.5 hover:shadow bg-white items-center"
+              v-for="player in searchPlayer"
+              :key="player.id"
+            >
+              <div class="flex gap-x-2 items-center text-sm">
+                <div
+                  class="bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
+                  :style="{
+                    backgroundImage: `url('/images/${player.firstName}.jpg')`,
+                  }"
+                ></div>
+                <div>
+                  <p class="text-[#666]">
+                    Gool: <b class="text-black">{{ player.goal }}</b>
+                  </p>
+                  <p class="text-[#666]">
+                    Assist: <b class="text-black">{{ player.assist }}</b>
+                  </p>
+                </div>
+              </div>
+              <div class="text-right">
+                <h3 class="font-semibold capitalize">{{ player.firstName }}</h3>
+                <h4 class="text-sm capitalize">{{ player.lastName }}</h4>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <ul
+          v-show="team.length"
+          class="border flex flex-wrap shadow-[0_0_1em_0_rgba(0,128,128,0.9)] mt-2 p-2 rounded-lg"
+        >
+          <li v-for="member in team" :key="member.id">
+            <div
+              class="bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
+              :style="{
+                backgroundImage: `url('/images/${member.firstName}.jpg')`,
+              }"
+            ></div>
+            <small class="block text-center capitalize w-20">
+              {{ member.firstName }}
+            </small>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
