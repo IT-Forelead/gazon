@@ -4,16 +4,17 @@ import BallIcon from "../assets/icons/BallIcon.vue";
 import FootIcon from "../assets/icons/FootIcon.vue";
 import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import ShapeIcon from "../assets/icons/ShapeIcon.vue";
+import CloseIcon from "../assets/icons/CloseIcon.vue";
 import SearchIcon from "../assets/icons/SearchIcon.vue";
-import playersList from "@/assets/data/playerLists.json";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
+import playersListData from "@/assets/data/playerLists.json";
 import { useEditProfile } from "../stores/editProfile.store";
 import { computed, onBeforeUnmount, onMounted, ref } from "vue";
 
 const player = ref({});
 onMounted(() => {
   const randomNumber = Math.floor(Math.random() * 18 + 1);
-  player.value = playersList[randomNumber];
+  player.value = playersListData[randomNumber];
   useEditProfile().setEditProfile(player.value);
 });
 
@@ -35,21 +36,26 @@ onBeforeUnmount(() => {
 });
 
 const team = ref([]);
-const playerSSSSSS = ref([]);
+const playersList = ref([]);
 
-playerSSSSSS.value = playersList;
+playersList.value = playersListData;
 const addPlayer = (id) => {
   search.value = "";
-  team.value.push(playerSSSSSS.value.filter((player) => player.id == id)[0]);
-  playerSSSSSS.value = playerSSSSSS.value.filter((player) => player.id != id);
+  team.value.push(playersList.value.filter((player) => player.id == id)[0]);
+  playersList.value = playersList.value.filter((player) => player.id != id);
 };
 
-const searchPlayer = computed(() => {
-  console.log(playerSSSSSS);
-  return playerSSSSSS.value.filter((player) =>
+const searchPlayer = computed(() =>
+  playersList.value.filter((player) =>
     player.firstName.toLowerCase().includes(search.value.toLowerCase())
-  );
-});
+  )
+);
+
+const deletePlayer = (index) => {
+  // console.log(team.value[0]);
+  playersList.value.push(team.value[index]);
+  team.value.splice(index, 1);
+};
 </script>
 
 
@@ -188,15 +194,20 @@ const searchPlayer = computed(() => {
         </div>
         <ul
           v-show="team.length"
-          class="border flex flex-wrap shadow-[0_0_1em_0_rgba(0,128,128,0.9)] mt-2 p-2 rounded-lg"
+          class="border flex flex-wrap shadow-[0_0_1em_0_rgba(0,128,128,0.9)] mt-2 p-2 rounded-lg gap-y-2"
         >
-          <li v-for="member in team" :key="member.id">
+          <li v-for="(member, index) in team" :key="member.id">
             <div
-              class="bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
+              class="relative bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
               :style="{
                 backgroundImage: `url('/images/${member.firstName}.jpg')`,
               }"
-            ></div>
+            >
+              <CloseIcon
+                @click="deletePlayer(index)"
+                class="absolute w-4 h-4 -top-2 -right-4 font-extrabold text-xl p-[2px] hover:bg-red-500 hover:text-white rounded-full duration-300 cursor-pointer"
+              />
+            </div>
             <small class="block text-center capitalize w-20">
               {{ member.firstName }}
             </small>
