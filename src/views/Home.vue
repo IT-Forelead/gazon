@@ -1,6 +1,6 @@
 <script setup>
 import BestPlayers from "@/views/BestPlayers.vue"
-import NavbarTop from "@/components/NavbarTop.vue";
+import NavbarTop from "@/components/NavbarTop.vue"
 import SearchingSection from "@/components/Home Sections/SearchingSection.vue"
 import StadiumsSection from "@/components/Home Sections/StadiumsSection.vue"
 import TodaysMatchesSection from "@/components/Home Sections/TodaysMatchesSection.vue"

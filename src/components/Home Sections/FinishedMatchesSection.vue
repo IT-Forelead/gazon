@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from "vue";
-import { Vue3Marquee } from "vue3-marquee";
-import LocationIcon from "@/assets/icons/LocationIcon.vue";
+import { ref } from "vue"
+import { Vue3Marquee } from "vue3-marquee"
+import LocationIcon from "@/assets/icons/LocationIcon.vue"
 
 const today = new Date();
 const daysOfWeek = [
