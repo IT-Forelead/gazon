@@ -51,8 +51,8 @@ const searchPlayer = computed(() =>
   )
 );
 
+const isDelete = ref(false);
 const deletePlayer = (index) => {
-  // console.log(team.value[0]);
   playersList.value.push(team.value[index]);
   team.value.splice(index, 1);
 };
@@ -147,12 +147,12 @@ const deletePlayer = (index) => {
           </div>
         </div>
       </div>
-      <div class="md:flex items-start gap-x-10 my-2 w-full">
+      <div class="md:flex items-start gap-x-10 my-2 md:w-full">
         <div class="md:w-96">
           <label
             ref="inputRef"
             @click="open = true"
-            class="mt-2 flex items-center justify-between border border-teal-500 px-3 rounded w-full"
+            class="mt-2 flex items-center justify-between border border-teal-500 px-3 rounded md:w-96"
           >
             <SearchIcon class="text-teal-600 w-6 h-6 cursor-pointer" />
             <input
@@ -162,7 +162,7 @@ const deletePlayer = (index) => {
               class="border-0 focus:ring-0 w-full"
             />
           </label>
-          <ul class="max-h-52 overflow-y-scroll w-full mt-2 pr-2" v-show="open">
+          <ul class="max-h-52 overflow-y-scroll mt-2 pr-2" v-show="open">
             <li
               @click="addPlayer(player.id)"
               class="py-1 flex justify-between border-b cursor-pointer duration-300 hover:-translate-y-0.5 hover:shadow bg-white items-center"
@@ -194,18 +194,18 @@ const deletePlayer = (index) => {
         </div>
         <ul
           v-show="team.length"
-          class="border flex flex-wrap shadow-[0_0_1em_0_rgba(0,128,128,0.9)] mt-2 p-2 rounded-lg gap-y-2"
+          class="border md:flex flex-wrap shadow-[0_0_1em_0_rgba(0,128,128,0.9)] mt-2 p-2 rounded-lg gap-y-2 grid grid-cols-6 max-[526px]:grid-cols-4 max-[380px]:grid-cols-3"
         >
           <li v-for="(member, index) in team" :key="member.id">
             <div
-              class="relative bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
+              class="bg-top bg-cover w-16 h-16 cursor-pointer bg-no-repeat rounded-full mx-2 relative after:absolute after:content-[''] after:w-16 after:h-16 hover:after:bg-[#56dfe94f] hover:after:backdrop-blur-sm after:transition-all after:rounded-full group"
               :style="{
                 backgroundImage: `url('/images/${member.firstName}.jpg')`,
               }"
             >
               <CloseIcon
+                class="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 h-6 w-0 z-10 text-white font-extrabold duration-300 group-hover:w-6"
                 @click="deletePlayer(index)"
-                class="absolute w-4 h-4 -top-2 -right-4 font-extrabold text-xl p-[2px] hover:bg-red-500 hover:text-white rounded-full duration-300 cursor-pointer"
               />
             </div>
             <small class="block text-center capitalize w-20">
