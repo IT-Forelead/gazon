@@ -56,6 +56,12 @@ const routes = [
     meta: { layout: 'dashboard' },
   },
   {
+    path: '/news-blog',
+    name: 'News Blog',
+    component: () => import('../views/NewsBlog.vue'),
+    meta: { layout: 'dashboard' },
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import('../views/Login.vue'),
