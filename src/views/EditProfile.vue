@@ -1,19 +1,13 @@
 <script setup>
-import { onMounted, reactive, ref } from "vue";
+import playersList from "@/assets/data/playerLists.json";
 import router from "@/router";
-import EyeIcon from "@/assets/icons/EyeIcon.vue";
-import RightIcon from "@/assets/icons/RightIcon.vue";
-import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
-import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
-import { useEditProfile } from "../stores/editProfile.store";
-import { vMaska } from "maska";
-import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
+import { computed, ref } from "vue";
+import { useRoute } from "vue-router";
 
 const goBack = () => {
   router.back();
 };
 
-const player = ref({});
 const showPasswordChange = ref(false);
 const hideCurrentPassword = ref(true);
 const hideNewPassword = ref(true);
@@ -25,16 +19,16 @@ const toggleNewPassword = () =>
 const toggleConfirmPassword = () =>
   (hideConfirmPassword.value = !hideConfirmPassword.value);
 
-onMounted(() => {
-  player.value = useEditProfile().editProfile;
-});
+const player = computed(() => playersList[useRoute().fullPath?.split("/")[2]]);
 </script>
 <template>
   <div
     class="min-h-screen max-w-lg mx-auto py-6 mb-10 flex flex-col justify-center"
   >
     <button @click="router.back()">
-      <LeftBackIcon class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"/>
+      <LeftBackIcon
+        class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"
+      />
     </button>
     <div class="relative px-4 py-10 mx-8 md:mx-0">
       <div class="max-w-md mx-auto">
@@ -45,7 +39,16 @@ onMounted(() => {
               :style="{
                 backgroundImage: `url(/images/${player?.firstName}.jpg)`,
               }"
-            ></div>
+            >
+              <img
+                style="display: none"
+                :src="`/images/${player?.firstName}.jpg`"
+                onerror="
+                  this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
+                  
+               ` "
+              />
+            </div>
             <label
               for="fileInput"
               type="button"
@@ -201,5 +204,4 @@ onMounted(() => {
     </div>
   </div>
 </template>
-<style scoped>
-</style>
+<style scoped></style>
