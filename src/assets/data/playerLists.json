@@ -7,7 +7,7 @@
     "loses": 40,
     "assist": 5,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "lastName": "saidov",
     "firstName": "arslon",
     "images": ["arslon", "arslon0", "arslon1", "murod1", "murod2"]
@@ -20,7 +20,7 @@
     "loses": 20,
     "assist": 8,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "firstName": "abror",
     "lastName": "hasanov",
     "images": ["abror"]
@@ -33,7 +33,7 @@
     "loses": 10,
     "assist": 5,
     "foot": "Chap",
-    "status": "monthly",
+    "status": "oylik",
     "lastName": "saidov",
     "firstName": "akmal",
     "images": ["akmal"]
@@ -46,7 +46,7 @@
     "loses": 10,
     "assist": 5,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "firstName": "bobur",
     "lastName": "radjabov",
     "images": ["bobur"]
@@ -59,7 +59,7 @@
     "loses": 40,
     "assist": 5,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "firstName": "elyor",
     "lastName": "allohbergan o'gli",
     "images": ["elyor"]
@@ -72,7 +72,7 @@
     "loses": 12,
     "assist": 5,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "lastName": "razzaqov",
     "firstName": "qodirbergan",
     "images": ["qodirbergan", "qodirbergan0"]
@@ -85,7 +85,7 @@
     "loses": 0,
     "assist": 5,
     "foot": "O'ng",
-    "status": "monthly",
+    "status": "oylik",
     "lastName": "ruzmetov",
     "firstName": "ibrohim",
     "images": ["ibrohim"]
@@ -98,7 +98,7 @@
     "loses": 20,
     "assist": 5,
     "foot": "O'ng",
-    "status": "monthly",
+    "status": "oylik",
     "firstName": "jamshid",
     "lastName": "abdulloh o'gli",
     "images": ["jamshid"]
@@ -111,7 +111,7 @@
     "loses": 10,
     "assist": 5,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "firstName": "otabek",
     "lastName": "abdurrahmon o'gli",
     "images": ["otabek"]
@@ -124,7 +124,7 @@
     "loses": 10,
     "assist": 5,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "lastName": "raxmanov",
     "firstName": "ulugbek",
     "images": ["ulugbek"]
@@ -137,7 +137,7 @@
     "loses": 0,
     "assist": 4,
     "foot": "Chap",
-    "status": "weekly",
+    "status": "haftalik",
     "lastName": "ga'ipov",
     "firstName": "sardor",
     "images": ["sardor"]
@@ -150,7 +150,7 @@
     "loses": 0,
     "assist": 3,
     "foot": "Chap",
-    "status": "monthly",
+    "status": "oylik",
     "firstName": "murod",
     "lastName": "sobirov",
     "images": ["murod", "murod0", "murod1", "murod2", "arslon1"]
@@ -163,7 +163,7 @@
     "loses": 2,
     "assist": 1,
     "foot": "O'ng",
-    "status": "monthly",
+    "status": "oylik",
     "lastName": "yusupov",
     "firstName": "elyorj",
     "images": ["elyorj"]
@@ -176,7 +176,7 @@
     "loses": 20,
     "assist": 1,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "lastName": "yusupov",
     "firstName": "doniyor",
     "images": ["doniyor"]
@@ -189,7 +189,7 @@
     "loses": 6,
     "assist": 1,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "firstName": "yunusbek",
     "lastName": "yaqubov",
     "images": ["yunusbek"]
@@ -202,7 +202,7 @@
     "loses": 27,
     "assist": 0,
     "foot": "O'ng",
-    "status": "weekly",
+    "status": "haftalik",
     "firstName": "behruz",
     "lastName": "boltayev",
     "images": ["behruz"]
@@ -215,7 +215,7 @@
     "loses": 20,
     "assist": 1,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "lastName": "karimov",
     "firstName": "bekzod",
     "images": ["bekzod"]
@@ -228,7 +228,7 @@
     "loses": 20,
     "assist": 3,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "lastName": "ruzmetov",
     "firstName": "umidbek",
     "images": ["umidbek", "umidbek0", "umidbek1", "umidbek2"]
@@ -241,7 +241,7 @@
     "loses": 5,
     "assist": 5,
     "foot": "Chap",
-    "status": "weekly",
+    "status": "haftalik",
     "firstName": "furqat",
     "lastName": "ruzmetov",
     "images": ["furqat", "furqat0", "furqat1", "furqat2", "furqat3"]
@@ -254,7 +254,7 @@
     "loses": 33,
     "assist": 30,
     "foot": "O'ng",
-    "status": "daily",
+    "status": "kunlik",
     "firstName": "nodir",
     "lastName": "hamrayev",
     "images": ["nodir", "nodir0", "nodir1"]
