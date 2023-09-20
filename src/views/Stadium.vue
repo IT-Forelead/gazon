@@ -7,12 +7,6 @@ import { useModalStore } from "../stores/modal.store";
   <h1 class="text-2xl font-bold px-5 text-teal-500">
     Assalomu alaykum Siz Stadium.vue dasiz.
   </h1>
-
-  <button @click="useModalStore().openTeleport()">open</button>
-
-  <MyTeleport>
-    <h1>Azizbekdan salom</h1>
-  </MyTeleport>
 </template>
 
 <style scoped></style>
