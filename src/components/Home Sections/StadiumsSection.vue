@@ -64,14 +64,14 @@ const reportStadion = computed(() => {
     </div>
     <ul class="hidden my-2 gap-x-2 min-[374px]:flex">
       <li
-        v-for="(item, index) in titleList"
+        v-for="(title, index) in titleList"
         :key="index"
-        :class="{ 'ml-auto': item == 'narxi' }"
+        :class="{ 'ml-auto': title == 'narxi' }"
       >
         <SortButton
-          :class="{ 'bg-teal-500 text-white': currentStadion == item }"
-          :title="item"
-          @click="currentStadion = item"
+          :class="{ 'bg-teal-500 text-white': currentStadion == title }"
+          :title="title"
+          @click="currentStadion = title"
         />
       </li>
     </ul>
@@ -80,12 +80,12 @@ const reportStadion = computed(() => {
       class="bg-gray-50 my-2 border-teal-500 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-teal-700 hidden max-[373px]:inline"
     >
       <option
-        v-for="(item, index) in titleList"
+        v-for="(title, index) in titleList"
         :key="index"
-        :value="item"
+        :value="title"
         class="capitalize"
       >
-        {{ item }}
+        {{ title }}
       </option>
     </select>
     <swiper

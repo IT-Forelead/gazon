@@ -1,14 +1,15 @@
 <script setup>
-import { computed, ref } from "vue"
-import PlaceIcon from "@/assets/icons/PlaceIcon.vue"
+import { computed, ref } from "vue";
+import PlaceIcon from "@/assets/icons/PlaceIcon.vue";
 import bestPlayers from "@/assets/data/playerLists.json";
-import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue"
-import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue"
-import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue"
+import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue";
+import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue";
+import SortButton from "../components/Buttons/SortButton.vue";
+import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue";
 
-const best = ref("daily");
+const bestPlayer = ref("kunlik");
 const reportBestPlayer = computed(() =>
-  bestPlayers.filter((player) => player.status == best.value)
+  bestPlayers.filter((player) => player.status == bestPlayer.value)
 );
 </script>
 
@@ -27,32 +28,15 @@ const reportBestPlayer = computed(() =>
         Eng zo'r futbolchilar
       </h2>
       <ul class="flex mt-2 gap-x-2">
-        <li>
-          <button
-            class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
-            :class="{ 'bg-teal-500 text-white': best == 'daily' }"
-            @click="best = 'daily'"
-          >
-            Kunlik
-          </button>
-        </li>
-        <li>
-          <button
-            class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
-            :class="{ 'bg-teal-500 text-white': best == 'weekly' }"
-            @click="best = 'weekly'"
-          >
-            Haftalik
-          </button>
-        </li>
-        <li>
-          <button
-            class="text-sm py-1 px-4 bg-gray-200 rounded font-semibold duration-200"
-            :class="{ 'bg-teal-500 text-white': best == 'monthly' }"
-            @click="best = 'monthly'"
-          >
-            Oylik
-          </button>
+        <li
+          v-for="(title, index) in ['kunlik', 'haftalik', 'oylik']"
+          :key="index"
+        >
+          <SortButton
+            :class="{ 'bg-teal-500 text-white': bestPlayer == title }"
+            :title="title"
+            @click="bestPlayer = title"
+          />
         </li>
       </ul>
     </div>
