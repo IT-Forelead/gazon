@@ -57,7 +57,7 @@ onMounted(() => {
         />
         <div>
           <h4 class="font-bold">{{ hero?.foot }}</h4>
-          <p class="text-[#666]">oyoq45455645564564</p>
+          <p class="text-[#666]">oyoq</p>
         </div>
       </div>
       <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">
