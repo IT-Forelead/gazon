@@ -1,16 +1,16 @@
 <script setup>
-import "swiper/css"
-import "swiper/css/effect-cards"
-import { onMounted, ref } from "vue"
-import { useRoute } from "vue-router"
-import { EffectCards } from "swiper/modules"
-import { Swiper, SwiperSlide } from "swiper/vue"
-import CupIcon from "../assets/icons/CupIcon.vue"
-import BallIcon from "../assets/icons/BallIcon.vue"
-import FootIcon from "../assets/icons/FootIcon.vue"
-import ShoesIcon from "../assets/icons/ShoesIcon.vue"
-import playerLists from "@/assets/data/playerLists.json"
-import LightingIcon from "../assets/icons/LightingIcon.vue"
+import "swiper/css";
+import "swiper/css/effect-cards";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+import { EffectCards } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import CupIcon from "../assets/icons/CupIcon.vue";
+import BallIcon from "../assets/icons/BallIcon.vue";
+import FootIcon from "../assets/icons/FootIcon.vue";
+import ShoesIcon from "../assets/icons/ShoesIcon.vue";
+import playerLists from "@/assets/data/playerLists.json";
+import LightingIcon from "../assets/icons/LightingIcon.vue";
 
 const hero = ref();
 const route = useRoute();
@@ -27,8 +27,18 @@ onMounted(() => {
     <div class="flex items-center pl-10 pt-5">
       <div
         class="bg-top bg-cover w-20 h-20 mr-2 bg-no-repeat rounded-full"
-        :style="{ backgroundImage: `url(/images/${hero?.firstName}.jpg)` }"
-      ></div>
+        :style="{
+          backgroundImage: `url(/images/${hero?.firstName}.jpg)`,
+        }"
+      >
+        <img
+          style="display: none"
+          :src="`/images/${hero?.firstName}.jpg`"
+          onerror="
+  this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
+  ` "
+        />
+      </div>
       <span class="-space-y-1">
         <h2 class="capitalize font-semibold text-xl">{{ hero?.firstName }}</h2>
         <h4 class="capitalize">{{ hero?.lastName }}</h4>
@@ -47,7 +57,7 @@ onMounted(() => {
         />
         <div>
           <h4 class="font-bold">{{ hero?.foot }}</h4>
-          <p class="text-[#666]">oyoq</p>
+          <p class="text-[#666]">oyoq45455645564564</p>
         </div>
       </div>
       <div class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow">

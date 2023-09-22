@@ -22,7 +22,15 @@ onMounted(() => {
     <div
       class="w-32 h-32 mx-auto -mt-16 bg-top bg-no-repeat bg-cover rounded-full shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
-    ></div>
+    >
+      <img
+        style="display: none"
+        :src="`/images/${player.firstName}.jpg`"
+        onerror="
+  this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
+  ` "
+      />
+    </div>
     <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>

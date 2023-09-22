@@ -45,7 +45,6 @@ const player = computed(() => playersList[useRoute().fullPath?.split("/")[2]]);
                 :src="`/images/${player?.firstName}.jpg`"
                 onerror="
                   this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
-                  
                ` "
               />
             </div>
