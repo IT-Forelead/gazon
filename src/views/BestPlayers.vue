@@ -1,10 +1,10 @@
 <script setup>
-import { computed, ref } from "vue"
-import PlaceIcon from "@/assets/icons/PlaceIcon.vue"
+import { computed, ref } from "vue";
+import PlaceIcon from "@/assets/icons/PlaceIcon.vue";
 import bestPlayers from "@/assets/data/playerLists.json";
-import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue"
-import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue"
-import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue"
+import PlaceOneIcon from "@/assets/icons/PlaceOneIcon.vue";
+import PlaceTwoIcon from "@/assets/icons/PlaceTwoIcon.vue";
+import PlaceThreeIcon from "@/assets/icons/PlaceThreeIcon.vue";
 
 const best = ref("daily");
 const reportBestPlayer = computed(() =>
@@ -76,7 +76,15 @@ const reportBestPlayer = computed(() =>
               :style="{
                 backgroundImage: `url('/images/${player.firstName}.jpg')`,
               }"
-            ></div>
+            >
+              <img
+                style="display: none"
+                :src="`/images/${player.firstName}.jpg`"
+                onerror="
+  this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
+  ` "
+              />
+            </div>
             <div class="text-left">
               <h3 class="font-semibold capitalize">{{ player.firstName }}</h3>
               <h4 class="text-sm capitalize">{{ player.lastName }}</h4>

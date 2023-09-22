@@ -1,20 +1,18 @@
 <script setup>
-import { onMounted, ref } from "vue"
-import CupIcon from "../assets/icons/CupIcon.vue"
-import BallIcon from "../assets/icons/BallIcon.vue"
-import FootIcon from "../assets/icons/FootIcon.vue"
-import ShoesIcon from "../assets/icons/ShoesIcon.vue"
-import ShapeIcon from "../assets/icons/ShapeIcon.vue"
-import playersList from "@/assets/data/playerLists.json"
-import LightingIcon from "../assets/icons/LightingIcon.vue"
-import { useEditProfile } from "../stores/editProfile.store"
+import { onMounted, ref } from "vue";
+import CupIcon from "../assets/icons/CupIcon.vue";
+import BallIcon from "../assets/icons/BallIcon.vue";
+import FootIcon from "../assets/icons/FootIcon.vue";
+import ShoesIcon from "../assets/icons/ShoesIcon.vue";
+import ShapeIcon from "../assets/icons/ShapeIcon.vue";
+import playersList from "@/assets/data/playerLists.json";
+import LightingIcon from "../assets/icons/LightingIcon.vue";
 
 const player = ref({});
 
 onMounted(() => {
   const randomNumber = Math.floor(Math.random() * 18 + 1);
   player.value = playersList[randomNumber];
-  useEditProfile().setEditProfile(player.value);
 });
 </script>
 
@@ -24,12 +22,20 @@ onMounted(() => {
     <div
       class="w-32 h-32 mx-auto -mt-16 bg-top bg-no-repeat bg-cover rounded-full shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
-    ></div>
+    >
+      <img
+        style="display: none"
+        :src="`/images/${player.firstName}.jpg`"
+        onerror="
+  this.parentNode.style.backgroundImage = `url(/images/userProfile.jpg)
+  ` "
+      />
+    </div>
     <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>
     <router-link
-      to="/edit-profile"
+      :to="`/edit-profile/${player.id}`"
       class="block w-32 py-2 mx-auto mt-2 mb-4 font-semibold text-center text-white bg-teal-500 rounded-3xl"
       >Edit</router-link
     >
