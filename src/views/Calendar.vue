@@ -1,21 +1,21 @@
 <script setup>
 import {computed, ref} from "vue"
-import Datepicker from 'vuejs3-datepicker'
 import notify from "izitoast"
 import "izitoast/dist/css/iziToast.min.css"
+import {useModalStore} from "@/stores/modal.store"
+import {useStadiumStore} from "@/stores/stadiums.store"
+import router from "@/router";
+import useMoneyFormatter from "../mixins/currencyFormatter"
+import Datepicker from 'vuejs3-datepicker'
+import SearchStadium from "@/components/SearchStadium.vue"
+import SuccessBookingStadiumModal from "@/components/Modals/SuccessBookingStadiumModal.vue"
 import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue"
 import CalendarCheckIcon from "@/assets/icons/CalendarCheckIcon.vue"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
 import BookmarkIcon from "@/assets/icons/BookmarkIcon.vue"
-import SearchStadium from "@/components/SearchStadium.vue"
 import PriceIcon from "@/assets/icons/PriceIcon.vue"
 import CalendarIcon from "@/assets/icons/CalendarIcon.vue"
 import UserIcon from "@/assets/icons/UserIcon.vue"
-import {useModalStore} from "@/stores/modal.store"
-import SuccessBookingStadiumModal from "@/components/Modals/SuccessBookingStadiumModal.vue"
-import {useStadiumStore} from "@/stores/stadiums.store"
-import router from "@/router";
-import useMoneyFormatter from "../mixins/currencyFormatter";
 
 let searchStadium = ref('')
 const currentStep = ref(1)
@@ -37,7 +37,6 @@ const selectedDateTime = (time) => {
   const startTimeParts = time.split(":");
   date.setHours(parseInt(startTimeParts[0], 10));
   date.setMinutes(parseInt(startTimeParts[1], 10));
-
   const formatter = new Intl.DateTimeFormat("uz-UZ", {
     weekday: "long",
     day: "numeric",
@@ -51,7 +50,6 @@ const selectedDateTime = (time) => {
 const disabledDates = computed(() => {
   return {to: new Date(Date.now() - 24 * 60 * 1000)}
 });
-
 const showWarningToast = (text) => {
   notify.warning({
     message: text,
@@ -72,7 +70,6 @@ const validateStartTime = () => {
   }
   return true
 };
-
 const endTime = computed(() => {
   const startTimeParts = startTime.value.split(":");
   const startHour = parseInt(startTimeParts[0], 10);
@@ -89,13 +86,10 @@ const endTime = computed(() => {
   } else if (selectedMatchTime === '4') {
     endHour += 4;
   } else if (selectedMatchTime === 'vip') {
-    // Handle VIP case separately
     endHour = 23;
     endMinute = 59;
   }
-  // Check if the end time exceeds 23:59
   if (endHour >= 24) {
-    // You can choose to display 24:00 instead of 00:00
     endHour -= 24;
   }
   return `${String(endHour).padStart(2, '0')}:${String(endMinute).padStart(2, '0')}`;
@@ -129,7 +123,7 @@ const goToThirdStep = () => {
 }
 </script>
 <template>
-  <div class="max-w-3xl mx-2 my-8 md:mx-auto">
+  <div class="max-w-3xl px-2 my-8 md:mx-auto">
     <div class="flex justify-around mb-5">
       <button @click="goBackToPreviousStep">
         <LeftBackIcon class="text-teal-600 cursor-pointer w-7 h-7 hover:text-teal-500"/>
@@ -156,7 +150,7 @@ const goToThirdStep = () => {
       </ol>
     </div>
     <!-- Step 1 -->
-    <div v-if="currentStep === 1" class="flex flex-col w-full px-2 mt-3 md:mx-auto">
+    <div v-if="currentStep === 1" class="flex flex-col w-full mt-3 md:mx-auto">
       <div class="flex flex-wrap justify-center mt-1">
         <div class="max-w-sm p-4">
           <datepicker
@@ -168,7 +162,7 @@ const goToThirdStep = () => {
           ></datepicker>
         </div>
         <div class="flex p-4">
-          <!--          Start Time-->
+          <!-- Start Time-->
           <div class="flex flex-col justify-center p-2">
             <label for="startTime" class="px-1 text-sm font-bold text-teal-600">Boshlanish vaqti:</label>
             <input
@@ -209,7 +203,7 @@ const goToThirdStep = () => {
     <!-- Step 2 -->
     <div v-if="currentStep === 2" class="mt-4">
       <SearchStadium/>
-      <div class="flex justify-between mx-4 mt-14">
+      <div class="flex justify-between mx-2 mt-14">
         <button @click="goBackToPreviousStep" class="px-4 py-2 mt-4 font-medium text-white bg-gray-500 rounded-lg">Orqaga</button>
         <button @click="goToThirdStep" class="px-4 py-2 mt-4 font-medium text-white bg-teal-500 rounded-lg">Keyingi</button>
       </div>
@@ -263,7 +257,6 @@ const goToThirdStep = () => {
     </div>
   </div>
 </template>
-
 <style scoped>
 
 </style>

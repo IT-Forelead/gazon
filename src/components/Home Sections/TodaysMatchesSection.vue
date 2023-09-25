@@ -46,11 +46,11 @@ const todaysMatches = ref([
 ]);
 </script>
 <template>
-  <div class="flex justify-between max-w-lg items-center md:mx-auto text-teal-600 font-bold px-2">
+  <div class="flex justify-between max-w-5xl items-center md:mx-auto text-teal-600 font-bold px-2">
     <h1 class="text-xl">Bugungi o'yinlar</h1>
     <router-link to="/match-list" class="text-xs hover:text-teal-500">Barchasi</router-link>
   </div>
-  <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-lg mt-2 md:mx-auto">
+  <Vue3Marquee :space="50" :duration="30" :direction="'normal'" class="max-w-5xl mt-2 md:mx-auto">
     <div class="flex items-center ml-6 space-x-4">
       <div v-for="(match, index) in todaysMatches" :key="index"
         class="mx-4 w-80 h-36 pb-1 bg-white rounded-lg shadow-md mb-3">

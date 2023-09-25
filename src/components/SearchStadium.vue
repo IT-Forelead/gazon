@@ -136,4 +136,5 @@ const handleClick = (stadium) => {
   </div>
 </template>
 <style scoped>
+
 </style>

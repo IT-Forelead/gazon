@@ -66,7 +66,7 @@ onUpdated(() => {
       </button>
     </div>
     <div class="flex mt-2 space-x-2">
-      <span class="text-blue-700 font-bold"><LocationIcon /></span>
+      <span class="text-blue-700 font-bold"><LocationIcon class="text-blue-600 h-5 w-5"/></span>
       <span class="text-blue-600 border-r pr-4">100 mi</span>
       <p class="text-md">
         {{ stadion?.Item }} Xorazm Palace 24-son maktab yoni

@@ -27,7 +27,7 @@ const closeModal = () => {
           <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">So'rovingiz muvaffaqiyatli yuborildi.</h3>
           <button type="button" @click="closeModal"
                   class="text-white bg-teal-500 transition duration-300 hover:bg-teal-700 focus:ring-4 focus:outline-none focus:ring-teal-500 font-medium rounded-lg text-md inline-flex items-center px-5 py-2.5 text-center mr-2">
-            OK
+            Yuborildi
           </button>
         </div>
       </div>
