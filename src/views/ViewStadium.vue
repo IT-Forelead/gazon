@@ -42,8 +42,8 @@ onUpdated(() => {
 </script>
 
 <template>
-  <div class="px-1  mx-auto">
-    <div class="flex items-center mt-1 mb-4">
+  <div class="px-3 mx-auto">
+    <div class="flex items-center pt-2 pb-3">
       <RouterLink to="/" class="">
         <ArrowLeftIcon/>
       </RouterLink>
@@ -88,14 +88,15 @@ onUpdated(() => {
       <h1 class="text-3xl font-bold">
         <StarIcon  class="text-yellow-500 h-6 w-6"/>
       </h1>
-      <h1 class="text-lg font-semi-bold">{{ stadium?.assessment}}</h1>
-      <h1 class="text-lg">({{ stadium?.reviews }} Reviews)</h1>
+      <h1 class="text-lg">{{ stadium?.assessment}}</h1>
+      <h1 class="text-lg text-[#666]">({{ stadium?.reviews }} Reviews)</h1>
     </div>
     <div class="flex items-center">
       <h1 class="text-2xl md:text-3xl font-bold">{{ stadium?.price}}</h1>
       <h1 class="text-md md:text-lg ml-1">so'm</h1>
     </div>
   </div>
+
   <div class="items-center mt-3">
     <span class="text-lg font-bold">Xususiyatlari:</span>
     <div class="flex justify-start mb-2 space-x-6 items-center mt-1">
@@ -109,8 +110,9 @@ onUpdated(() => {
       </div>
       <div class="flex space-x-1 items-center">
         <FieldIcon/>
-        <h1 class="text-lg">{{ stadium?.field }}</h1>
+        <h1 class="text-lg text-[#666]">{{ stadium?.field }}</h1>
       </div>
+
     </div>
     <span class="text-lg mt-4 font-bold">Tasnifi:</span>
     <p class="text-left">

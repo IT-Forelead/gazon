@@ -9,6 +9,8 @@ import SortButton from "../Buttons/SortButton.vue";
 import { Autoplay, Pagination } from "swiper/modules";
 import stadiumList from "@/assets/data/stadiumList.json";
 import useMoneyFormatter from "../../mixins/currencyFormatter";
+import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
+import Location16 from "@/assets/icons/LocationIcon.vue";
 
 const screenSize = ref(0);
 const router = useRouter();
@@ -110,31 +112,35 @@ const reportStadion = computed(() => {
         <div
           class="border w-full transition duration-300 flex flex-col rounded-xl"
         >
+
           <div class="relative">
-            <div  :class="[ $route.href === '/' ? ' hidden' :'text-lg items-center absolute top-3 right-3']">
-              {{ stadion.title }}
+            <div  :class="[ $route.href === '/' ? 'hidden' :' overlay bg-gray-800 bg-opacity-50 w-full h-full  text-lg items-center absolute rounded-xl']">
+
+              <div class="flex justify-center items-center space-x-1  h-full">
+                <span><Location16/></span>
+                <p>{{stadion.title}}</p>
+              </div>
             </div>
             <div class="w-14 h-5 gap-x-1 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-sm rounded-3xl p-2">
-              <StarIcon class="text-yellow-500 "/>
+              <StarIcon class="text-yellow-500"/>
               <p>{{ stadion.assessment }}</p>
 
             </div>
-            <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg lg:h-40 xl:h-48 2xl:h-52' :'h-36 bg-cover bg-center rounded-lg lg:h-40 xl:h-48 2xl:h-52']"
+            <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg  lg:h-40 xl:h-48 2xl:h-52' :' h-36 bg-cover bg-center rounded-lg lg:h-40 xl:h-48 2xl:h-52']"
               :style="{
                 backgroundImage: `url(/images/${stadion.images[0]}.jpg)`,
               }"
-            ></div>
+            >
+            </div>
           </div>
 
           <div :class="[ $route.href === '/' ? 'p-2' :'hidden']">
             <div  class="border-b-2 pb-1">
-              <h3 :class="[ $route.href === '/' ? 'ont-semi-bold text-zinc-900 md:text-xl text-lg' :'hidden']">
+              <h3 :class="[ $route.href === '/' ? 'text-zinc-900 md:text-xl text-lg' :'hidden']">
                 {{ stadion.title }}
               </h3>
-              <div  :class="[ $route.href === '/' ? 'flex justify-between text-zinc-500 text-sm font-normal gap-x-2' :'hidden']"
-
-              >
-                <p >{{ stadion.address }}</p>
+              <div  :class="[ $route.href === '/' ? 'flex justify-between text-[#666] text-sm font-normal gap-x-2' :'hidden']">
+                <p>{{ stadion.address }}</p>
                 <p>{{ useMoneyFormatter(stadion.price) }}</p>
               </div>
             </div>
@@ -149,7 +155,7 @@ const reportStadion = computed(() => {
               ></div>
               <router-link
                 :to="`/view-stadiums/${stadion.id}`"
-                class="font-normal text-zinc-500 text-sm md:text-lg hover:text-teal-400"
+                class="font-normal text-[#666] text-sm md:text-lg hover:text-teal-400"
               >
                 Batafsil...
               </router-link>
@@ -161,8 +167,14 @@ const reportStadion = computed(() => {
   </div>
 </template>
 
-<style>
-.swiper-slide {
-  min-width: fit-content;
+<style scoped >
+.relative:hover .overlay {
+  opacity: 1;
+}
+
+/* Style the overlay */
+.overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 </style>
