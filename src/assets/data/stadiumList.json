@@ -10,19 +10,21 @@
     "assessment": "5.0",
     "phone": "+998911234567",
     "address": "Urganch tuman",
-    "images": ["Arsenal", "Arsenal1", "Arsenal2", "Arsenal3"]
+    "images": ["Arsenal", "Arsenal1", "Arsenal2", "Arsenal3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 1,
     "reviews": 10,
     "price": 100000,
     "field": "50 m²",
-    "assessment": "4",
+    "assessment": "4.2",
     "status": "band emas",
     "title": "Xorazm Palace",
     "phone": "+998917654321",
     "address": "Urganch shahar",
-    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"]
+    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 2,
@@ -34,7 +36,8 @@
     "status": "band emas",
     "phone": "+998942469111",
     "address": "Urganch tuman",
-    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"]
+    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 3,
@@ -46,7 +49,8 @@
     "title": "24-son maktab",
     "phone": "+998999099909",
     "address": "Urganch shahar",
-    "images": ["Arena", "Arena1", "Arena2", "Arena3"]
+    "images": ["Arena", "Arena1", "Arena2", "Arena3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 4,
@@ -58,7 +62,8 @@
     "phone": "+998917077707",
     "title": "Ulug'bek maktab",
     "address": "Urganch shahar",
-    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"]
+    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 5,
@@ -70,7 +75,8 @@
     "status": "band emas",
     "phone": "+998998080888",
     "address": "Urganch shahar",
-    "images": ["United", "United1", "United2", "United3"]
+    "images": ["United", "United1", "United2", "United3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 6,
@@ -82,7 +88,8 @@
     "status": "band emas",
     "phone": "+99894600666",
     "address": "Urganch shahar",
-    "images": ["Germany", "Germany1", "Germany2", "Germany3"]
+    "images": ["Germany", "Germany1", "Germany2", "Germany3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 7,
@@ -94,18 +101,20 @@
     "status": "band emas",
     "phone": "+998905555005",
     "address": "Urganch shahar",
-    "images": ["Siti", "Siti1", "Siti2", "Siti3"]
+    "images": ["Siti", "Siti1", "Siti2", "Siti3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   },
   {
     "id": 8,
     "reviews": 12,
     "price": 50000,
     "field": "50 m²",
-    "assessment": "4",
+    "assessment": "4.4",
     "status": "band emas",
     "title": "Bobur maktab",
     "phone": "+998905555005",
     "address": "Urganch shahar",
-    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"]
+    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"],
+    "description": " Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's"
   }
 ]
