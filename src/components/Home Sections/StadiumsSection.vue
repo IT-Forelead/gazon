@@ -9,8 +9,6 @@ import SortButton from "../Buttons/SortButton.vue";
 import { Autoplay, Pagination } from "swiper/modules";
 import stadiumList from "@/assets/data/stadiumList.json";
 import useMoneyFormatter from "../../mixins/currencyFormatter";
-import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
-import Location16 from "@/assets/icons/LocationIcon.vue";
 
 const screenSize = ref(0);
 const router = useRouter();
@@ -24,7 +22,7 @@ const slidesPerView = computed(() => {
   } else if (screenSize.value < 510) {
     return 2.5;
   } else if (screenSize.value < 910) {
-    return 2.7;
+    return 3;
   } else {
     return 4;
   }
@@ -57,7 +55,7 @@ const reportStadion = computed(() => {
 });
 </script>
 <template>
-  <div class="relative mx-auto mb-4 mt-2 px-2">
+  <div class="relative max-w-5xl mx-auto mb-8 px-2">
     <div
       class="flex justify-between items-center md:mx-auto text-teal-600 font-bold"
     >
@@ -79,7 +77,7 @@ const reportStadion = computed(() => {
     </ul>
     <select
       v-model="currentStadion"
-      class="bg-gray-50 my-2 border-teal-500 rounded-lg focus:ring-teal-500 focus:border-teal-500 text-teal-700 hidden max-[373px]:inline"
+      class="my-2 py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400 hidden max-[373px]:inline"
     >
       <option
         v-for="(item, index) in titleList"
@@ -112,39 +110,33 @@ const reportStadion = computed(() => {
         <div
           class="border w-full transition duration-300 flex flex-col rounded-xl"
         >
-
           <div class="relative">
-            <div  :class="[ $route.href === '/' ? 'hidden' :' overlay bg-gray-800 bg-opacity-50 w-full h-full  text-lg items-center absolute rounded-xl']">
-
-              <div class="flex justify-center items-center space-x-1  h-full">
-                <span><Location16/></span>
-                <p>{{stadion.title}}</p>
-              </div>
+            <div
+              class="w-20 h-8 gap-x-2 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-lg rounded-3xl p-2"
+            >
+              <StarIcon />
+              <p class="text-lg font-semibold">{{ stadion.assessment }}</p>
             </div>
-            <div class="w-14 h-5 gap-x-1 flex items-center absolute top-3 left-3 bg-gray-200 text-black text-sm rounded-3xl p-2">
-              <StarIcon class="text-yellow-500"/>
-              <p>{{ stadion.assessment }}</p>
-
-            </div>
-            <div :class="[ $route.href === '/' ? 'h-36 bg-cover bg-center rounded-t-lg  lg:h-40 xl:h-48 2xl:h-52' :' h-36 bg-cover bg-center rounded-lg lg:h-40 xl:h-48 2xl:h-52']"
+            <div
+              class="h-36 bg-cover bg-center rounded-t-lg lg:h-40 xl:h-48 2xl:h-52"
               :style="{
                 backgroundImage: `url(/images/${stadion.images[0]}.jpg)`,
               }"
-            >
-            </div>
+            ></div>
           </div>
-
-          <div :class="[ $route.href === '/' ? 'p-2' :'hidden']">
-            <div  class="border-b-2 pb-1">
-              <h3 :class="[ $route.href === '/' ? 'text-zinc-900 md:text-xl text-lg' :'hidden']">
+          <div class="p-2">
+            <div class="border-b-2 pb-1">
+              <h3 class="font-semibold text-zinc-900 md:text-xl text-lg">
                 {{ stadion.title }}
               </h3>
-              <div  :class="[ $route.href === '/' ? 'flex justify-between text-[#666] text-sm font-normal gap-x-2' :'hidden']">
+              <div
+                class="flex justify-between text-zinc-500 text-sm font-normal gap-x-2"
+              >
                 <p>{{ stadion.address }}</p>
                 <p>{{ useMoneyFormatter(stadion.price) }}</p>
               </div>
             </div>
-            <div :class="[ $route.href === '/' ? 'flex justify-between items-center mt-2 relative' :'hidden']">
+            <div class="flex justify-between items-center mt-2 relative">
               <button
                 class="bg-teal-400 hover:bg-teal-500 transition duration-200 text-sm text-gray-50 rounded-full py-1 md:py-1.5 px-3 md:px-5"
               >
@@ -155,7 +147,7 @@ const reportStadion = computed(() => {
               ></div>
               <router-link
                 :to="`/view-stadiums/${stadion.id}`"
-                class="font-normal text-[#666] text-sm md:text-lg hover:text-teal-400"
+                class="font-normal text-zinc-500 text-sm md:text-lg hover:text-teal-400"
               >
                 Batafsil...
               </router-link>
@@ -167,14 +159,8 @@ const reportStadion = computed(() => {
   </div>
 </template>
 
-<style scoped >
-.relative:hover .overlay {
-  opacity: 1;
-}
-
-/* Style the overlay */
-.overlay {
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+<style>
+.swiper-slide {
+  min-width: fit-content;
 }
 </style>

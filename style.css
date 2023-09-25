@@ -37,3 +37,7 @@ body {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+.rotate-right{
+  transform: rotateY(180deg) rotate(-30deg);
+}
