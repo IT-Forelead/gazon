@@ -79,7 +79,7 @@ const handleClick = (stadium) => {
             <div
               class="flex flex-col items-center justify-center w-10 h-10 mr-4 bg-center bg-cover rounded-full"
               :style="{
-                backgroundImage: `url(/images/${stadium.images[0]}.jpg)`,
+                backgroundImage: `url(/images/stadiums/${stadium.images[0]}.jpg)`,
               }"
             ></div>
             <div class="flex-1 pl-1 md:mr-16">
@@ -106,7 +106,7 @@ const handleClick = (stadium) => {
     <div
       class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md"
       :style="{
-        backgroundImage: `url(/images/${
+        backgroundImage: `url(/images/stadiums/${
           useStadiumStore().selectStadium.images[0]
         }.jpg)`,
       }"
@@ -122,7 +122,7 @@ const handleClick = (stadium) => {
       <div
         class="flex items-center justify-between px-3 py-2 text-white bg-teal-500"
       >
-        <LocationIcon class="w-5 h-5"/>
+        <LocationIcon class="w-5 h-5" />
         <span class="text-xs font-bold">{{
           useStadiumStore().selectStadium.address
         }}</span>
@@ -136,5 +136,4 @@ const handleClick = (stadium) => {
   </div>
 </template>
 <style scoped>
-
 </style>

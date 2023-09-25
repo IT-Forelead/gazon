@@ -1,7 +1,7 @@
 <script setup>
-import SunIcon from "@/assets/icons/SunIcon.vue"
-import BallIcon from "@/assets/icons/BallIcon.vue"
-import NotificationIcon from "@/assets/icons/NotificationIcon.vue"
+import SunIcon from "@/assets/icons/SunIcon.vue";
+import BallIcon from "@/assets/icons/BallIcon.vue";
+import NotificationIcon from "@/assets/icons/NotificationIcon.vue";
 </script>
 <template>
   <div class="w-full h-14 px-4 pt-2">

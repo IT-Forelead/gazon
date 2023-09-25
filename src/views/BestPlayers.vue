@@ -74,7 +74,7 @@ const reportBestPlayer = computed(() =>
             <div
               class="bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
               :style="{
-                backgroundImage: `url('/images/${player.firstName}.jpg')`,
+                backgroundImage: `url('/images/players/${player.firstName}.jpg')`,
               }"
             ></div>
             <div class="text-left">

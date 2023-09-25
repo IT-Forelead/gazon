@@ -63,7 +63,7 @@ const deletePlayer = (index) => {
     <ShapeIcon class="md:-mt-[7%]" />
     <div
       class="bg-top bg-cover w-32 h-32 md:w-40 md:h-40 xl:w-60 xl:h-60 bg-no-repeat rounded-full mx-auto md:-mt-[18%] -mt-[15%] shadow-2xl"
-      :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
+      :style="{ backgroundImage: `url('/images/players/${player.firstName}.jpg')` }"
     ></div>
     <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
@@ -172,7 +172,7 @@ const deletePlayer = (index) => {
                 <div
                   class="bg-top bg-cover w-16 h-16 bg-no-repeat rounded-full mx-2"
                   :style="{
-                    backgroundImage: `url('/images/${player.firstName}.jpg')`,
+                    backgroundImage: `url('/images/players/${player.firstName}.jpg')`,
                   }"
                 ></div>
                 <div>
@@ -199,7 +199,7 @@ const deletePlayer = (index) => {
             <div
               class="bg-top bg-cover w-16 h-16 cursor-pointer bg-no-repeat rounded-full mx-2 relative after:absolute after:content-[''] after:w-16 after:h-16 hover:after:bg-[#56dfe94f] hover:after:backdrop-blur-sm after:transition-all after:rounded-full group"
               :style="{
-                backgroundImage: `url('/images/${member.firstName}.jpg')`,
+                backgroundImage: `url('/images/players/${member.firstName}.jpg')`,
               }"
             >
               <CloseIcon

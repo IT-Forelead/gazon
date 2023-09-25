@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue"
+import { ref } from "vue";
 import notify from "izitoast";
 import { vMaska } from "maska";
 import "izitoast/dist/css/iziToast.min.css";

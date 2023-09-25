@@ -45,7 +45,7 @@ onMounted(() => {
             <div
               class="mx-auto w-36 h-36 border rounded-full bg-top bg-cover relative bg-gray-100 mb-4 shadow-inset"
               :style="{
-                backgroundImage: `url(/images/${player?.firstName}.jpg)`,
+                backgroundImage: `url(/images/players/${player?.firstName}.jpg)`,
               }"
             ></div>
             <label
