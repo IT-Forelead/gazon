@@ -1,9 +1,9 @@
 import { defineStore } from "pinia"
-
 export const useModalStore = defineStore('modal', {
     state: () => ({
         isFilterMatchListModalOpen: false,
-        isSearchMatchListModalOpen: false
+        isSearchMatchListModalOpen: false,
+        isSuccessBookingStadiumModalOpen:false
     }),
     actions: {
         openFilterMatchListModal() {
@@ -17,6 +17,12 @@ export const useModalStore = defineStore('modal', {
         },
         closeSearchMatchListModal() {
             this.isSearchMatchListModalOpen = false
+        },
+        openSuccessBookingStadiumModal(){
+            this.isSuccessBookingStadiumModalOpen = true
+        },
+        closeSuccessBookingStadiumModal(){
+            this.isSuccessBookingStadiumModalOpen = false
         }
     }
 })

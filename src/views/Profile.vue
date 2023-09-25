@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted, ref } from "vue";
-import CupIcon from "../assets/icons/CupIcon.vue";
-import BallIcon from "../assets/icons/BallIcon.vue";
-import FootIcon from "../assets/icons/FootIcon.vue";
-import ShoesIcon from "../assets/icons/ShoesIcon.vue";
-import ShapeIcon from "../assets/icons/ShapeIcon.vue";
-import playersList from "@/assets/data/playerLists.json";
-import LightingIcon from "../assets/icons/LightingIcon.vue";
-import { useEditProfile } from "../stores/editProfile.store";
+import { onMounted, ref } from "vue"
+import CupIcon from "../assets/icons/CupIcon.vue"
+import BallIcon from "../assets/icons/BallIcon.vue"
+import FootIcon from "../assets/icons/FootIcon.vue"
+import ShoesIcon from "../assets/icons/ShoesIcon.vue"
+import ShapeIcon from "../assets/icons/ShapeIcon.vue"
+import playersList from "@/assets/data/playerLists.json"
+import LightingIcon from "../assets/icons/LightingIcon.vue"
+import { useEditProfile } from "../stores/editProfile.store"
 
 const player = ref({});
 
@@ -19,18 +19,18 @@ onMounted(() => {
 </script>
 
 <template>
-  <section class="overflow-hidden max-w-lg mx-auto">
+  <section class="max-w-lg mx-auto overflow-hidden">
     <ShapeIcon />
     <div
-      class="bg-top bg-cover w-32 h-32 bg-no-repeat rounded-full mx-auto -mt-16 shadow-2xl"
+      class="w-32 h-32 mx-auto -mt-16 bg-top bg-no-repeat bg-cover rounded-full shadow-2xl"
       :style="{ backgroundImage: `url('/images/${player.firstName}.jpg')` }"
     ></div>
-    <h2 class="text-2xl text-center font-semibold capitalize">
+    <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
     </h2>
     <router-link
       to="/edit-profile"
-      class="mx-auto text-center mt-2 mb-4 block py-2 w-32 rounded-3xl bg-teal-500 text-white font-semibold"
+      class="block w-32 py-2 mx-auto mt-2 mb-4 font-semibold text-center text-white bg-teal-500 rounded-3xl"
       >Edit</router-link
     >
     <hr />
@@ -45,7 +45,7 @@ onMounted(() => {
       </div>
       <div class="grid grid-cols-2 gap-4">
         <div
-          class="flex items-center gap-x-4 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center px-4 py-2 bg-white rounded shadow gap-x-4"
         >
           <FootIcon
             :class="[
@@ -61,7 +61,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center px-4 py-2 bg-white rounded shadow gap-x-5"
         >
           <ShoesIcon class="w-8 h-8 text-teal-400" />
           <div>
@@ -70,7 +70,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center px-4 py-2 bg-white rounded shadow gap-x-5"
         >
           <BallIcon class="w-8 h-8 text-teal-400" />
           <div>
@@ -79,7 +79,7 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center px-4 py-2 bg-white rounded shadow gap-x-5"
         >
           <CupIcon class="w-8 h-8 text-yellow-400" />
           <div>
@@ -88,14 +88,14 @@ onMounted(() => {
           </div>
         </div>
         <div
-          class="flex items-center gap-x-5 bg-white py-2 px-4 rounded shadow"
+          class="flex items-center px-4 py-2 bg-white rounded shadow gap-x-5"
         >
           <div class="relative">
             <CupIcon class="w-8 h-8 text-red-500" />
             <LightingIcon class="absolute top-0 text-white right-2" />
           </div>
           <div>
-            <h4 class="font-bold text-xl">40</h4>
+            <h4 class="text-xl font-bold">40</h4>
             <p class="text-[#666]">Loses</p>
           </div>
         </div>
