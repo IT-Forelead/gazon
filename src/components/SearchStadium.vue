@@ -122,7 +122,7 @@ const handleClick = (stadium) => {
       <div
         class="flex items-center justify-between px-3 py-2 text-white bg-teal-500"
       >
-        <LocationIcon />
+        <LocationIcon class="w-5 h-5"/>
         <span class="text-xs font-bold">{{
           useStadiumStore().selectStadium.address
         }}</span>

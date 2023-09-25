@@ -1,19 +1,56 @@
 <script setup>
-import SearchIcon from "@/assets/icons/SearchIcon.vue"
+import { ref } from "vue";
+import SearchIcon from "@/assets/icons/SearchIcon.vue";
+import stadiumsList from "@/assets/data/stadiumList.json";
+import useMoneyFormatter from "@/mixins/currencyFormatter";
+
+const search = ref("");
+const open = ref(false);
+const inputRef = ref(null);
 </script>
 
 <template>
-    <form class="mt-8 px-2 pb-6">
-      <div class="relative mx-auto max-w-3xl pb-1">
-        <div class="absolute inset-y-0 flex items-center pl-3">
-          <SearchIcon class="w-5 h-5 text-teal-600"/>
-        </div>
-        <input type="search" id="default-search"
-               class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-200 rounded-full bg-white focus:ring-teal-500 focus:border-teal-500"
-               placeholder="Stadionlarni qidirish..." required>
-      </div>
-    </form>
+  <section class="mt-8 pb-6 px-2">
+    <label
+      ref="inputRef"
+      @click="open = true"
+      class="mx-auto md:max-w-lg flex items-center px-2 py-2 border rounded-full bg-white border-teal-600"
+    >
+      <SearchIcon class="w-7 h-7 text-teal-600 cursor-pointer mr-2" />
+      <input
+        type="search"
+        v-model="search"
+        class="text-gray-900 border-0 focus:ring-0 w-full sm:p-2 p-0"
+        placeholder="Stadionlarni qidirish..."
+      />
+    </label>
+    <ul
+      class="max-h-52 mt-2 pr-2 flex flex-col overflow-y-scroll rounded-lg"
+      v-show="open"
+    >
+      <li v-for="stadium in stadiumsList" :key="stadium.id" class="mb-0.5">
+        <router-link :to="`/view-stadiums/${stadium.id}`"
+          class="justify-between transition duration-300 shadow hover:-translate-y-0.5 hover:shadow select-none cursor-pointer bg-white flex flex-1 items-center py-1 pr-2"
+        >
+          <div
+            class="flex flex-col items-center justify-center w-10 h-10 mr-4 bg-center bg-cover rounded-full"
+            :style="{
+              backgroundImage: `url(/images/${stadium.images[0]}.jpg)`,
+            }"
+          ></div>
+          <div class="flex-1 pl-1 md:mr-16">
+            <div class="font-medium dark:text-white">
+              {{ stadium.title }}
+            </div>
+            <div class="text-sm text-gray-600 dark:text-gray-200">
+              {{ stadium.address }}
+            </div>
+          </div>
+          <div class="text-xs text-gray-600 dark:text-gray-200">
+            {{ useMoneyFormatter(stadium.price) }}
+          </div>
+        </router-link>
+      </li>
+    </ul>
+  </section>
 </template>
-<style scoped>
-
-</style>
