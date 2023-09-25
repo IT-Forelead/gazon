@@ -5,6 +5,7 @@ import SearchingSection from "@/components/Home Sections/SearchingSection.vue"
 import StadiumsSection from "@/components/Home Sections/StadiumsSection.vue"
 import TodaysMatchesSection from "@/components/Home Sections/TodaysMatchesSection.vue"
 import FinishedMatchesSection from "@/components/Home Sections/FinishedMatchesSection.vue"
+import News from "@/views/News.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import FinishedMatchesSection from "@/components/Home Sections/FinishedMatchesSe
     <TodaysMatchesSection/>
     <BestPlayers />
     <FinishedMatchesSection/>
+    <News/>
   </div>
 </template>

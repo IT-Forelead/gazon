@@ -1,32 +1,20 @@
 <script setup>
 import {onBeforeUnmount, onMounted, ref} from "vue"
-import notify from "izitoast"
-import "izitoast/dist/css/iziToast.min.css"
+import useMoneyFormatter from "../mixins/currencyFormatter"
 import stadiums from '@/assets/data/stadiumList.json'
 import SearchIcon from "@/assets/icons/SearchIcon.vue"
-import RightIcon from "@/assets/icons/RightIcon.vue"
 import {useDropDownStore} from "@/stores/dropdown.store"
 import LocationIcon from "@/assets/icons/LocationIcon.vue"
 import {useStadiumStore} from "@/stores/stadiums.store"
-import useMoneyFormatter from "../mixins/currencyFormatter";
 
 const inputRef = ref(null)
 const searchQuery = ref("")
 
-const showWarningToast = (text) => {
-  notify.warning({
-    message: text,
-    messageSize: "20",
-    position: "bottomRight",
-    timeout: 5000,
-  })
-}
 const filterStadiums = () => {
   return stadiums.filter((stadium) =>
       stadium.title.toLowerCase().includes(searchQuery.value.toLowerCase())
   )
 }
-
 const closeStadiumList = (event) => {
   if (inputRef.value && !inputRef.value.contains(event.target)) {
     useDropDownStore().closeSelectStadiums()
@@ -57,7 +45,7 @@ const handleClick = (stadium) => {
              class="w-full p-4 pl-10 text-sm text-gray-900 bg-white border border-gray-200 rounded-xl focus:ring-teal-500 focus:border-teal-500"
              placeholder="Stadionlarni qidirish...">
     </div>
-    <!--    StadiumList-->
+    <!-- StadiumList-->
     <div class="px-1">
       <ul v-if="useDropDownStore().isOpenSelectStadiums" class="flex flex-col h-48 overflow-y-scroll rounded-lg">
         <li v-for="(stadium, index) in filterStadiums()" :key="index" class="mb-0.5">
@@ -78,13 +66,12 @@ const handleClick = (stadium) => {
             <div class="text-xs text-gray-600 dark:text-gray-200">
               {{ useMoneyFormatter(stadium.price) }}
             </div>
-
           </div>
         </li>
       </ul>
     </div>
   </div>
-<!--Selected Stadium Info-->
+  <!--Selected Stadium Info-->
   <div v-if="useStadiumStore().selectStadium.title" class="flex flex-col items-center justify-center w-full max-w-lg px-2 mx-auto mt-4">
     <div class="w-full h-64 bg-gray-300 bg-center bg-cover rounded-lg shadow-md" :style="{ backgroundImage:
       `url(/images/${useStadiumStore().selectStadium.images[0]}.jpg)` }">
@@ -92,7 +79,7 @@ const handleClick = (stadium) => {
     <div class="w-64 -mt-10 overflow-hidden bg-white rounded-lg shadow-lg md:w-80 dark:bg-gray-800">
       <h3 class="py-2 font-bold tracking-wide text-center text-gray-800 uppercase dark:text-white">{{ useStadiumStore().selectStadium.title }}</h3>
       <div class="flex items-center justify-between px-3 py-2 text-white bg-teal-500">
-        <LocationIcon/>
+        <LocationIcon class="w-5 h-5"/>
         <span class="text-xs font-bold">{{ useStadiumStore().selectStadium.address }}</span>
         <div
             class="px-2 py-1 text-xs font-semibold text-white uppercase transition-colors duration-300 transform bg-teal-700 rounded hover:bg-teal-600 dark:hover:bg-gray-600 focus:bg-gray-700 dark:focus:bg-gray-600 focus:outline-none">

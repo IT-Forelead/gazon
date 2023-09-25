@@ -55,7 +55,7 @@ const reportStadion = computed(() => {
 });
 </script>
 <template>
-  <div class="relative mx-auto mb-8 px-2">
+  <div class="relative max-w-5xl mx-auto mb-8 px-2">
     <div
       class="flex justify-between items-center md:mx-auto text-teal-600 font-bold"
     >
