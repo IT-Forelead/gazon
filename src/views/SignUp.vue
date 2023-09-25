@@ -1,14 +1,14 @@
 <script setup>
+import notify from "izitoast";
+import { vMaska } from "maska";
 import { ref, reactive } from "vue";
+import "izitoast/dist/css/iziToast.min.css";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
 import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import UserRoleIcon from "@/assets/icons/UserRoleIcon.vue";
 import LockPasswordIcon from "@/assets/icons/LockPasswordIcon.vue";
-import { vMaska } from "maska";
-import notify from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
 
 const showToast = (text) => {
   notify.error({

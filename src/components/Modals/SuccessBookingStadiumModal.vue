@@ -1,6 +1,6 @@
 <script setup>
-import CloseIcon from "@/assets/icons/CloseIcon.vue";
 import {useModalStore} from "@/stores/modal.store";
+import CloseIcon from "@/assets/icons/CloseIcon.vue";
 import SuccessIcon from "@/assets/icons/SuccessIcon.vue";
 
 const closeModal = () => {

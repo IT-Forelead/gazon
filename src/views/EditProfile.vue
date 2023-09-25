@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted, ref } from "vue";
 import router from "@/router";
+import { vMaska } from "maska";
+import { onMounted, reactive, ref } from "vue";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import RightIcon from "@/assets/icons/RightIcon.vue";
-import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
-import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
-import { useEditProfile } from "@/stores/editProfile.store";
-import { vMaska } from "maska";
 import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
+import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
+import { useEditProfile } from "../stores/editProfile.store";
+import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
 
 const goBack = () => {
   router.back();
@@ -31,12 +31,14 @@ onMounted(() => {
 </script>
 <template>
   <div
-    class="min-h-screen max-w-lg mx-auto px-2 py-6 mb-10 flex flex-col justify-center"
+    class="min-h-screen max-w-lg mx-auto py-6 mb-10 flex flex-col justify-center"
   >
     <button @click="router.back()">
-      <LeftBackIcon class="w-7 h-7 text-teal-600 hover:text-teal-500 cursor-pointer"/>
+      <LeftBackIcon
+        class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"
+      />
     </button>
-    <div class="relative py-10 px-2">
+    <div class="relative px-4 py-10 mx-8 md:mx-0">
       <div class="max-w-md mx-auto">
         <div class="flex justify-center items-center mt-12">
           <div class="mb-6 text-center absolute">
