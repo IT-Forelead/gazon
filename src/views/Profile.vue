@@ -58,7 +58,6 @@ const deletePlayer = (index) => {
 };
 </script>
 
-
 <template>
   <section>
     <ShapeIcon class="md:-mt-[7%]" />
