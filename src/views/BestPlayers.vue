@@ -14,7 +14,7 @@ const reportBestPlayer = computed(() =>
 
 <template>
   <section
-    class="overflow-y-auto max-w-lg md:mx-auto my-2"
+    class="px-2 overflow-y-auto max-w-5xl md:mx-auto my-2"
     :class="{ 'max-h-96': $route.href == '/' }"
   >
     <div class="sticky top-0 pb-4 px-2 bg-white">

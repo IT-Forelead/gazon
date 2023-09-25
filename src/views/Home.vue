@@ -1,4 +1,5 @@
 <script setup>
+import News from "./News.vue";
 import BestPlayers from "@/views/BestPlayers.vue";
 import NavbarTop from "@/components/NavbarTop.vue";
 import StadiumsSection from "@/components/Home Sections/StadiumsSection.vue";
@@ -15,5 +16,6 @@ import FinishedMatchesSection from "@/components/Home Sections/FinishedMatchesSe
     <TodaysMatchesSection />
     <BestPlayers />
     <FinishedMatchesSection />
+    <News />
   </div>
 </template>
