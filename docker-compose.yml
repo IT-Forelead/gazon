@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  gazonui:
+    restart: always
+    image: gazonui:latest
+    hostname: gazonui
+    container_name: gazonui
+    networks:
+      - external-net
+    ports:
+      - "4100:80"
+networks:
+  external-net:
+    name: external-net
+    external: true
