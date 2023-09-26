@@ -80,10 +80,14 @@ onUpdated(() => {
       </div>
       <div class="w-full h-64">
         <iframe
+          :src="stadium?.location"
+          class="rounded-2xl my-3.5 mx-auto w-full h-full"
+        ></iframe>
+        <!-- <iframe
           class="rounded-2xl my-3.5 mx-auto w-full h-full"
           src="https://yandex.ru/map-widget/v1/?um=constructor%3A0861d5d052d7a68acfd29d258e16d301bf0474c689e21cece960b0f2abbbaedc&amp;source=constructor"
           frameborder="0"
-        ></iframe>
+        ></iframe> -->
       </div>
       <div class="flex justify-between items-center mt-2">
         <div class="flex items-center space-x-2">
