@@ -1,31 +1,27 @@
 <script setup>
-import {useModalStore} from "@/stores/modal.store"
-import CloseIcon from "@/assets/icons/CloseIcon.vue"
-
-const closeModal = () => {
-  useModalStore().closeFilterMatchListModal()
-}
-
+import { useModalStore } from "@/stores/modal.store";
+import CloseIcon from "../../assets/icons/CloseIcon.vue";
+import MyTeleport from "../../MyTeleport.vue";
 </script>
+
 <template>
-  <div v-if="useModalStore().isFilterMatchListModalOpen"
-       class="fixed left-0 right-0 z-50 flex items-center justify-center md:top-0 -bottom-4 md:bottom-0">
-    <div class="fixed inset-0 bg-black opacity-40"></div>
-    <div class="w-full md:p-4 md:max-w-lg">
-      <div class="relative bg-white shadow md:rounded-lg rounded-t-3xl">
-        <div class="flex items-start justify-between p-3 border-b rounded-t">
-          <h3 class="text-xl font-semibold text-teal-600">
-            Filtr
-          </h3>
-          <button @click="closeModal" type="button"
-                  class="inline-flex items-center justify-center w-8 h-8 ml-auto text-gray-400 bg-transparent rounded-lg hover:bg-teal-200 hover:text-teal-500">
-            <CloseIcon class="w-5 h-5"/>
+  <div>
+    <MyTeleport>
+      <div class="w-full md:p-2 shadow-md p-3">
+        <div class="flex justify-between">
+          <h3 class="text-xl font-semibold text-teal-600">Filtr</h3>
+          <button
+            @click="closeModal"
+            type="button"
+            class="text-gray-400 bg-transparent hover:bg-teal-200 hover:text-teal-500 rounded-lg w-8 h-8 ml-auto inline-flex justify-center items-center"
+          >
+            <CloseIcon class="w-5 h-5" />
           </button>
         </div>
         <!-- Modal body -->
         <div class="px-3 py-2 space-y-2">
           <h3 class="text-lg font-medium text-gray-900">Gollar</h3>
-          <ul class="grid w-full grid-cols-3 gap-2">
+          <ul class="grid w-full gap-2 grid-cols-3">
             <li>
               <input type="radio" id="price-1" name="hosting" value="price-1" class="hidden peer" required>
               <label for="price-1"
@@ -86,14 +82,14 @@ const closeModal = () => {
           </div>
         </div>
         <!-- Modal footer -->
-        <div class="flex items-center p-4 mb-2 space-x-2 border-t">
+        <div class="flex items-center p-4 space-x-2 border-t mb-2">
           <button  type="button"
                   class="text-white w-full bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-md px-4 py-2.5 text-center">
             Filtr
           </button>
         </div>
       </div>
-    </div>
+    </MyTeleport>
   </div>
 </template>
 <style scoped>

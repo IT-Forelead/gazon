@@ -1,4 +1,6 @@
 <script setup>
+import MyTeleport from "../MyTeleport.vue";
+import { useModalStore } from "../stores/modal.store";
 </script>
 
 <template>
@@ -7,5 +9,4 @@
   </h1>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
