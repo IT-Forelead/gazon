@@ -57,7 +57,7 @@ const reportStadion = computed(() => {
     <Vue3Marquee
       :duration="100"
       :pauseOnHover="true"
-      :direction="normal"
+      :direction="'normal'"
       class="overflow-hidden"
     >
       <ul
