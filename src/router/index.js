@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import {supabase} from "@/client/supabase";
+let localUser
 const routes = [
   {
     path: '/',
@@ -79,11 +80,65 @@ const routes = [
     component: () => import('../views/ViewPlayer.vue'),
     meta: { layout: 'dashboard' },
   },
+  {
+    path: '/admin',
+    name: 'Admin Home',
+    component: () => import('../views/admin/AdminDashboard.vue'),
+    meta: {
+      requiresAuth: true,
+        layout: "admin"
+    }
+  },
+  {
+    path: '/my-stadiums',
+    name: 'My stadiums',
+    component: () => import('../views/admin/MyStadiums.vue'),
+    meta: {requiresAuth: true,
+    layout: "admin"}
+  },
+  {
+    path: '/orders',
+    name: 'Orders',
+    component: () => import('../views/admin/Orders.vue'),
+    meta: {requiresAuth: true,
+      layout: "admin"}
+  },
+  {
+    path: '/matches',
+    name: 'Matches',
+    component: () => import('../views/admin/Matches.vue'),
+    meta: {requiresAuth: true,
+      layout: "admin"}
+  },
+  {
+    path: '/dashboard',
+    name: 'Admin Dashboard',
+    component: () => import('../views/admin/AdminDashboard.vue'),
+    meta: {requiresAuth: true,
+      layout: "admin"}
+  },
 ]
-
 const router = createRouter({
   history: createWebHistory(),
   routes: routes,
+})
+
+async function getUser(next) {
+  localUser = await supabase.auth.getSession()
+  console.log(localUser)
+  if (localUser.data.session == null) {
+    next("/")
+  } else {
+    next()
+  }
+}
+//auth requirements
+router.beforeEach((to, from, next) => {
+  if (to.meta.requiresAuth) {
+    getUser(next)
+  } else {
+    next()
+  }
 })
 
 export default router

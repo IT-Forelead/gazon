@@ -4,7 +4,7 @@ import router from "@/router";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import RightIcon from "@/assets/icons/RightIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
-import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
+import EditIcon from "@/assets/icons/EditIcon.vue";
 import { useEditProfile } from "../stores/editProfile.store";
 import { vMaska } from "maska";
 import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
@@ -51,7 +51,7 @@ onMounted(() => {
               type="button"
               class="relative -top-7 text-teal-500 cursor-pointer focus:outline-none border py-1 px-3 rounded-full shadow-sm text-left bg-white hover:bg-gray-100 font-medium"
             >
-              <EditPhotoIcon class="inline-flex w-5 h-5 mr-1" />
+              <EditIcon class="inline-flex w-5 h-5 mr-1" />
               O'zgartirish
             </label>
             <input

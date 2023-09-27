@@ -14,5 +14,5 @@ const layout = computed(
   <component :is="layout" class="pb-16">
     <router-view />
   </component>
-  <NavbarBottom />
+
 </template>

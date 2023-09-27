@@ -3,7 +3,10 @@ export const useModalStore = defineStore('modal', {
     state: () => ({
         isFilterMatchListModalOpen: false,
         isSearchMatchListModalOpen: false,
-        isSuccessBookingStadiumModalOpen:false
+        isSuccessBookingStadiumModalOpen:false,
+        isAddStadiumModalOpen:false,
+        isDeleteStadiumModalOpen:false,
+        isViewStadiumModalOpen:false
     }),
     actions: {
         openFilterMatchListModal() {
@@ -23,6 +26,24 @@ export const useModalStore = defineStore('modal', {
         },
         closeSuccessBookingStadiumModal(){
             this.isSuccessBookingStadiumModalOpen = false
+        },
+        openAddStadiumModal() {
+            this.isAddStadiumModalOpen = true
+        },
+        closeAddStadiumModal() {
+            this.isAddStadiumModalOpen = false
+        },
+        openDeleteStadiumModal() {
+            this.isDeleteStadiumModalOpen = true
+        },
+        closeDeleteStadiumModal() {
+            this.isDeleteStadiumModalOpen = false
+        },
+        openViewStadiumModal() {
+            this.isViewStadiumModalOpen = true
+        },
+        closeViewStadiumModal() {
+            this.isViewStadiumModalOpen = false
         }
     }
 })
