@@ -32,7 +32,7 @@ const fetchRssData = () => {
             pubDate: formattedPubDate,
             image: imageUrl
               ? imageUrl.getAttribute("url")
-              : "/images/the-stadium.jpg",
+              : "/images/stadiums/the-stadium.jpg",
             title: item.querySelector("title").textContent,
             link: item.querySelector("link").textContent,
             description: item.querySelector("description").textContent,
@@ -105,7 +105,7 @@ onMounted(() => {
           >
             <img
               class="w-full h-full absolute top-0 left-0 object-cover"
-              src="/images/the-stadium.jpg"
+              src="/images/stadiums/the-stadium.jpg"
               alt="Image Description"
             />
           </div>
@@ -171,7 +171,7 @@ onMounted(() => {
           >
             <img
               class="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-              src="/images/the-stadium.jpg"
+              src="/images/stadiums/the-stadium.jpg"
               alt="image"
               v-if="item.image"
             />
