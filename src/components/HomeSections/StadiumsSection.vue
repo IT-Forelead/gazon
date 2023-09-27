@@ -57,7 +57,7 @@ const reportStadion = computed(() => {
     <Vue3Marquee
       :duration="100"
       :pauseOnHover="true"
-      :direction="'normal'"
+      :direction="normal"
       class="overflow-hidden"
     >
       <ul
@@ -76,7 +76,9 @@ const reportStadion = computed(() => {
             <div
               class="h-40 bg-cover bg-center md:h-48 2xl:h-60 rounded-t-xl relative after:absolute after:content-[''] after:w-full after:h-full after:rounded-t-xl after:bg-[#00000049] duration-300 group-hover:after:bg-[#00000070]"
               :style="{
-                backgroundImage: `url(/images/stadiums/${stadion.images[0]}.jpg)`,
+                backgroundImage: `url(/images/stadiums/${
+                  stadion.images[0] ? stadion.images[0] : 'the-stadium'
+                }.jpg)`,
               }"
             ></div>
             <div class="p-2 border border-t-0 rounded-b-xl">
