@@ -65,7 +65,7 @@ const reportStadion = computed(() => {
         v-for="(stadion, index) in reportStadion"
         :key="index"
       >
-        <li class="w-72 md:w-96 ml-1 md:ml-2 relative group">
+        <li class="w-72 md:w-96 ml-4 relative group">
           <router-link :to="`/view-stadiums/${stadion.id}`">
             <div
               class="flex items-start gap-x-1 absolute top-3 right-3 text-white font-extrabold z-10"
