@@ -1,13 +1,13 @@
 <script setup>
-import { onMounted, reactive, ref } from "vue";
 import router from "@/router";
+import { vMaska } from "maska";
+import { onMounted, reactive, ref } from "vue";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import RightIcon from "@/assets/icons/RightIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import EditIcon from "@/assets/icons/EditIcon.vue";
 import { useEditProfile } from "../stores/editProfile.store";
-import { vMaska } from "maska";
-import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
+import EditPhotoIcon from "@/assets/icons/EditPhotoIcon.vue";
 
 const goBack = () => {
   router.back();
@@ -34,7 +34,9 @@ onMounted(() => {
     class="min-h-screen max-w-lg mx-auto py-6 mb-10 flex flex-col justify-center"
   >
     <button @click="router.back()">
-      <LeftBackIcon class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"/>
+      <LeftBackIcon
+        class="w-7 h-7 ml-8 text-teal-600 hover:text-teal-500 cursor-pointer mx-2"
+      />
     </button>
     <div class="relative px-4 py-10 mx-8 md:mx-0">
       <div class="max-w-md mx-auto">
@@ -43,7 +45,7 @@ onMounted(() => {
             <div
               class="mx-auto w-36 h-36 border rounded-full bg-top bg-cover relative bg-gray-100 mb-4 shadow-inset"
               :style="{
-                backgroundImage: `url(/images/${player?.firstName}.jpg)`,
+                backgroundImage: `url(/images/players/${player?.firstName}.jpg)`,
               }"
             ></div>
             <label

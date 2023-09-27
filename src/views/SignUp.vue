@@ -1,5 +1,8 @@
 <script setup>
+import notify from "izitoast";
+import { vMaska } from "maska";
 import {ref, reactive} from "vue";
+import "izitoast/dist/css/iziToast.min.css";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import PhoneIcon from "@/assets/icons/PhoneIcon.vue";
 import UserBoldIcon from "@/assets/icons/UserBoldIcon.vue";

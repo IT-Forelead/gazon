@@ -1,5 +1,8 @@
 <script setup>
+import notify from "izitoast";
+import { vMaska } from "maska";
 import {ref, reactive} from "vue";
+import "izitoast/dist/css/iziToast.min.css";
 import EyeIcon from "@/assets/icons/EyeIcon.vue";
 import EyeSlashIcon from "@/assets/icons/EyeSlashIcon.vue";
 import notify from "izitoast";
@@ -84,6 +87,7 @@ const logout = async () => {
   }
 };
 </script>
+
 <template>
   <div
       class="absolute w-full max-w-lg px-8 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 md:w-2/3 md:px-4 md:mx-auto"

@@ -1,12 +1,12 @@
 <script setup>
-import SunIcon from "@/assets/icons/SunIcon.vue"
-import BallIcon from "@/assets/icons/BallIcon.vue"
-import NotificationIcon from "@/assets/icons/NotificationIcon.vue"
+import SunIcon from "@/assets/icons/SunIcon.vue";
+import BallIcon from "@/assets/icons/BallIcon.vue";
+import NotificationIcon from "@/assets/icons/NotificationIcon.vue";
 </script>
 <template>
   <div class="w-full h-14 px-4 pt-2">
     <div
-      class="mx-auto h-full flex justify-between items-center max-w-lg md:max-w-3xl"
+      class="mx-auto px-2 h-full flex justify-between items-center max-w-5xl"
     >
       <div class="flex items-center">
         <router-link to="/">

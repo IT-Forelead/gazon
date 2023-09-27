@@ -1,9 +1,9 @@
 <script setup>
-import HomeIcon from "@/assets/icons/HomeIcon.vue"
-import BallIcon from "@/assets/icons/BallIcon.vue"
-import ProfileIcon from "@/assets/icons/ProfileIcon.vue"
-import StadiumIcon from "@/assets/icons/StadiumIcon.vue"
-import CalendarIcon from "@/assets/icons/CalendarIcon.vue"
+import HomeIcon from "@/assets/icons/HomeIcon.vue";
+import BallIcon from "@/assets/icons/BallIcon.vue";
+import ProfileIcon from "@/assets/icons/ProfileIcon.vue";
+import StadiumIcon from "@/assets/icons/StadiumIcon.vue";
+import CalendarIcon from "@/assets/icons/CalendarIcon.vue";
 
 const menuLists = [
   { path: "", icon: HomeIcon, size: "w-9 h-9" },
