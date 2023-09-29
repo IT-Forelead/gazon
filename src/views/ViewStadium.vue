@@ -78,59 +78,58 @@ onUpdated(() => {
       ></iframe>
     </div>
 
-    <div class="">
-      <div class="flex items-center justify-between">
-        <address class="flex items-center">
-          <LocationIcon class="w-4 h-4 text-teal-400" />
-          {{ stadium?.address }}
-        </address>
-        <h4 class="text-2xl">{{ useMoneyFormatter(stadium?.price) }}</h4>
-      </div>
+    <div class="flex items-center justify-between">
+      <address class="flex items-center">
+        <LocationIcon class="w-4 h-4 text-teal-400" />
+        {{ stadium?.address }}
+      </address>
+      <h4 class="text-2xl">{{ useMoneyFormatter(stadium?.price) }}</h4>
+    </div>
+    <div class="flex items-center mb-2">
+      <StarIcon class="text-yellow-300 h-6 w-6" />
+      <h4 class="text-lg">{{ stadium?.assessment }}</h4>
+      <h4 class="text-[#666]">({{ stadium?.reviews }} Reviews)</h4>
+    </div>
+    <span class="text-lg font-bold2">Xususiyatlari:</span>
+    <div class="flex items-center gap-x-3 mb-2">
       <div class="flex items-center">
-        <StarIcon class="text-yellow-300 h-6 w-6" />
-        <h4 class="text-lg">{{ stadium?.assessment }}</h4>
-        <h4 class="text-lg text-[#666]">({{ stadium?.reviews }} Reviews)</h4>
+        <UserIcon class="text-3xl font-bold text-teal-400 h-6 w-6 text" />
+        <h1 class="text-lg">{{ stadium?.reviews }}ta odam</h1>
       </div>
-      <div class="items-center mt-3">
-        <span class="text-lg font-bold">Xususiyatlari:</span>
-        <div class="flex justify-start mb-2 space-x-6 items-center mt-1">
-          <div class="flex space-x-1 items-center">
-            <h1 class="text-3xl font-bold">
-              <UserIcon class="text-teal-400 h-6 w-6 text" />
-            </h1>
-            <h1 class="text-lg">{{ stadium?.reviews }}ta odam</h1>
-          </div>
-          <div class="flex space-x-1 items-center">
-            <FieldIcon class="text-teal-400 h-6 w-6 text" />
-            <h1 class="text-lg text-[#666]">{{ stadium?.field }}</h1>
-          </div>
-        </div>
-        <span class="text-lg mt-4 font-bold">Tasnifi:</span>
-        <p class="text-left">
-          {{ stadium?.description }}
-        </p>
+      <div class="flex space-x-1 items-center">
+        <FieldIcon class="text-teal-400 h-6 w-6 text" />
+        <h1 class="text-lg text-[#666]">{{ stadium?.field }}</h1>
       </div>
-      <div class="flex justify-around mb-4 mt-2 items-center">
-        <div class="flex">
-          <h1
-            class="text-lg rounded-l-lg border-2 px-4 py-1.5 bg-teal-50 border-teal-50 hover:bg-teal-50 transition duration-300"
-          >
-            {{ stadium?.phone }}
-          </h1>
-          <button
-            class="px-4 py-2 bg-teal-400 hover:bg-teal-500 transition duration-300 rounded-r-lg"
-          >
-            <a :href="`tel:${stadium?.phone}`">
-              <CallIcon class="text-white h-6 w-6 text" />
-            </a>
-          </button>
-        </div>
-        <button
-          class="px-4 py-2 bg-teal-400 hover:bg-teal-500 transition duration-300 rounded-lg"
+    </div>
+    <div v-show="stadium?.description">
+      <span class="text-lg mt-4 font-bold">Tasnifi:</span>
+      <p class="text-left">
+        {{ stadium?.description }}
+      </p>
+    </div>
+    <div
+      class="flex justify-between mb-4 mt-2 items-center"
+      v-show="stadium?.phone"
+    >
+      <div class="flex">
+        <h1
+          class="text-lg rounded-l-lg border-2 px-4 py-1.5 bg-teal-50 border-teal-50 hover:bg-teal-50 transition duration-300"
         >
-          <label class="text-gray-50">Band qilish</label>
+          {{ stadium?.phone }}
+        </h1>
+        <button
+          class="px-4 py-2 bg-teal-400 hover:bg-teal-500 transition duration-300 rounded-r-lg"
+        >
+          <a :href="`tel:${stadium?.phone}`">
+            <CallIcon class="text-white h-6 w-6 text" />
+          </a>
         </button>
       </div>
+      <button
+        class="px-4 py-2 bg-teal-400 hover:bg-teal-500 transition duration-300 rounded-lg"
+      >
+        <label class="text-gray-50">Band qilish</label>
+      </button>
     </div>
     <StadiumsSection />
   </section>
