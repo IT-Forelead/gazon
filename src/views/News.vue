@@ -52,7 +52,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="max-w-6xl px-2 py-6 sm:px-6 lg:px-0 lg:py-14 mx-auto">
+  <div class="px-2">
     <button @click="router.back()" :class="{ hidden: $route.href === '/' }">
       <LeftBackIcon
         class="w-7 h-7 text-teal-600 hover:text-teal-500 cursor-pointer"
