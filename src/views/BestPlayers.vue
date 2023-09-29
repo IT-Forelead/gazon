@@ -20,8 +20,8 @@ const reportBestPlayer = computed(() =>
     <div class="sticky top-0 pb-4 px-2 bg-white">
       <h2
         :class="[
-          $route.href == '/' ? 'text-xl' : 'text-3xl my-4',
-          'font-bold text-teal-600',
+          $route.href == '/' ? 'text-xl' : 'text-center text-3xl py-5',
+          'font-bold text-teal-500',
         ]"
       >
         Eng zo'r futbolchilar
@@ -56,15 +56,18 @@ const reportBestPlayer = computed(() =>
         </li>
       </ul>
     </div>
-    <ul class="space-y-2">
+    <ul
+      class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-5"
+      :class="{ 'gap-ddd': $route.href != '/' }"
+    >
       <li
         v-for="(player, index) in reportBestPlayer"
         :key="player.id"
-        class="bg-white rounded-md py-2 pr-2"
+        class="bg-white rounded md:border"
       >
         <router-link
           :to="`/view-player/${player.firstName}/${player.id}`"
-          class="flex items-center justify-between text-sm"
+          class="flex items-center justify-between text-sm border-b md:p-2 py-1"
         >
           <button class="flex items-center">
             <PlaceOneIcon class="w-10 h-10" v-show="index == 0" />
