@@ -1,19 +1,18 @@
 <script setup>
 import { ref, computed } from "vue";
 import { Vue3Marquee } from "vue3-marquee";
-import StarIcon from "@/assets/icons/StarIcon.vue";
+import StadiumCard from "./StadiumCard.vue";
 import SortButton from "../Buttons/SortButton.vue";
 import stadiumList from "@/assets/data/stadiumList.json";
-import useMoneyFormatter from "../../mixins/currencyFormatter";
 
-const currentStadion = ref("barchasi");
+const currentStadium = ref("barchasi");
 const titleList = ref(["barchasi", "band", "band emas", "narxi"]);
-const reportStadion = computed(() => {
-  if (currentStadion.value == "barchasi") return stadiumList;
-  if (currentStadion.value == "narxi")
+const reportStadium = computed(() => {
+  if (currentStadium.value == "barchasi") return stadiumList;
+  if (currentStadium.value == "narxi")
     return stadiumList.sort((a, b) => b.price - a.price);
   return stadiumList.filter(
-    (stadion) => stadion.status == currentStadion.value
+    (stadion) => stadion.status == currentStadium.value
   );
 });
 </script>
@@ -34,14 +33,14 @@ const reportStadion = computed(() => {
         :class="{ 'ml-auto': item == 'narxi' }"
       >
         <SortButton
-          :class="{ 'bg-teal-500 text-white': currentStadion == item }"
+          :class="{ 'bg-teal-500 text-white': currentStadium == item }"
           :title="item"
-          @click="currentStadion = item"
+          @click="currentStadium = item"
         />
       </li>
     </ul>
     <select
-      v-model="currentStadion"
+      v-model="currentStadium"
       class="my-2 py-[1px] px-2 text-teal-600 rounded border-teal-500 shadow-[0_0_1em_0_rgba(0,128,128,0.2)] focus:border-teal-400 hidden max-[373px]:inline"
     >
       <option
@@ -62,43 +61,13 @@ const reportStadion = computed(() => {
     >
       <ul
         class="flex items-center cursor-pointer"
-        v-for="(stadion, index) in reportStadion"
+        v-for="(stadium, index) in reportStadium"
         :key="index"
       >
-        <li class="w-72 md:w-96 ml-4 relative group">
-          <router-link :to="`/view-stadiums/${stadion.id}`">
-            <div
-              class="flex items-start gap-x-1 absolute top-3 right-3 text-white font-extrabold z-10"
-            >
-              <StarIcon class="text-yellow-300 h-6 w-6" />
-              <p>{{ stadion.assessment }}</p>
-            </div>
-            <div
-              class="h-40 bg-cover bg-center md:h-48 2xl:h-60 rounded-t-xl relative after:absolute after:content-[''] after:w-full after:h-full after:rounded-t-xl after:bg-[#00000049] duration-300 group-hover:after:bg-[#00000070]"
-              :style="{
-                backgroundImage: `url(/images/stadiums/${
-                  stadion.images[0] ? stadion.images[0] : 'the-stadium'
-                }.jpg)`,
-              }"
-            ></div>
-            <div class="p-2 border border-t-0 rounded-b-xl">
-              <h4 class="text-teal-700 md:text-2xl text-lg font-bold">
-                {{ stadion.title }}
-              </h4>
-              <div class="flex justify-between">
-                <p>{{ stadion.address }}</p>
-                <p>{{ useMoneyFormatter(stadion.price) }}</p>
-              </div>
-            </div>
-          </router-link>
+        <li class="w-72 md:w-96 ml-4 group">
+          <StadiumCard :stadium="stadium" />
         </li>
       </ul>
     </Vue3Marquee>
   </section>
 </template>
-
-<style>
-bg {
-  background-color: rgba(0, 128, 128, 0.034);
-}
-</style>

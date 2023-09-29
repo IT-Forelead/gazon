@@ -3,7 +3,7 @@ import LeftBackIcon from "@/assets/icons/LeftBackIcon.vue";
 </script>
 
 <template>
-  <div class="md:mx-auto px-2 py-10 w-full max-w-5xl">
+  <div class="px-2 py-10 w-full">
     <button @click="$router.back()">
       <LeftBackIcon
         class="w-7 h-7 text-teal-600 hover:text-teal-500 cursor-pointer"
