@@ -15,7 +15,10 @@ defineProps({
         <p>{{ stadium?.assessment }}</p>
       </div>
       <div
-        class="h-40 bg-cover bg-center md:h-48 2xl:h-60 rounded-t-xl relative after:absolute after:content-[''] after:w-full after:h-full after:rounded-t-xl after:bg-[#00000049] duration-300 group-hover:after:bg-[#00000070]"
+        :class="[
+          $route.href == '/stadium' ? 'h-60 md:h-64 lg:h-48' : 'h-40 md:h-48',
+          'bg-cover bg-center 2xl:h-60 rounded-t-xl relative after:absolute after:content-[\'\'] after:w-full after:h-full after:rounded-t-xl after:bg-[#00000049] duration-300 group-hover:after:bg-[#00000070]',
+        ]"
         :style="{
           backgroundImage: `url(/images/stadiums/${
             stadium?.images[0] ? stadium?.images[0] : 'the-stadium'
