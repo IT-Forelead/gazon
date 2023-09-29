@@ -54,11 +54,20 @@ onUpdated(() => {
         :modules="modules"
         class="mySwiper md:w-1/2 aspect-auto"
       >
-        <swiper-slide v-for="(image, key) in stadium?.images" :key="key">
+        <swiper-slide
+          v-for="(image, key) in stadium?.images.length
+            ? stadium?.images
+            : ['the-stadium']"
+          :key="key"
+        >
           <div class="w-full h-60 md:h-96">
             <div
               class="w-full h-full mx-auto rounded-xl bg-cover bg-center"
-              :style="{ backgroundImage: `url(/images/stadiums/${image}.jpg)` }"
+              :style="{
+                backgroundImage: `url(/images/stadiums/${
+                  image ? image : 'the-stadium'
+                }.jpg)`,
+              }"
             ></div>
           </div>
         </swiper-slide>

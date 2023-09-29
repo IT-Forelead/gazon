@@ -42,7 +42,7 @@ onBeforeUnmount(() => {
         placeholder="Stadionlarni qidirish..."
       />
       <ul
-        class="max-h-52 md:max-w-5xl flex flex-col overflow-y-scroll rounded-lg absolute -bottom-[210px] left-0 w-full bg-red z-10 bg-white shadow-[0_1em_1em_1em_rgba(0,128,128,0.2)]"
+        class="max-h-52 md:max-w-5xl flex flex-col overflow-y-scroll rounded-lg absolute top-14 md:top-16 left-0 w-full bg-red z-10 bg-white shadow-[0_1em_1em_1em_rgba(0,128,128,0.2)]"
         v-show="open"
       >
         <li v-for="stadium in searchStadium" :key="stadium.id" class="">

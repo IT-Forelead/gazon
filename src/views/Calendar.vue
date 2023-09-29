@@ -1,7 +1,7 @@
 <script setup>
 import notify from "izitoast";
 import router from "@/router";
-import { computed, ref } from "vue";
+import { computed, onMounted, onUpdated, ref } from "vue";
 import Datepicker from "vuejs3-datepicker";
 import "izitoast/dist/css/iziToast.min.css";
 import UserIcon from "@/assets/icons/UserIcon.vue";
@@ -136,6 +136,10 @@ const goToThirdStep = () => {
     currentStep.value++;
   }
 };
+
+onUpdated(() => {
+  useStadiumStore().clearSelectStadium();
+});
 </script>
 
 <template>
@@ -287,6 +291,8 @@ const goToThirdStep = () => {
           :style="{
             backgroundImage: `url(/images/stadiums/${
               useStadiumStore().selectStadium.images[0]
+                ? useStadiumStore().selectStadium.images[0]
+                : 'the-stadium'
             }.jpg)`,
           }"
         >
