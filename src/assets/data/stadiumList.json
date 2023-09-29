@@ -83,7 +83,8 @@
     "address": "Urganch shahar",
     "images": ["ulugbek-maktab-0", "ulugbek-maktab-1"],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.9846687781233!2d60.60381869468152!3d41.56957641062191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695735876317!5m2!1sen!2s"
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.9846687781233!2d60.60381869468152!3d41.56957641062191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695735876317!5m2!1sen!2s",
+    "old": "  https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11939.939397876024!2d60.6086896!3d41.5695725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695818705720!5m2!1sen!2s"
   },
   {
     "id": 5,
@@ -240,7 +241,7 @@
     "title": "Tandirchi",
     "status": "band emas",
     "phone": "+998995719254",
-    "address": "Urganch shahar",
+    "address": "Urganch tumen",
     "images": [
       "tandirchi-0",
       "tandirchi-1",

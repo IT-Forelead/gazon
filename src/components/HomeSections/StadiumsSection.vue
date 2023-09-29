@@ -19,13 +19,13 @@ const reportStadion = computed(() => {
 </script>
 
 <template>
-  <div class="px-2">
-    <div class="flex justify-between items-center text-teal-600 font-bold">
+  <section>
+    <div class="flex justify-between items-center text-teal-600 font-bold px-2">
       <h2 class="text-2xl">Stadionlar ro'yhati</h2>
       <router-link to="/stadium">Barchasi</router-link>
     </div>
     <ul
-      class="hidden my-2 gap-x-2 min-[374px]:flex"
+      class="hidden my-2 gap-x-2 min-[374px]:flex px-2"
       v-show="$route.href == 'stadium'"
     >
       <li
@@ -94,7 +94,7 @@ const reportStadion = computed(() => {
         </li>
       </ul>
     </Vue3Marquee>
-  </div>
+  </section>
 </template>
 
 <style>
