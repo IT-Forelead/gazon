@@ -8,5 +8,8 @@ export const useStadiumStore = defineStore('stadium', {
         setSelectStadium(data) {
             this.selectStadium = data
         },
+        clearSelectStadium(){
+            this.selectStadium = {}
+        }
     }
 })
