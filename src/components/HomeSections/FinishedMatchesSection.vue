@@ -55,7 +55,7 @@ const finishedMatches = ref([
 </script>
 <template>
   <div
-    class="flex justify-between max-w-5xl items-center md:mx-auto text-teal-600 font-bold px-2 mt-8"
+    class="flex justify-between items-center md:mx-auto text-teal-600 font-bold px-2 mb-2"
   >
     <h1 class="text-xl">Yakunlangan o'yinlar</h1>
     <router-link to="/match-list" class="text-xs hover:text-teal-500"
@@ -66,7 +66,6 @@ const finishedMatches = ref([
     :space="50"
     :duration="30"
     :direction="'normal'"
-    class="max-w-5xl mt-2 md:mx-auto"
   >
     <div class="flex items-center ml-6 space-x-4">
       <div
