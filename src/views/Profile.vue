@@ -63,7 +63,9 @@ const deletePlayer = (index) => {
     <ShapeIcon class="md:-mt-[7%]" />
     <div
       class="bg-top bg-cover w-32 h-32 md:w-40 md:h-40 xl:w-60 xl:h-60 bg-no-repeat rounded-full mx-auto md:-mt-[18%] -mt-[15%] shadow-2xl"
-      :style="{ backgroundImage: `url('/images/players/${player.firstName}.jpg')` }"
+      :style="{
+        backgroundImage: `url('/images/players/${player.firstName}.jpg')`,
+      }"
     ></div>
     <h2 class="text-2xl font-semibold text-center capitalize">
       {{ `${player.firstName} ${player.lastName}` }}
@@ -146,7 +148,7 @@ const deletePlayer = (index) => {
           </div>
         </div>
       </div>
-      <div class="md:flex items-start gap-x-10 my-2 md:w-full">
+      <div class="md:flex items-start gap-x-10 my-2 md:w-full relative">
         <div class="md:w-96">
           <label
             ref="inputRef"
@@ -161,7 +163,10 @@ const deletePlayer = (index) => {
               class="border-0 focus:ring-0 w-full"
             />
           </label>
-          <ul class="max-h-52 overflow-y-scroll mt-2 pr-2" v-show="open">
+          <ul
+            class="max-h-52 overflow-y-scroll mt-2 pr-2 absolute md:static w-full pb-16 md:pb-0 top-10 md:shadow-none bg-white shadow-[0_0_1em_0_rgba(0,128,128,0.2)] z-10"
+            v-show="open"
+          >
             <li
               @click="addPlayer(player.id)"
               class="py-1 flex justify-between border-b cursor-pointer duration-300 hover:-translate-y-0.5 hover:shadow bg-white items-center"

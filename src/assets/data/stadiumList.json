@@ -23,17 +23,25 @@
   },
   {
     "id": 1,
-    "reviews": 10,
-    "price": 100000,
+    "reviews": 12,
+    "price": 50000,
     "field": "50 m²",
-    "assessment": "4.2",
+    "assessment": "4.0",
     "status": "band emas",
-    "title": "Xorazm Palace",
-    "phone": "+998999999999",
+    "title": "Usmon maktab",
+    "phone": "+998919951110",
     "address": "Urganch shahar",
-    "images": ["Tottenham", "Tottenham1", "Tottenham2", "Tottenham3"],
+    "images": [
+      "usmon-maktab-0",
+      "usmon-maktab-1",
+      "usmon-maktab-2",
+      "usmon-maktab-3",
+      "usmon-maktab-4",
+      "usmon-maktab-5",
+      "usmon-maktab-6"
+    ],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": ""
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.824035134729!2d60.644574977199056!3d41.551407085803504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfcf4d603512b5%3A0x31476a58ff6f5545!2sgazon%20(%22Usmon%20Yusupov%22%20maktab)!5e0!3m2!1sen!2s!4v1695737006274!5m2!1sen!2s"
   },
   {
     "id": 2,
@@ -45,9 +53,9 @@
     "status": "band emas",
     "phone": "+998996200550",
     "address": "Urganch tuman",
-    "images": ["PSJ", "PSJ1", "PSJ2", "PSJ3"],
+    "images": [],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": ""
+    "location": "https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d2984.536373124581!2d60.56431397738102!3d41.57927777127611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDHCsDM0JzQ1LjQiTiA2MMKwMzQnMDAuOCJF!5e0!3m2!1sen!2s!4v1695809482746!5m2!1sen!2s"
   },
   {
     "id": 3,
@@ -75,7 +83,8 @@
     "address": "Urganch shahar",
     "images": ["ulugbek-maktab-0", "ulugbek-maktab-1"],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.9846687781233!2d60.60381869468152!3d41.56957641062191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695735876317!5m2!1sen!2s"
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2984.9846687781233!2d60.60381869468152!3d41.56957641062191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695735876317!5m2!1sen!2s",
+    "old": "  https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11939.939397876024!2d60.6086896!3d41.5695725!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc972861acec9%3A0x5dd750c9600fa76d!2sgazon%20(19-maktab%20%22Ulug&#39;bek%22)!5e0!3m2!1sen!2s!4v1695818705720!5m2!1sen!2s"
   },
   {
     "id": 5,
@@ -136,11 +145,11 @@
     "assessment": "4.4",
     "status": "band emas",
     "title": "Bobur maktab",
-    "phone": "+998999999999",
+    "phone": "",
     "address": "Urganch shahar",
-    "images": ["Barsa", "Barsa1", "Barsa2", "Barsa3"],
+    "images": [],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": ""
+    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.334092193808!2d60.65606687606737!3d41.54036297128079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfcfc598111361%3A0x293882239a4d0286!2sSchool!5e0!3m2!1sen!2s!4v1695811684154!5m2!1sen!2s"
   },
   {
     "id": 9,
@@ -183,7 +192,7 @@
     "title": "Okean",
     "assessment": "4.4",
     "status": "band emas",
-    "phone": "+998939999999",
+    "phone": "",
     "address": "Urganch shahar",
     "images": ["okean-0", "okean-1", "okean-2"],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
@@ -197,7 +206,7 @@
     "assessment": "4.0",
     "status": "band emas",
     "title": "Saharnyyy",
-    "phone": "+998939999999",
+    "phone": "",
     "address": "Urganch shahar",
     "images": [
       "saxarnyy-0",
@@ -232,7 +241,7 @@
     "title": "Tandirchi",
     "status": "band emas",
     "phone": "+998995719254",
-    "address": "Urganch shahar",
+    "address": "Urganch tumen",
     "images": [
       "tandirchi-0",
       "tandirchi-1",
@@ -242,27 +251,5 @@
     ],
     "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
     "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2986.000233513903!2d60.569572877199!3d41.54759218604097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfc97fead7fdc9%3A0x471a21652171be88!2sgazon%20(Tandirchi%206-maktab)!5e0!3m2!1sen!2s!4v1695736975931!5m2!1sen!2s"
-  },
-  {
-    "id": 15,
-    "reviews": 12,
-    "price": 50000,
-    "field": "50 m²",
-    "assessment": "4.0",
-    "status": "band emas",
-    "title": "Usmon maktab",
-    "phone": "+998919951110",
-    "address": "Urganch shahar",
-    "images": [
-      "usmon-maktab-0",
-      "usmon-maktab-1",
-      "usmon-maktab-2",
-      "usmon-maktab-3",
-      "usmon-maktab-4",
-      "usmon-maktab-5",
-      "usmon-maktab-6"
-    ],
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting\n  industry. Lorem Ipsum has been the industry's",
-    "location": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2985.824035134729!2d60.644574977199056!3d41.551407085803504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x41dfcf4d603512b5%3A0x31476a58ff6f5545!2sgazon%20(%22Usmon%20Yusupov%22%20maktab)!5e0!3m2!1sen!2s!4v1695737006274!5m2!1sen!2s"
   }
 ]

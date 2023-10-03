@@ -1,7 +1,7 @@
 <script setup>
 import notify from "izitoast";
 import router from "@/router";
-import { computed, ref } from "vue";
+import { computed, onMounted, onUpdated, ref } from "vue";
 import Datepicker from "vuejs3-datepicker";
 import "izitoast/dist/css/iziToast.min.css";
 import UserIcon from "@/assets/icons/UserIcon.vue";
@@ -136,10 +136,14 @@ const goToThirdStep = () => {
     currentStep.value++;
   }
 };
+
+onUpdated(() => {
+  useStadiumStore().clearSelectStadium();
+});
 </script>
 
 <template>
-  <div class="max-w-3xl px-2 my-8 md:mx-auto">
+  <div class="px-2 my-8">
     <div class="flex justify-around mb-5">
       <button @click="goBackToPreviousStep">
         <LeftBackIcon
@@ -193,7 +197,7 @@ const goToThirdStep = () => {
     <!-- Step 1 -->
     <div v-if="currentStep === 1" class="flex flex-col w-full mt-3 md:mx-auto">
       <div class="flex flex-wrap justify-center mt-1">
-        <div class="max-w-sm p-4">
+        <div class="">
           <datepicker
             language="ru"
             monday-first
@@ -287,6 +291,8 @@ const goToThirdStep = () => {
           :style="{
             backgroundImage: `url(/images/stadiums/${
               useStadiumStore().selectStadium.images[0]
+                ? useStadiumStore().selectStadium.images[0]
+                : 'the-stadium'
             }.jpg)`,
           }"
         >

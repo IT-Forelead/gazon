@@ -32,7 +32,7 @@ const fetchRssData = () => {
             pubDate: formattedPubDate,
             image: imageUrl
               ? imageUrl.getAttribute("url")
-              : "/images/the-stadium.jpg",
+              : "/images/stadiums/the-stadium.jpg",
             title: item.querySelector("title").textContent,
             link: item.querySelector("link").textContent,
             description: item.querySelector("description").textContent,
@@ -52,7 +52,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div class="max-w-6xl px-2 py-6 sm:px-6 lg:px-0 lg:py-14 mx-auto">
+  <div class="px-2">
     <button @click="router.back()" :class="{ hidden: $route.href === '/' }">
       <LeftBackIcon
         class="w-7 h-7 text-teal-600 hover:text-teal-500 cursor-pointer"
@@ -105,7 +105,7 @@ onMounted(() => {
           >
             <img
               class="w-full h-full absolute top-0 left-0 object-cover"
-              src="/images/the-stadium.jpg"
+              src="/images/stadiums/the-stadium.jpg"
               alt="Image Description"
             />
           </div>
@@ -171,7 +171,7 @@ onMounted(() => {
           >
             <img
               class="group-hover:scale-105 transition-transform duration-500 ease-in-out w-full h-full absolute top-0 left-0 object-cover rounded-xl"
-              src="/images/the-stadium.jpg"
+              src="/images/stadiums/the-stadium.jpg"
               alt="image"
               v-if="item.image"
             />
