@@ -12,6 +12,8 @@ import ShoesIcon from "../assets/icons/ShoesIcon.vue";
 import playerLists from "@/assets/data/playerLists.json";
 import LightingIcon from "../assets/icons/LightingIcon.vue";
 
+import Story from "../Story.vue";
+
 const hero = ref();
 const route = useRoute();
 const currentImage = ref(-1);
@@ -27,7 +29,9 @@ onMounted(() => {
     <div class="flex items-center pl-10 pt-5">
       <div
         class="bg-top bg-cover w-20 h-20 mr-2 bg-no-repeat rounded-full"
-        :style="{ backgroundImage: `url(/images/players/${hero?.firstName}.jpg)` }"
+        :style="{
+          backgroundImage: `url(/images/players/${hero?.firstName}.jpg)`,
+        }"
       ></div>
       <span class="-space-y-1">
         <h2 class="capitalize font-semibold text-xl">{{ hero?.firstName }}</h2>
@@ -118,6 +122,11 @@ onMounted(() => {
         class="bg-top bg-cover h-40 xl:h-96 2xl:h-[600px] md:h-60 bg-no-repeat cursor-pointer"
         :style="{ backgroundImage: `url(/images/players/${image}.jpg)` }"
       ></li>
+      <li
+        class="bg-top bg-cover h-40 xl:h-96 2xl:h-[600px] md:h-60 bg-no-repeat cursor-pointer"
+      >
+        <Story />
+      </li>
     </ul>
     <div v-if="currentImage > -1" class="fixed inset-0">
       <div
